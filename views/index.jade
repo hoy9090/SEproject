@@ -1,5 +1,296 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	// banner
+	.banner
+		.container
+			section.rw-wrapper
+				h1.rw-sentence
+					span Fashion & Beauty
+					.rw-words.rw-words-1
+						span Beautiful Designs
+						span Sed ut perspiciatis
+						span  Totam rem aperiam
+						span Nemo enim ipsam
+						span Temporibus autem
+						span intelligent systems
+					.rw-words.rw-words-2
+						span We denounce with right
+						span But in certain circum
+						span Sed ut perspiciatis unde
+						span There are many variation
+						span The generated Lorem Ipsum
+						span Excepteur sint occaecat
+	// content
+	.content
+		.container
+			.content-top
+				.col-md-6.col-md
+					.col-1
+						a.b-link-stroke.b-animate-go.thickbox(href='single.html')
+							img.img-responsive(src='images/pi.jpg', alt='')
+							.b-wrapper1.long-img
+								p.b-animate.b-from-right.b-delay03 Lorem ipsum
+								label.b-animate.b-from-right.b-delay03
+								h3.b-animate.b-from-left.b-delay03 Trendy
+						// -<a href="single.html"><img src="images/pi.jpg" class="img-responsive" alt=""></a>
+					.col-2
+						span Hot Deal
+						h2
+							a(href='single.html') Luxurious & Trendy
+						p
+							| Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years
+						a.buy-now(href='single.html') Buy Now
+				.col-md-6.col-md1
+					.col-3
+						a(href='single.html')
+							img.img-responsive(src='images/pi1.jpg', alt='')
+							.col-pic
+								p Lorem Ipsum
+								label
+								h5 For Men
+					.col-3
+						a(href='single.html')
+							img.img-responsive(src='images/pi2.jpg', alt='')
+							.col-pic
+								p Lorem Ipsum
+								label
+								h5 For Kids
+					.col-3
+						a(href='single.html')
+							img.img-responsive(src='images/pi3.jpg', alt='')
+							.col-pic
+								p Lorem Ipsum
+								label
+								h5 For Women
+				.clearfix
+			// products
+			.content-mid
+				h3 Trending Items
+				label.line
+				.mid-popular
+					.col-md-3.item-grid.simpleCart_shelfItem
+						.mid-pop
+							.pro-img
+								img.img-responsive(src='images/pc.jpg', alt='')
+								.zoom-icon
+									a.picture(href='images/pc.jpg', rel='title')
+										i.glyphicon.glyphicon-search.icon
+									a(href='single.html')
+										i.glyphicon.glyphicon-menu-right.icon
+							.mid-1
+								.women
+									.women-top
+										span Women
+										h6
+											a(href='single.html') Sed ut perspiciati
+									.img.item_add
+										a(href='#')
+											img(src='images/ca.png', alt='')
+									.clearfix
+								.mid-2
+									p
+										label $100.00
+										em.item_price $70.00
+									.block
+										.starbox.small.ghosting  
+									.clearfix
+					.col-md-3.item-grid.simpleCart_shelfItem
+						.mid-pop
+							.pro-img
+								img.img-responsive(src='images/pc1.jpg', alt='')
+								.zoom-icon
+									a.picture(href='images/pc1.jpg', rel='title')
+										i.glyphicon.glyphicon-search.icon
+									a(href='single.html')
+										i.glyphicon.glyphicon-menu-right.icon
+							.mid-1
+								.women
+									.women-top
+										span Women
+										h6
+											a(href='single.html') At vero eos
+									.img.item_add
+										a(href='#')
+											img(src='images/ca.png', alt='')
+									.clearfix
+								.mid-2
+									p
+										label $100.00
+										em.item_price $70.00
+									.block
+										.starbox.small.ghosting  
+									.clearfix
+					.col-md-3.item-grid.simpleCart_shelfItem
+						.mid-pop
+							.pro-img
+								img.img-responsive(src='images/pc2.jpg', alt='')
+								.zoom-icon
+									a.picture(href='images/pc2.jpg', rel='title')
+										i.glyphicon.glyphicon-search.icon
+									a(href='single.html')
+										i.glyphicon.glyphicon-menu-right.icon
+							.mid-1
+								.women
+									.women-top
+										span Men
+										h6
+											a(href='single.html') Sed ut perspiciati
+									.img.item_add
+										a(href='#')
+											img(src='images/ca.png', alt='')
+									.clearfix
+								.mid-2
+									p
+										label $100.00
+										em.item_price $70.00
+									.block
+										.starbox.small.ghosting  
+									.clearfix
+					.col-md-3.item-grid.simpleCart_shelfItem
+						.mid-pop
+							.pro-img
+								img.img-responsive(src='images/pc3.jpg', alt='')
+								.zoom-icon
+									a.picture(href='images/pc3.jpg', rel='title')
+										i.glyphicon.glyphicon-search.icon
+									a(href='single.html')
+										i.glyphicon.glyphicon-menu-right.icon
+							.mid-1
+								.women
+									.women-top
+										span Women
+										h6
+											a(href='single.html') On the other
+									.img.item_add
+										a(href='#')
+											img(src='images/ca.png', alt='')
+									.clearfix
+								.mid-2
+									p
+										label $100.00
+										em.item_price $70.00
+									.block
+										.starbox.small.ghosting  
+									.clearfix
+					.clearfix
+				.mid-popular
+					.col-md-3.item-grid.simpleCart_shelfItem
+						.mid-pop
+							.pro-img
+								img.img-responsive(src='images/pc4.jpg', alt='')
+								.zoom-icon
+									a.picture(href='images/pc4.jpg', rel='title')
+										i.glyphicon.glyphicon-search.icon
+									a(href='single.html')
+										i.glyphicon.glyphicon-menu-right.icon
+							.mid-1
+								.women
+									.women-top
+										span Men
+										h6
+											a(href='single.html') On the other
+									.img.item_add
+										a(href='#')
+											img(src='images/ca.png', alt='')
+									.clearfix
+								.mid-2
+									p
+										label $100.00
+										em.item_price $70.00
+									.block
+										.starbox.small.ghosting  
+									.clearfix
+					.col-md-3.item-grid.simpleCart_shelfItem
+						.mid-pop
+							.pro-img
+								img.img-responsive(src='images/pc5.jpg', alt='')
+								.zoom-icon
+									a.picture(href='images/pc5.jpg', rel='title')
+										i.glyphicon.glyphicon-search.icon
+									a(href='single.html')
+										i.glyphicon.glyphicon-menu-right.icon
+							.mid-1
+								.women
+									.women-top
+										span Men
+										h6
+											a(href='single.html') Sed ut perspiciati
+									.img.item_add
+										a(href='#')
+											img(src='images/ca.png', alt='')
+									.clearfix
+								.mid-2
+									p
+										label $100.00
+										em.item_price $70.00
+									.block
+										.starbox.small.ghosting  
+									.clearfix
+					.col-md-3.item-grid.simpleCart_shelfItem
+						.mid-pop
+							.pro-img
+								img.img-responsive(src='images/pc6.jpg', alt='')
+								.zoom-icon
+									a.picture(href='images/pc6.jpg', rel='title')
+										i.glyphicon.glyphicon-search.icon
+									a(href='single.html')
+										i.glyphicon.glyphicon-menu-right.icon
+							.mid-1
+								.women
+									.women-top
+										span Women
+										h6
+											a(href='single.html') At vero eos
+									.img.item_add
+										a(href='#')
+											img(src='images/ca.png', alt='')
+									.clearfix
+								.mid-2
+									p
+										label $100.00
+										em.item_price $70.00
+									.block
+										.starbox.small.ghosting  
+									.clearfix
+					.col-md-3.item-grid.simpleCart_shelfItem
+						.mid-pop
+							.pro-img
+								img.img-responsive(src='images/pc7.jpg', alt='')
+								.zoom-icon
+									a.picture(href='images/pc7.jpg', rel='title')
+										i.glyphicon.glyphicon-search.icon
+									a(href='single.html')
+										i.glyphicon.glyphicon-menu-right.icon
+							.mid-1
+								.women
+									.women-top
+										span Men
+										h6
+											a(href='single.html') Sed ut perspiciati
+									.img.item_add
+										a(href='#')
+											img(src='images/ca.png', alt='')
+									.clearfix
+								.mid-2
+									p
+										label $100.00
+										em.item_price $70.00
+									.block
+										.starbox.small.ghosting  
+									.clearfix
+					.clearfix
+			// //products
+			// brand
+			.brand
+				.col-md-3.brand-grid
+					img.img-responsive(src='images/ic.png', alt='')
+				.col-md-3.brand-grid
+					img.img-responsive(src='images/ic1.png', alt='')
+				.col-md-3.brand-grid
+					img.img-responsive(src='images/ic2.png', alt='')
+				.col-md-3.brand-grid
+					img.img-responsive(src='images/ic3.png', alt='')
+				.clearfix
+			// //brand
+	// //content

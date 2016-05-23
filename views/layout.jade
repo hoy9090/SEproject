@@ -1,7 +1,375 @@
 doctype html
+//
+	A Design by W3layouts
+	Author: W3layout
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title
+			| Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts
+		link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
+		// Custom Theme files
+		// theme-style
+		link(href='css/style.css', rel='stylesheet', type='text/css', media='all')
+		// //theme-style
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+		meta(name='keywords', content='Shopin Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndroId Compatible web template, \
+		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design')
+		script(type='application/x-javascript').
+			addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+		// theme-style
+		link(href='css/style4.css', rel='stylesheet', type='text/css', media='all')
+		// //theme-style
+		script(src='js/jquery.min.js')
+		// - start-rate--
+		script(src='js/jstarbox.js')
+		link(rel='stylesheet', href='css/jstarbox.css', type='text/css', media='screen', charset='utf-8')
+		script(type='text/javascript').
+			jQuery(function() {
+			jQuery('.starbox').each(function() {
+			var starbox = jQuery(this);
+			starbox.starbox({
+			average: starbox.attr('data-start-value'),
+			changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+			ghosting: starbox.hasClass('ghosting'),
+			autoUpdateAverage: starbox.hasClass('autoupdate'),
+			buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+			stars: starbox.attr('data-star-count') || 5
+			}).bind('starbox-value-changed', function(event, value) {
+			if(starbox.hasClass('random')) {
+			var val = Math.random();
+			starbox.next().text(' '+val);
+			return val;
+			}
+			})
+			});
+			});
+		// -//End-rate--
+	body
+		// header
+		.header
+			.container
+				.head
+					.logo
+						a(href='index.html')
+							img(src='images/logo.png', alt='')
+			.header-top
+				.container
+					.col-sm-5.col-md-offset-2.header-login
+						ul
+							li
+								a(href='login.html') Login
+							li
+								a(href='register.html') Register
+							li
+								a(href='checkout.html') Checkout
+					.col-sm-5.header-social
+						ul
+							li
+								a(href='#')
+									i
+							li
+								a(href='#')
+									i.ic1
+							li
+								a(href='#')
+									i.ic2
+							li
+								a(href='#')
+									i.ic3
+							li
+								a(href='#')
+									i.ic4
+					.clearfix  
+			.container
+				.head-top
+					.col-sm-8.col-md-offset-2.h_menu4
+						nav.navbar.nav_bottom(role='navigation')
+							// Brand and toggle get grouped for better mobile display
+							.navbar-header.nav_2
+								button.navbar-toggle.collapsed.navbar-toggle1(type='button', data-toggle='collapse', data-target='#bs-megadropdown-tabs')
+									span.sr-only Toggle navigation
+									span.icon-bar
+									span.icon-bar
+									span.icon-bar
+							// Collect the nav links, forms, and other content for toggling
+							#bs-megadropdown-tabs.collapse.navbar-collapse
+								ul.nav.navbar-nav.nav_1
+									li
+										a.color(href='index.html') Home
+									li.dropdown.mega-dropdown.active
+										a.color1(href='#', data-toggle='dropdown')
+											| Women
+											span.caret
+										.dropdown-menu
+											.menu-top
+												.col1
+													.h_nav
+														h4 Submenu1
+														ul
+															li
+																a(href='product.html') Accessories
+															li
+																a(href='product.html') Bags
+															li
+																a(href='product.html') Caps & Hats
+															li
+																a(href='product.html') Hoodies & Sweatshirts
+												.col1
+													.h_nav
+														h4 Submenu2
+														ul
+															li
+																a(href='product.html') Jackets & Coats
+															li
+																a(href='product.html') Jeans
+															li
+																a(href='product.html') Jewellery
+															li
+																a(href='product.html') Jumpers & Cardigans
+															li
+																a(href='product.html') Leather Jackets
+															li
+																a(href='product.html') Long Sleeve T-Shirts
+												.col1
+													.h_nav
+														h4 Submenu3
+														ul
+															li
+																a(href='product.html') Shirts
+															li
+																a(href='product.html') Shoes, Boots & Trainers
+															li
+																a(href='product.html') Sunglasses
+															li
+																a(href='product.html') Sweatpants
+															li
+																a(href='product.html') Swimwear
+															li
+																a(href='product.html') Trousers & Chinos
+												.col1
+													.h_nav
+														h4 Submenu4
+														ul
+															li
+																a(href='product.html') T-Shirts
+															li
+																a(href='product.html') Underwear & Socks
+															li
+																a(href='product.html') Vests
+															li
+																a(href='product.html') Jackets & Coats
+															li
+																a(href='product.html') Jeans
+															li
+																a(href='product.html') Jewellery
+												.col1.col5
+													img.img-responsive(src='images/me.png', alt='')
+												.clearfix
+									li.dropdown.mega-dropdown.active
+										a.color2(href='#', data-toggle='dropdown')
+											| Men
+											span.caret
+										.dropdown-menu.mega-dropdown-menu
+											.menu-top
+												.col1
+													.h_nav
+														h4 Submenu1
+														ul
+															li
+																a(href='product.html') Accessories
+															li
+																a(href='product.html') Bags
+															li
+																a(href='product.html') Caps & Hats
+															li
+																a(href='product.html') Hoodies & Sweatshirts
+												.col1
+													.h_nav
+														h4 Submenu2
+														ul
+															li
+																a(href='product.html') Jackets & Coats
+															li
+																a(href='product.html') Jeans
+															li
+																a(href='product.html') Jewellery
+															li
+																a(href='product.html') Jumpers & Cardigans
+															li
+																a(href='product.html') Leather Jackets
+															li
+																a(href='product.html') Long Sleeve T-Shirts
+												.col1
+													.h_nav
+														h4 Submenu3
+														ul
+															li
+																a(href='product.html') Shirts
+															li
+																a(href='product.html') Shoes, Boots & Trainers
+															li
+																a(href='product.html') Sunglasses
+															li
+																a(href='product.html') Sweatpants
+															li
+																a(href='product.html') Swimwear
+															li
+																a(href='product.html') Trousers & Chinos
+												.col1
+													.h_nav
+														h4 Submenu4
+														ul
+															li
+																a(href='product.html') T-Shirts
+															li
+																a(href='product.html') Underwear & Socks
+															li
+																a(href='product.html') Vests
+															li
+																a(href='product.html') Jackets & Coats
+															li
+																a(href='product.html') Jeans
+															li
+																a(href='product.html') Jewellery
+												.col1.col5
+													img.img-responsive(src='images/me1.png', alt='')
+												.clearfix
+									li
+										a.color3(href='product.html') Sale
+									li
+										a.color4(href='404.html') About
+									li
+										a.color5(href='typo.html') Short Codes
+									li
+										a.color6(href='contact.html') Contact
+							// /.navbar-collapse
+					.col-sm-2.search-right
+						ul.heart
+							li
+								a(href='wishlist.html')
+									span.glyphicon.glyphicon-heart(aria-hidden='true')
+							li
+								a.play-icon.popup-with-zoom-anim(href='#small-dialog')
+									i.glyphicon.glyphicon-search  
+						.cart.box_1
+							a(href='checkout.html')
+								h3
+									.total
+										span.simpleCart_total
+									img(src='images/cart.png', alt='')
+							p
+								a.simpleCart_empty(href='javascript:;') Empty Cart
+						.clearfix  
+						// -
+						// -pop-up-box--
+						link(href='css/popuo-box.css', rel='stylesheet', type='text/css', media='all')
+						script(src='js/jquery.magnific-popup.js', type='text/javascript')
+						// -//pop-up-box--
+						#small-dialog.mfp-hide
+							.search-top
+								.login-search
+									input(type='submit', value='')
+									input(type='text', value='Search..', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Search..';}")
+								p Shopin
+						script.
+							$(document).ready(function() {
+							$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+							});
+							});
+						// -
+					.clearfix
+		block content
+		// //footer
+		.footer
+			.footer-middle
+				.container
+					.col-md-3.footer-middle-in
+						a(href='index.html')
+							img(src='images/log.png', alt='')
+						p
+							| Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.
+					.col-md-3.footer-middle-in
+						h6 Information
+						ul.in
+							li
+								a(href='404.html') About
+							li
+								a(href='contact.html') Contact Us
+							li
+								a(href='#') Returns
+							li
+								a(href='contact.html') Site Map
+						ul.in.in1
+							li
+								a(href='#') Order History
+							li
+								a(href='wishlist.html') Wish List
+							li
+								a(href='login.html') Login
+						.clearfix
+					.col-md-3.footer-middle-in
+						h6 Tags
+						ul.tag-in
+							li
+								a(href='#') Lorem
+							li
+								a(href='#') Sed
+							li
+								a(href='#') Ipsum
+							li
+								a(href='#') Contrary
+							li
+								a(href='#') Chunk
+							li
+								a(href='#') Amet
+							li
+								a(href='#') Omnis
+					.col-md-3.footer-middle-in
+						h6 Newsletter
+						span Sign up for News Letter
+						form
+							input(type='text', value='Enter your E-mail', onfocus="this.value='';", onblur="if (this.value == '') {this.value ='Enter your E-mail';}")
+							input(type='submit', value='Subscribe')
+					.clearfix  
+			.footer-bottom
+				.container
+					ul.footer-bottom-top
+						li
+							a(href='#')
+								img.img-responsive(src='images/f1.png', alt='')
+						li
+							a(href='#')
+								img.img-responsive(src='images/f2.png', alt='')
+						li
+							a(href='#')
+								img.img-responsive(src='images/f3.png', alt='')
+					p.footer-class
+						| © 2016 Shopin. All Rights Reserved | Design by  
+						a(href='http://w3layouts.com/', target='_blank') W3layouts
+					.clearfix  
+		// //footer
+		// jQuery (necessary for Bootstrap's JavaScript plugins)
+		script(src='js/simpleCart.min.js')
+		// slide
+		script(src='js/bootstrap.min.js')
+		// light-box-files
+		script(src='js/jquery.chocolat.js')
+		link(rel='stylesheet', href='css/chocolat.css', type='text/css', media='screen', charset='utf-8')
+		// light-box-files
+		script(type='text/javascript', charset='utf-8').
+			$(function() {
+			$('a.picture').Chocolat();
+			});
