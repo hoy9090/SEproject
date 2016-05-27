@@ -14,11 +14,11 @@ router.post('/', function(req, res, next) {
 		pool.getConnection(function(err, conn) {
 			if (err) 
 				console.error(err);
-			connection.query('use board');
-			connection.query('select count(*) as count, serial_no from buyer where ID=?', [req.body.email], function(err, result, field) {
+			conn.query('use board');
+			conn.query('select count(*) as count, serial_no from buyer where ID=?', [req.body.email], function(err, result, field) {
 				if (err)
 					console.error(err);
-				connection.release();
+				conn.release();
 				var isAlreadyUser = result[0].count;
 				if (isAlreadyUser == 1) {
 					req.session.userno = result[0].serial_no;
