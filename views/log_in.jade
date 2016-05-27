@@ -1,5 +1,9 @@
 extends layout
 
+block style
+  style.
+    a.hvr-skew-backward {margin-bottom: 50px;}
+
 block content
   .container
     .login
@@ -17,7 +21,7 @@ block content
               i  
               | Forget Password
           label.hvr-skew-backward
-            input(type='submit', value='login')
+            input(type='submit', value='Login')
         .col-md-6.login-right
           h3 Completely Free Account
           p
