@@ -4,11 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var index = require('./routes/index');
 var about = require('./routes/about');
 var sign_buyer = require('./routes/sign_buyer');
 var sign_insert = require('./routes/sign_insert');
+var log_in = require('./routes/log_in');
+var log_out = require('./routes/log_out');
+var login_check = require('./routes/login_check');
 
 var app = express();
 
@@ -25,10 +29,24 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// session config
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(function(req, res, next) {
+  res.locals.loggedIn = req.session.userno ? true : false;
+  next();
+});
+
 app.use('/', index);
 app.use('/about', about);
 app.use('/sign_buyer', sign_buyer);
 app.use('/sign_insert', sign_insert);
+app.use('/log_in', log_in);
+app.use('/log_out', log_out);
+app.use('/login_check', login_check);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');

@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .container
+    .login
+      form(role='form', action='login_check', method='post')
+        .col-md-6.login-do
+          .login-mail
+            input(type='text', name='email', placeholder='Email', required)
+            i.glyphicon.glyphicon-envelope
+          .login-mail
+            input(type='password', name='pw', placeholder='Password', required)
+            i.glyphicon.glyphicon-lock
+          //a.news-letter(href='#')
+            label.checkbox1
+              input(type='checkbox', name='checkbox')
+              i  
+              | Forget Password
+          label.hvr-skew-backward
+            input(type='submit', value='login')
+        .col-md-6.login-right
+          h3 Completely Free Account
+          p
+            | Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio
+            | libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.
+          a.hvr-skew-backward(href='sign_buyer') Register
+        .clearfix
+  if (login_fail)
+    script.
+      alert('Verify your email or password.');

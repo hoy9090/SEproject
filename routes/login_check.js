@@ -13,11 +13,16 @@ router.post('/', function(req, res, next) {
   	if (err)
   		console.error(err);
   	conn.query('use board');
-  	conn.query('insert into buyer(ID, PW, name, nickname, phone_no, address) values(?, ?, ?, ?, ?, ?)', [req.body.email, req.body.pw, req.body.name, req.body.nickname, req.body.phone, req.body.address], function(err, result, field) {
+  	conn.query('select count(*) as count, serial_no from buyer where ID=? and PW=?', [req.body.email, req.body.pw], function(err, result, field) {
   		if (err)
   			console.error(err);
-  		conn.release();
-  		res.redirect('/');
+      conn.release();
+      if (result.count == 1) {
+        req.session.userno = result.serial_no;
+        res.redirect('/');
+      } else {
+        res.render('log_in', {login_fail: true});
+      }
   	});
   });
 });

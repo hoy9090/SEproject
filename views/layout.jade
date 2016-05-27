@@ -55,18 +55,24 @@ html
 			.container
 				.head
 					.logo
-						a(href='')
+						a(href='/')
 							img(src='images/logo.png', alt='')
 			.header-top
 				.container
 					.col-sm-5.col-md-offset-2.header-login
 						ul
-							li
-								a(href='login') Login
-							li
-								a(href='sign_buyer') Register
-							li
-								a(href='checkout') Mypage
+							if (loggedIn)
+								li
+									a(href='log_in') Logout
+							else
+								li
+									a(href='log_out') Login
+							if (!loggedIn)
+								li
+									a(href='sign_buyer') Register
+							else
+								li
+									a(href='checkout') Mypage
 							li
 								a(href='checkout') Q&A
 					.col-sm-5.header-social
@@ -232,7 +238,7 @@ html
 			.footer-middle
 				.container
 					.col-md-3.footer-middle-in
-						a(href='')
+						a(href='/')
 							img(src='images/log.png', alt='')
 						p
 							| Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.
