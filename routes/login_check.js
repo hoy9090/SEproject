@@ -17,7 +17,7 @@ router.post('/', function(req, res, next) {
   		if (err)
   			console.error(err);
       conn.release();
-      if (result.count == 1) {
+      if (result.count === 1) {
         req.session.userno = result.serial_no;
         res.redirect('/');
       } else {
