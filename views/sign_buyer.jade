@@ -10,13 +10,13 @@ block content
       form(role='form', action='sign_insert', method='post')
         .col-md-12.login-do
           .login-mail
-            input(type='text', name='email', placeholder='Email', required=)
+            input(type='text', name='email', placeholder='Email', required, value=(email ? '#{email}' : null))
             i.glyphicon.glyphicon-envelope
           .login-mail
             input(type='password', name='pw', placeholder='Password', required)
             i.glyphicon.glyphicon-lock
           .login-mail
-            input(type='text', name='name', placeholder='Name', required)
+            input(type='text', name='name', placeholder='Name', required, value=(name ? '#{name}' : null))
             i.glyphicon.glyphicon-user
           .login-mail
             input(type='text', name='nickname', placeholder='Nickname', required)
