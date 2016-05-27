@@ -6,9 +6,37 @@
 	font-family:'Oxygen-Regular';
 	src:url(../fonts/Oxygen-Regular.ttf) format('truetype');
 }
+@font-face{
+    font-family:'KoolBean';
+    src:url(../fonts/KoolBean.ttf) format('truetype');
+}
+@font-face{
+    font-family:'MASTODB_';
+    src:url(../fonts/MASTODB_.ttf) format('truetype');
+}
+@font-face{
+    font-family:'MASTOD__';
+    src:url(../fonts/MASTOD__.ttf) format('truetype');
+}
+@font-face{
+    font-family:'BMDOHYEON_ttf';
+    src:url(../fonts/BMDOHYEON_ttf.ttf) format('truetype');
+}
+@font-face{
+    font-family:'BMHANNA_11yrs_ttf';
+    src:url(../fonts/BMHANNA_11yrs_ttf.ttf) format('truetype');
+}
+@font-face{
+    font-family:'BMJUA_ttf';
+    src:url(../fonts/BMJUA_ttf.ttf) format('truetype');
+}
+@font-face{
+    font-family:'Delta_Universe';
+    src:url(../fonts/Delta_Universe.ttf) format('truetype');
+}
 .rw-wrapper{
 	position: relative;
-	padding: 13em 0 0;
+	padding: 14em 0 0;
 }
 .rw-sentence{
 	margin: 0;
@@ -21,9 +49,11 @@
 }
 .rw-sentence > span:first-child{
 	display: block;
-	text-indent: 5px;
-	font-size: 3em;
-	font-family: 'Ubuntu-Regular';
+	text-indent: 0px;
+	font-size: 3.1em;
+     color: #FFFFFF;
+     text-shadow: 0.05em 0.07em 0em #333, 0em -0.03em 0.1em #888;
+	font-family: 'BMDOHYEON_ttf';
 }
 .rw-words{
 	width: 100%;
@@ -44,7 +74,8 @@
 .rw-words-1 span{
 font-family:'Oxygen-Regular';
 	font-size: 1.2em;
-	-webkit-animation: rotateWordsFirst 18s linear infinite 0s;
+	color: #c1d977;
+    -webkit-animation: rotateWordsFirst 18s linear infinite 0s;
 	-moz-animation: rotateWordsFirst 18s linear infinite 0s;
 	-o-animation: rotateWordsFirst 18s linear infinite 0s;
 	-ms-animation: rotateWordsFirst 18s linear infinite 0s;
@@ -53,10 +84,11 @@ font-family:'Oxygen-Regular';
 }
 .rw-words-2 span{
 	font-size: 2em;
-	font-style: italic;
-	text-indent: 5px;
-	color: #F67777;	
-	font-family: 'Ubuntu-Regular';
+	/*font-style: italic;*/
+	text-align: left;
+    text-indent: 40%;
+	color: #c1d977;	
+	font-family: 'KoolBean';
 	-webkit-animation: rotateWordsSecond 18s ease-in infinite 0s;
 	-moz-animation: rotateWordsSecond 18s ease-in infinite 0s;
 	-o-animation: rotateWordsSecond 18s ease-in infinite 0s;
