@@ -17,7 +17,7 @@ var login_check = require('./routes/login_check');
 var notice = require('./routes/notice');
 var lectures = require('./routes/lectures');
 var free_board = require('./routes/free_board');
-var news = require = ('./routes/news');
+var news = require('./routes/news');
 
 var app = express();
 
@@ -56,7 +56,7 @@ app.use('/login_check', login_check);
 app.use('/notice', notice);
 app.use('/lectures', lectures);
 app.use('/free_board', free_board);
-app.use('news', news);
+app.use('/news', news);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');
