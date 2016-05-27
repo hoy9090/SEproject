@@ -13,6 +13,7 @@ block content
             input(type='text', name='email', placeholder='Email', required, value=(email ? '#{email}' : null))
             i.glyphicon.glyphicon-envelope
           if (email)
+            - console.log(email);
             .login-mail
               input(type='password', name='pw', placeholder='Password', required)
               i.glyphicon.glyphicon-lock
