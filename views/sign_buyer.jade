@@ -12,9 +12,12 @@ block content
           .login-mail
             input(type='text', name='email', placeholder='Email', required, value=(email ? '#{email}' : null))
             i.glyphicon.glyphicon-envelope
-          .login-mail
-            input(type='password', name='pw', placeholder='Password', required)
-            i.glyphicon.glyphicon-lock
+          if (email)
+            .login-mail
+              input(type='password', name='pw', placeholder='Password', required)
+              i.glyphicon.glyphicon-lock
+          else
+            input(type='hidden', name='pw', placeholder='Password', required, value='thisuserfacebook')
           .login-mail
             input(type='text', name='name', placeholder='Name', required, value=(name ? '#{name}' : null))
             i.glyphicon.glyphicon-user
