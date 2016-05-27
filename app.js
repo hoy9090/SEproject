@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var about = require('./routes/about');
-var signup_buyer = require('./routes/signup_buyer');
-var signup_insert = require('./routes/signup_insert');
+var sign_buyer = require('./routes/sign_buyer');
+var sign_insert = require('./routes/sign_insert');
 
 var app = express();
 
@@ -27,8 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/about', about);
-app.use('/signup_buyer', signup_buyer);
-app.use('/signup_insert', signup_insert);
+app.use('/sign_buyer', sign_buyer);
+app.use('/sign_insert', sign_insert);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');
