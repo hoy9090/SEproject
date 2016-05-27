@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
         req.session.userno = result[0].serial_no;
         res.redirect('/');
       } else {
-        res.send({login_fail: true});
+        res.render('log_in', {login_fail: true});
       }
   	});
   });
