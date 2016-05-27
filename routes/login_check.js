@@ -22,7 +22,6 @@ router.post('/', function(req, res, next) {
         res.redirect('/');
       } else {
         res.send({login_fail: true});
-        res.end();
       }
   	});
   });
