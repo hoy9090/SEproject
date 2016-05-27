@@ -1,40 +1,31 @@
 extends layout
 
+block style
+  style.
+    form {padding-bottom: 50px;}
+
 block content
   .container
     .login
       form(role='form', action='sign_insert', method='post')
-        .col-md-6.login-do
+        .col-md-12.login-do
           .login-mail
-            input(type='text', name='email', placeholder='Email', required='')
+            input(type='text', name='email', placeholder='Email', required=)
             i.glyphicon.glyphicon-envelope
           .login-mail
-            input(type='password', name='pw', placeholder='Password', required='')
+            input(type='password', name='pw', placeholder='Password', required)
             i.glyphicon.glyphicon-lock
           .login-mail
-            input(type='text', name='name', placeholder='Name', required='')
+            input(type='text', name='name', placeholder='Name', required)
             i.glyphicon.glyphicon-user
           .login-mail
-            input(type='text', name='nickname', placeholder='Name', required='')
-            i.glyphicon.glyphicon-user
+            input(type='text', name='nickname', placeholder='Nickname', required)
+            i.glyphicon.glyphicon-pencil
           .login-mail
-            input(type='text', name='phone', placeholder='Phone Number', required='')
+            input(type='text', name='phone', placeholder='Phone Number', required)
             i.glyphicon.glyphicon-phone
           .login-mail
-            input(type='text', name='address', placeholder='Address', required='')
-            i.glyphicon.glyphicon-phone
-
-          a.news-letter(href='#')
-            label.checkbox1
-              input(type='checkbox', name='checkbox')
-              i  
-              | Forget Password
+            input(type='text', name='address', placeholder='Address', required)
+            i.glyphicon.glyphicon-home
           label.hvr-skew-backward
             input(type='submit', value='Submit')
-        .col-md-6.login-right
-          h3 Completely Free Account
-          p
-            | Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio
-            | libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.
-          a.hvr-skew-backward(href='login') Login
-        .clearfix  
