@@ -17,11 +17,12 @@ router.post('/', function(req, res, next) {
   		if (err)
   			console.error(err);
       conn.release();
-      if (result.count === 1) {
-        req.session.userno = result.serial_no;
+      if (result[0].count == 1) {
+        req.session.userno = result[0].serial_no;
         res.redirect('/');
       } else {
-        res.render('log_in', {login_fail: true});
+        res.send({login_fail: true});
+        res.end();
       }
   	});
   });
