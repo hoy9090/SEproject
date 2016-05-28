@@ -3,7 +3,7 @@ extends layout
 block style
 	style.
 		table td {color: black; word-break: break-all; border: 1px solid #ddd !important;}
-		table {min-width: 700px; margin-bottom: 0;}
+		table {min-width: 700px; margin-bottom: 0 !important;}
 		thead {font-weight: bold;}
 		td.no {width: 60px;}
 		td.views {min-width: 60px;}
@@ -44,3 +44,12 @@ block content
 							a(href='notice?pageNo=#{val}')= val
 					li
 						a(href='notice?pageNo=#{endpage}') END
+		.col-md-12.text-center
+			form.form-inline(role='form', action='notice_search', method='post')
+				.form-group
+					select.form-control(name='search_scope')
+						option(value='title') Title
+						option(value='writter') Writter
+				.form-group
+					input.form-control(type='text', name='search_word', placeholder='Enter word' value='')
+				button.btn.btn-info(type='submit') Search
