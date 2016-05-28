@@ -13,11 +13,42 @@ router.get('/', function(req, res, next) {
 		if (err)
 			console.error(err);
 		conn.query('use board');
-		conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from notice order by serial_no desc', function(err, result, field) {
+		conn.query('select count(*) as count from notice', function(err, result, field) {
 			if (err)
 				console.error(err);
-			conn.release();
-			res.render('notice', {contents: result});
+			var count = parseInt((result[0].count-1)/10)+1;
+			if (req.query.pageNo === null) {
+				conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from notice order by serial_no desc limit 0, 10', function(err, result, field) {
+					if (err)
+						console.error(err);
+					conn.release();
+					var page = [];
+					if (count < 5)
+						for (var i=0; i<count; i++)
+							page.push(i+1);
+					else
+						page = [1, 2, 3, 4, 5];
+					res.render('notice', {contents: result, page: page, endpage: count});
+				});
+			} else {
+				var pageNo = req.query.pageNo;
+				conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from notice order by serial_no desc limit ?, 10', [(pageNo-1)*10], function(err, result, field) {
+					if (err)
+						console.error(err);
+					conn.release();
+					var page = [];
+					var pageCount = 0;
+					for(var i=-4; ; i++) {
+						if (pageNo+i > 0) {
+							page.push(pageNo+i);
+							pageCount++;
+						}
+						if (pageCount == 9)
+							break;
+					}
+					res.render('notice', {contents: result, page: page, endpage: count});
+				});
+			}
 		});
 	});
 });

@@ -7,9 +7,11 @@ block style
 		thead {font-weight: bold;}
 		td.no, td.views {min-width: 60px;}
 		td.writter, td.date {min-width: 100px;}
+		h2 {margin: 30px 0; text-align: center;}
 
 block content
 	.container
+		h2 Notice
 		.col-md-12(style='overflow: auto;')
 			table.table.table-hover
 				thead
@@ -31,12 +33,9 @@ block content
 			.text-center
 				ul.pagination
 					li 
-						a FIRST
+						a(href='notice?pageNo=1') FIRST
+					each val in page
+						li
+							a(href='notice?pageNo=#{val}')= val
 					li
-						a 1
-					li
-						a 2
-					li
-						a 3
-					li
-						a END
+						a(href='notice?pageNo=#{endpage}') END
