@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 				console.error(err);
 			conn.release();
 			if (result)
-				res.redirect('notice_view', {result: result[0]});
+				res.render('notice_view', {result: result[0]});
 			else
 				res.redirect('notice');
 		});
