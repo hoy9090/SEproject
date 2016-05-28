@@ -31,7 +31,7 @@ router.get('/', function(req, res, next) {
 					res.render('notice', {contents: result, page: page, endpage: count});
 				});
 			} else {
-				var pageNo = req.query.pageNo;
+				var pageNo = parseInt(req.query.pageNo);
 				conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from notice order by serial_no desc limit ?, 10', [(pageNo-1)*10], function(err, result, field) {
 					if (err)
 						console.error(err);
