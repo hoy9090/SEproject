@@ -1,26 +1,33 @@
 extends layout
 
 block style
+	style.
+		table td {border: 1px solid #CACACA !important;}
+		h2 {margin: 30px 0; text-align: center;}
+		tbody td {height: 100px;}
+		td.width {width: 90px;}
 
 block content
 	.container
-		table.table
-			thead
-				tr
-					td No
-					td= result.no
-				tr
-					td Title
-					td= result.title
-				tr
-					td Writter
-					td= result.writter
-				tr
-					td Date
-					td= result.date
-				tr
-					td Views
-					td= result.views
-			tbody
-				tr
-					td(colspan='2')= result.content
+		h2 Notice
+		.col-md-12
+			table.table
+				thead
+					tr
+						td.width No
+						td= result.no
+					tr
+						td.width Title
+						td= result.title
+					tr
+						td.width Writter
+						td= result.writter
+					tr
+						td.width Date
+						td= result.date
+					tr
+						td.width Views
+						td= result.views
+				tbody
+					tr
+						td(colspan='2')= result.content
