@@ -43,6 +43,8 @@ router.get('/', function(req, res, next) {
 							page.push(pageNo+i);
 							pageCount++;
 						}
+						if (pageNo+i == count)
+							break;
 						if (pageCount == 9)
 							break;
 					}
