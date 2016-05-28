@@ -14,7 +14,6 @@ var log_in = require('./routes/log_in');
 var log_out = require('./routes/log_out');
 var login_check = require('./routes/login_check');
 var sign_buyerFB = require('./routes/sign_buyerFB');
-var qna = require('./routes/qna');
 
 var notice = require('./routes/notice');
 var lectures = require('./routes/lectures');
@@ -23,6 +22,7 @@ var news = require('./routes/news');
 
 var notice_write = require('./routes/notice_write');
 var notice_insert = require('./routes/notice_insert');
+var notice_view = require('./routes/notice_view');
 
 var app = express();
 
@@ -58,7 +58,6 @@ app.use('/log_in', log_in);
 app.use('/log_out', log_out);
 app.use('/login_check', login_check);
 app.use('/sign_buyerFB', sign_buyerFB);
-app.use('/qna', qna);
 
 app.use('/notice', notice);
 app.use('/lectures', lectures);
@@ -67,6 +66,7 @@ app.use('/news', news);
 
 app.use('/notice_write', notice_write);
 app.use('/notice_insert', notice_insert);
+app.use('/notice_view', notice_view);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');

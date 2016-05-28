@@ -1,0 +1,26 @@
+extends layout
+
+block style
+
+block content
+	.container
+		table.table
+			thead
+				tr
+					td No
+					td= result.serial_no
+				tr
+					td Title
+					td= result.title
+				tr
+					td Writter
+					td= result.writter
+				tr
+					td Date
+					td= result.date
+				tr
+					td Views
+					td= result.views
+			tbody
+				tr
+					td(colspan='2')= result.content
