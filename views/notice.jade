@@ -12,6 +12,7 @@ block style
 		button.btn.btn-info.write {margin: 10px 0; float: right;}
 		ul.pagination > li > a:hover {background-color: #5BC0DE; color: #FFFFFF;}
 		.form-group {display: inline-block !important; margin-right: 5px;}
+
 block content
 	.container
 		h2 Notice
@@ -29,7 +30,8 @@ block content
 					each val in contents
 						tr
 							td= val.no
-							td= val.title
+							td
+								a(href='notice_view?no=#{val.no}')= val.title
 							td= val.writter
 							td= val.date
 							td= val.views
