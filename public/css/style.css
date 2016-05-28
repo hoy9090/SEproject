@@ -1676,7 +1676,7 @@ td {
 
 .banner {
     height: 450px;
-	background-position-x: -883px;
+	/*background-position-x: -883px;*/
 }
 }
 @media(max-width:767px){
@@ -1791,7 +1791,7 @@ td.add-check a {
 @media (max-width: 640px){
 .banner {
     height: 390px;
-    background-position-x: -965px;
+    /*background-position-x: -965px;*/
 }
 }
 @media (max-width: 620px){
