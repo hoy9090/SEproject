@@ -20,6 +20,9 @@ var lectures = require('./routes/lectures');
 var free_board = require('./routes/free_board');
 var news = require('./routes/news');
 
+var notice_write = require('./routes/notice_write');
+var notice_insert = require('./routes/notice_insert');
+
 var app = express();
 
 // view engine setup
@@ -59,6 +62,9 @@ app.use('/notice', notice);
 app.use('/lectures', lectures);
 app.use('/free_board', free_board);
 app.use('/news', news);
+
+app.use('/notice_write', notice_write);
+app.ues('/notice_insert', notice_insert);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');
