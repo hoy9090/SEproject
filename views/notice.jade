@@ -10,22 +10,23 @@ block style
 
 block content
 	.container
-		table.table.table-hover
-			thead
-				tr
-					td.no No
-					td.title Title
-					td.writter Writter
-					td.date Date
-					td.views Views
-			tbody
-				each val in contents
+		.col-md-12(style='overflow: auto;')
+			table.table.table-hover
+				thead
 					tr
-						td= val.no
-						td= val.title
-						td= val.writter
-						td= val.date
-						td= val.views
+						td.no No
+						td.title Title
+						td.writter Writter
+						td.date Date
+						td.views Views
+				tbody
+					each val in contents
+						tr
+							td= val.no
+							td= val.title
+							td= val.writter
+							td= val.date
+							td= val.views
 		.col-md-12
 			.text-center
 				ul.pagination
