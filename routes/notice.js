@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 			if (err)
 				console.error(err);
 			var count = parseInt((result[0].count-1)/10)+1;
-			if (req.query.pageNo === null) {
+			if (req.query.pageNo == null) {
 				conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from notice order by serial_no desc limit 0, 10', function(err, result, field) {
 					if (err)
 						console.error(err);
@@ -38,7 +38,7 @@ router.get('/', function(req, res, next) {
 					conn.release();
 					var page = [];
 					var pageCount = 0;
-					for(var i=-4; ; i++) {
+					for (var i=-4; ; i++) {
 						if (pageNo+i > 0) {
 							page.push(pageNo+i);
 							pageCount++;
