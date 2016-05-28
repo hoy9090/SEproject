@@ -14,6 +14,7 @@ var log_in = require('./routes/log_in');
 var log_out = require('./routes/log_out');
 var login_check = require('./routes/login_check');
 var sign_buyerFB = require('./routes/sign_buyerFB');
+var qna = require('./routes/qna');
 
 var notice = require('./routes/notice');
 var lectures = require('./routes/lectures');
@@ -57,6 +58,7 @@ app.use('/log_in', log_in);
 app.use('/log_out', log_out);
 app.use('/login_check', login_check);
 app.use('/sign_buyerFB', sign_buyerFB);
+app.use('/qna', qna);
 
 app.use('/notice', notice);
 app.use('/lectures', lectures);
