@@ -237,12 +237,12 @@ font-family:'Oxygen-Regular';
     height: 63px;
 }
 .rw-wrapper {
-    padding: 8em 0 0;
+    padding: 3em 0 0;
 }
 }
 @media(max-width: 480px){
 .rw-wrapper {
-    padding: 3em 0 0;
+    padding: 5em 0 0;
 }
 .rw-sentence {
     font-size: 23px;
