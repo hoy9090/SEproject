@@ -1,0 +1,21 @@
+extends layout
+
+block style
+
+block content
+	table.table.table-hover
+		thead
+			tr
+				td No
+				td Title
+				td Writter
+				td Date
+				td Views
+		tbody
+			each val in contents
+				tr
+					td= val.no
+					td= val.title
+					td= val.writter
+					td= val.date
+					td= val.views
