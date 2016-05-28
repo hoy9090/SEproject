@@ -1,21 +1,28 @@
 extends layout
 
 block style
+	style.
+		table td {color: black; word-break: break-all;}
+		table {min-width: 700px;}
+		thead {font-weight: bold;}
+		td.no, td.views {min-width: 60px;}
+		td.writter, td.date {min-width: 100px;}
 
 block content
-	table.table.table-hover
-		thead
-			tr
-				td No
-				td Title
-				td Writter
-				td Date
-				td Views
-		tbody
-			each val in contents
+	.container
+		table.table.table-hover
+			thead
 				tr
-					td= val.no
-					td= val.title
-					td= val.writter
-					td= val.date
-					td= val.views
+					td.no No
+					td.title Title
+					td.writter Writter
+					td.date Date
+					td.views Views
+			tbody
+				each val in contents
+					tr
+						td= val.no
+						td= val.title
+						td= val.writter
+						td= val.date
+						td= val.views
