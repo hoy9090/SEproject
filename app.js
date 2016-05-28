@@ -64,7 +64,7 @@ app.use('/free_board', free_board);
 app.use('/news', news);
 
 app.use('/notice_write', notice_write);
-app.ues('/notice_insert', notice_insert);
+app.use('/notice_insert', notice_insert);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');
