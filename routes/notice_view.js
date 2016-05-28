@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 		if (err)
 			console.error(err);
 		conn.query('use board');
-		conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d %H:%i:%s") date, views from notice where no=?', [req.query.no], function(err, result, field) {
+		conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d %H:%i:%s") date, views from notice where serial_no=?', [req.query.no], function(err, result, field) {
 			if (err)
 				console.error(err);
 			conn.release();
