@@ -7,7 +7,6 @@ block style
 		thead {font-weight: bold;}
 		td.no, td.views {min-width: 60px;}
 		td.writter, td.date {min-width: 100px;}
-		ui.pagination li {display: inline;}
 
 block content
 	.container
@@ -28,9 +27,15 @@ block content
 						td= val.date
 						td= val.views
 		.col-md-12
-			ul.pagination
-				li FIRST
-				li 1
-				li 2
-				li 3
-				li END
+			.text-center
+				ul.pagination
+					li 
+						a FIRST
+					li
+						a 1
+					li
+						a 2
+					li
+						a 3
+					li
+						a END
