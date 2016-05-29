@@ -23,6 +23,7 @@ var news = require('./routes/news');
 var notice_write = require('./routes/notice_write');
 var notice_insert = require('./routes/notice_insert');
 var notice_view = require('./routes/notice_view');
+var notice_search = require('./routes/notice_search');
 
 var app = express();
 
@@ -67,6 +68,7 @@ app.use('/news', news);
 app.use('/notice_write', notice_write);
 app.use('/notice_insert', notice_insert);
 app.use('/notice_view', notice_view);
+app.use('/notice_search', notice_search);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');
