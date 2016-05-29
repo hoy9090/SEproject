@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET log_in page. */
+/* GET log_in. */
 router.get('/', function(req, res, next) {
   res.render('log_in', {login_fail: false});
 });

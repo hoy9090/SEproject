@@ -1,14 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var board_title = "Notice";
 
 /* GET notice_write. */
 router.get('/', function(req, res, next)
 {
 	if (req.session.userno)
-		res.render('notice_write', {board_title: board_title});
+		res.render('lectures_write');
 	else
-		res.redirect('notice');
+		res.redirect('lectures');
 });
 
 module.exports = router;

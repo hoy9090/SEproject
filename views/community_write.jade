@@ -1,0 +1,19 @@
+extends layout
+
+block style
+	style.
+		form textarea {height: 500px;}
+		button {display: inline; margin-right: 5px;}
+		textarea {resize: none; width: 100%; margin-bottom: 15px;}
+		input {width: 100%; margin-bottom: 15px; margin-top: 30px;}
+		h2 {margin: 30px 0; text-align: center;}
+
+block content
+	.container
+		h2= board_title
+		.col-md-12
+			form.form(role='form', action='#{category}_insert', method='post')
+				input(type='text', name='title', placeholder='Title', required)
+				textarea(name='content', placeholder='Write text.', required)
+				button(type='submit').btn.btn-info Write
+				button(type='button').btn.btn-warning Cancel
