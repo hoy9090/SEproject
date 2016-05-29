@@ -6,6 +6,7 @@ var pool = mysql.createPool({
 	user: 'root',
 	password: '1234'
 });
+var urlencode = require('urlencode');
 
 /* GET notice.jade page. */
 router.get('/', function(req, res, next) {
@@ -54,8 +55,8 @@ router.get('/', function(req, res, next) {
 				}
 			});
 		} else {
-			var search_word = req.query.search_word;
-			var search_scope = req.query.search_scope;
+			var search_word = urlencode.decode(req.query.search_word);
+			var search_scope = urlencode.decode(req.query.search_scope);
 			conn.query("select count(*) as count from notice where "+search_scope+" like ?", ['%'+search_word+'%'], function(err, result, field) {
 				if (err)
 					console.error(err);
