@@ -13,45 +13,89 @@ router.get('/', function(req, res, next) {
 		if (err)
 			console.error(err);
 		conn.query('use board');
-		conn.query('select count(*) as count from notice', function(err, result, field) {
-			if (err)
-				console.error(err);
-			var count = parseInt((result[0].count-1)/10)+1;
-			if (req.query.pageNo == null) {
-				conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from notice order by serial_no desc limit 0, 10', function(err, result, field) {
-					if (err)
-						console.error(err);
-					conn.release();
-					var page = [];
-					if (count < 5)
-						for (var i=0; i<count; i++)
-							page.push(i+1);
-					else
-						page = [1, 2, 3, 4, 5];
-					res.render('notice', {contents: result, page: page, endpage: count});
-				});
-			} else {
-				var pageNo = parseInt(req.query.pageNo);
-				conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from notice order by serial_no desc limit ?, 10', [(pageNo-1)*10], function(err, result, field) {
-					if (err)
-						console.error(err);
-					conn.release();
-					var page = [];
-					var pageCount = 0;
-					for (var i=-4; ; i++) {
-						if (pageNo+i > 0) {
-							page.push(pageNo+i);
-							pageCount++;
+		if (req.query.search_word == null) {
+			conn.query('select count(*) as count from notice', function(err, result, field) {
+				if (err)
+					console.error(err);
+				var count = parseInt((result[0].count-1)/10)+1;
+				if (req.query.pageNo == null) {
+					conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from notice order by serial_no desc limit 0, 10', function(err, result, field) {
+						if (err)
+							console.error(err);
+						conn.release();
+						var page = [];
+						if (count < 5)
+							for (var i=0; i<count; i++)
+								page.push(i+1);
+						else
+							page = [1, 2, 3, 4, 5];
+						res.render('notice', {contents: result, page: page, endpage: count, search: false});
+					});
+				} else {
+					var pageNo = parseInt(req.query.pageNo);
+					conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from notice order by serial_no desc limit ?, 10', [(pageNo-1)*10], function(err, result, field) {
+						if (err)
+							console.error(err);
+						conn.release();
+						var page = [];
+						var pageCount = 0;
+						for (var i=-4; ; i++) {
+							if (pageNo+i > 0) {
+								page.push(pageNo+i);
+								pageCount++;
+							}
+							if (pageNo+i == count)
+								break;
+							if (pageCount == 9)
+								break;
 						}
-						if (pageNo+i == count)
-							break;
-						if (pageCount == 9)
-							break;
-					}
-					res.render('notice', {contents: result, page: page, endpage: count});
-				});
-			}
-		});
+						res.render('notice', {contents: result, page: page, endpage: count, search: false});
+					});
+				}
+			});
+		} else {
+			var search_word = req.query.search_word;
+			var search_scope = req.query.search_scope;
+			conn.query("select count(*) as count from notice where ? like '%?%'", [search_scope, search_word], function(err, result, field) {
+				if (err)
+					console.error(err);
+				var count = parseInt((result[0].count-1)/10)+1;
+				if (req.query.pageNo == null) {
+					conn.query("select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, '%Y-%m-%d') date, views from notice where ? like '%?%' order by serial_no desc limit 0, 10", [search_scope, search_word], function(err, result, field) {
+						if (err)
+							console.error(err);
+						conn.release();
+						var page = [];
+						if (count < 5)
+							for (var i=0; i<count; i++)
+								page.push(i+1);
+						else
+							page = [1, 2, 3, 4, 5];
+						res.render('notice', {contents: result, page: page, endpage: count, search: true, search_scope: search_scope, search_word: search_word});
+					});
+				} else {
+					var pageNo = parseInt(req.query.pageNo);
+					conn.query("select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, '%Y-%m-%d') date, views from notice where ? like '%?%' order by serial_no desc limit ?, 10", [(pageNo-1)*10, search_scope, search_word], function(err, result, field) {
+						if (err)
+							console.error(err);
+						conn.release();
+						var page = [];
+						var pageCount = 0;
+						for (var i=-4; ; i++) {
+							if (pageNo+i > 0) {
+								page.push(pageNo+i);
+								pageCount++;
+							}
+							if (pageNo+i == count)
+								break;
+							if (pageCount == 9)
+								break;
+						}
+						res.render('notice', {contents: result, page: page, endpage: count, serach: true, search_scope: search_scope, search_word: search_word});
+					});
+				}
+			});
+		}
 	});
 });
 

@@ -41,18 +41,35 @@ block content
 			.text-center
 				ul.pagination
 					li 
-						a(href='notice?pageNo=1') FIRST
+						if (search)
+							a(href='notice?pageNo=1&search_scope=#{search_scope}&search_word=#{search_word}') FIRST
+						else
+							a(href='notice?pageNo=1') FIRST
 					each val in page
 						li
-							a(href='notice?pageNo=#{val}')= val
+							if (search)
+								a(href='notice?pageNo=#{val}&search_scope=#{search_scope}&search_word=#{search_word}')= val
+							else	
+								a(href='notice?pageNo=#{val}')= val
 					li
-						a(href='notice?pageNo=#{endpage}') END
+						if (search)
+							a(href='notice?pageNo=#{endpage}&search_scope=#{search_scope}&search_word=#{search_word}') END
+						else
+							a(href='notice?pageNo=#{endpage}') END
 		.col-md-12.text-center
 			form.form-inline(role='form', action='notice_search', method='post')
 				.form-group
-					select.form-control(name='search_scope')
-						option(value='title') Title
+					select.form-control#search_scope(name='search_scope')
+						option(value='title', ()) Title
 						option(value='writter') Writter
 				.form-group
-					input.form-control(type='text', name='search_word', placeholder='Enter word' value='')
+					input.form-control#search_word(type='text', name='search_word', placeholder='Enter word for search', required)
 				button.btn.btn-info(type='submit') Search
+
+block script
+	if (search)
+		script.
+			$('#search_scope').val('#{search_scope}');
+			$('#search_word').val('#{search_word}');
+
+			
