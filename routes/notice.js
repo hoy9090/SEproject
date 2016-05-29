@@ -56,12 +56,12 @@ router.get('/', function(req, res, next) {
 		} else {
 			var search_word = req.query.search_word;
 			var search_scope = req.query.search_scope;
-			conn.query("select count(*) as count from notice where ? like ?", [search_scope, '%'+search_word+'%'], function(err, result, field) {
+			conn.query("select count(*) as count from notice where "+search_scope+" like ?", ['%'+search_word+'%'], function(err, result, field) {
 				if (err)
 					console.error(err);
 				var count = parseInt((result[0].count-1)/10)+1;
 				if (req.query.pageNo == null) {
-					conn.query("select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, '%Y-%m-%d') date, views from notice where ? like ? order by serial_no desc limit 0, 10", [search_scope, '%'+search_word+'%'], function(err, result, field) {
+					conn.query("select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, '%Y-%m-%d') date, views from notice where "+search_scope+" like ? order by serial_no desc limit 0, 10", ['%'+search_word+'%'], function(err, result, field) {
 						if (err)
 							console.error(err);
 						conn.release();
@@ -75,7 +75,7 @@ router.get('/', function(req, res, next) {
 					});
 				} else {
 					var pageNo = parseInt(req.query.pageNo);
-					conn.query("select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, '%Y-%m-%d') date, views from notice where ? like ? order by serial_no desc limit ?, 10", [(pageNo-1)*10, search_scope, '%'+search_word+'%'], function(err, result, field) {
+					conn.query("select serial_no as no, title, (select nickname from buyer where buyer.serial_no=notice.writter_SN) writter, date_format(date, '%Y-%m-%d') date, views from notice where "+search_scope+" like ? order by serial_no desc limit ?, 10", ['%'+search_word+'%', (pageNo-1)*10], function(err, result, field) {
 						if (err)
 							console.error(err);
 						conn.release();

@@ -6,10 +6,11 @@ var pool = mysql.createPool({
 	user: 'root',
 	password: '1234'
 });
+var urlencode = require('urlencode');
 
 /* POST notice_search. */
 router.post('/', function(req, res, next) {
-	res.redirect('/notice?search_word='+req.body.search_word+'&search_scope='+req.body.search_scope);
+	res.redirect(urlencode('/notice?search_word='+req.body.search_word+'&search_scope='+req.body.search_scope));
 });
 
 module.exports = router;
