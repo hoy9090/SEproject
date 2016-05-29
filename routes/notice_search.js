@@ -9,7 +9,7 @@ var pool = mysql.createPool({
 
 /* POST notice_search. */
 router.post('/', function(req, res, next) {
-	res.redirect('notice?search_word='+req.body.search_word+'&search_scope='+req.body.search_scope);
+	res.redirect('/notice?search_word='+req.body.search_word+'&search_scope='+req.body.search_scope);
 });
 
 module.exports = router;
