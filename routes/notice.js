@@ -92,7 +92,7 @@ router.get('/', function(req, res, next) {
 							if (pageCount == 9)
 								break;
 						}
-						res.render('notice', {contents: result, page: page, endpage: count, serach: true, search_scope: search_scope, search_word: search_word});
+						res.render('notice', {contents: result, page: page, endpage: count, search: true, search_scope: search_scope, search_word: search_word});
 					});
 				}
 			});
