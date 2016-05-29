@@ -17,8 +17,9 @@ block style
 block content
 	.container
 		h2 Notice
-		.col-md-12(style='overflow: auto;')
+		.col-md-12
 			button.btn.btn-info.write(onClick="location.href='notice_write';") Write
+		.col-md-12(style='overflow: auto;')			
 			table.table.table-hover.table-striped
 				thead
 					tr
@@ -36,6 +37,7 @@ block content
 							td= val.writter
 							td= val.date
 							td= val.views
+		.col-md-12
 			button.btn.btn-info.write(onClick="location.href='notice_write';") Write
 		.col-md-12
 			.text-center
@@ -60,7 +62,7 @@ block content
 			form.form-inline(role='form', action='notice_search', method='post')
 				.form-group
 					select.form-control#search_scope(name='search_scope')
-						option(value='title', ()) Title
+						option(value='title') Title
 						option(value='writter') Writter
 				.form-group
 					input.form-control#search_word(type='text', name='search_word', placeholder='Enter word for search', required)
@@ -71,5 +73,3 @@ block script
 		script.
 			$('#search_scope').val('#{search_scope}');
 			$('#search_word').val('#{search_word}');
-
-			

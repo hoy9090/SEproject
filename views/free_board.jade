@@ -13,12 +13,13 @@ block style
 		button.btn.btn-info.write {margin: 10px 0; float: right;}
 		ul.pagination > li > a:hover {background-color: #5BC0DE; color: #FFFFFF;}
 		.form-group {display: inline-block !important; margin-right: 5px;}
-		
+
 block content
 	.container
 		h2 Free Topic
-		.col-md-12(style='overflow: auto;')
-			button.btn.btn-info.write Write
+		.col-md-12
+			button.btn.btn-info.write(onClick="location.href='free_board_write';") Write
+		.col-md-12(style='overflow: auto;')			
 			table.table.table-hover.table-striped
 				thead
 					tr
@@ -32,27 +33,43 @@ block content
 						tr
 							td= val.no
 							td
-								a(href='free_view?no=#{val.no}')= val.title
+								a(href='free_board_view?no=#{val.no}')= val.title
 							td= val.writter
 							td= val.date
 							td= val.views
-			button.btn.btn-info.write Write
+		.col-md-12
+			button.btn.btn-info.write(onClick="location.href='free_board_write';") Write
 		.col-md-12
 			.text-center
 				ul.pagination
 					li 
-						a(href='free_board?pageNo=1') FIRST
+						if (search)
+							a(href='free_board?pageNo=1&search_scope=#{search_scope}&search_word=#{search_word}') FIRST
+						else
+							a(href='free_board?pageNo=1') FIRST
 					each val in page
 						li
-							a(href='free_board?pageNo=#{val}')= val
+							if (search)
+								a(href='free_board?pageNo=#{val}&search_scope=#{search_scope}&search_word=#{search_word}')= val
+							else	
+								a(href='free_board?pageNo=#{val}')= val
 					li
-						a(href='free_board?pageNo=#{endpage}') END
+						if (search)
+							a(href='free_board?pageNo=#{endpage}&search_scope=#{search_scope}&search_word=#{search_word}') END
+						else
+							a(href='free_board?pageNo=#{endpage}') END
 		.col-md-12.text-center
-			form.form-inline(role='form', action='free_search', method='post')
+			form.form-inline(role='form', action='free_board_search', method='post')
 				.form-group
-					select.form-control(name='search_scope')
+					select.form-control#search_scope(name='search_scope')
 						option(value='title') Title
 						option(value='writter') Writter
 				.form-group
-					input.form-control(type='text', name='search_word', placeholder='Enter word' value='')
+					input.form-control#search_word(type='text', name='search_word', placeholder='Enter word for search', required)
 				button.btn.btn-info(type='submit') Search
+
+block script
+	if (search)
+		script.
+			$('#search_scope').val('#{search_scope}');
+			$('#search_word').val('#{search_word}');
