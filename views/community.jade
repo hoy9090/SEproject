@@ -58,7 +58,7 @@ block content
 							a(href='#{category}?pageNo=#{endpage}&search_scope=#{search_scope}&search_word=#{search_word}') END
 						else
 							a(href='#{category}?pageNo=#{endpage}') END
-		.col-md-12.text-center
+		.col-xs-12.text-center
 			form.form-inline(role='form', action='#{category}_search', method='post')
 				.form-group
 					select.form-control#search_scope(name='search_scope')
