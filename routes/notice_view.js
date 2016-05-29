@@ -7,7 +7,6 @@ var pool = mysql.createPool({
 	password: '1234'
 });
 var board_title = "Notice";
-var category = "notice";
 
 /* GET notice_view. */
 router.get('/', function(req, res, next) {
@@ -20,7 +19,7 @@ router.get('/', function(req, res, next) {
 				console.error(err);
 			conn.release();
 			if (result)
-				res.render('notice_view', {board_title: board_title, category: category, result: result[0]});
+				res.render('notice_view', {board_title: board_title, result: result[0]});
 			else
 				res.redirect('notice');
 		});

@@ -7,6 +7,8 @@ var pool = mysql.createPool({
 	password: '1234'
 });
 var urlencode = require('urlencode');
+var board_title = "Free Topic";
+var category = "free_board";
 
 /* GET free_board. */
 router.get('/', function(req, res, next) {
@@ -30,7 +32,7 @@ router.get('/', function(req, res, next) {
 								page.push(i+1);
 						else
 							page = [1, 2, 3, 4, 5];
-						res.render('free_board', {contents: result, page: page, endpage: count, search: false});
+						res.render('free_board', {board_title: board_title, category: category, contents: result, page: page, endpage: count, search: false});
 					});
 				} else {
 					var pageNo = parseInt(req.query.pageNo);
@@ -50,7 +52,7 @@ router.get('/', function(req, res, next) {
 							if (pageCount == 9)
 								break;
 						}
-						res.render('free_board', {contents: result, page: page, endpage: count, search: false});
+						res.render('free_board', {board_title: board_title, category: category, contents: result, page: page, endpage: count, search: false});
 					});
 				}
 			});
@@ -72,7 +74,7 @@ router.get('/', function(req, res, next) {
 								page.push(i+1);
 						else
 							page = [1, 2, 3, 4, 5];
-						res.render('free_board', {contents: result, page: page, endpage: count, search: true, search_scope: search_scope, search_word: search_word});
+						res.render('free_board', {board_title: board_title, category: category, contents: result, page: page, endpage: count, search: true, search_scope: search_scope, search_word: search_word});
 					});
 				} else {
 					var pageNo = parseInt(req.query.pageNo);
@@ -92,7 +94,7 @@ router.get('/', function(req, res, next) {
 							if (pageCount == 9)
 								break;
 						}
-						res.render('free_board', {contents: result, page: page, endpage: count, search: true, search_scope: search_scope, search_word: search_word});
+						res.render('free_board', {board_title: board_title, category: category, contents: result, page: page, endpage: count, search: true, search_scope: search_scope, search_word: search_word});
 					});
 				}
 			});
