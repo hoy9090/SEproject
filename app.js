@@ -43,6 +43,10 @@ var news_insert = require('./routes/news_insert');
 var news_view = require('./routes/news_view');
 var news_search = require('./routes/news_search');
 
+//product features
+var product = require('./routes/product');
+
+
 var app = express();
 
 // view engine setup
@@ -102,6 +106,7 @@ app.use('/news_insert', news_insert);
 app.use('/news_view', news_view);
 app.use('/news_search', news_search);
 
+app.use('/product', product);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');
