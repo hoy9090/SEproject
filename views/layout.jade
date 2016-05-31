@@ -67,10 +67,10 @@ html
 									a(href='log_out') Logout
 							else
 								li
-									a(href='log_in') Login
+									a(href='buyerLogin') Login
 							if (!loggedIn)
 								li
-									a(href='sign_buyer') Register
+									a(href='sign') Register
 							else
 								li
 									a(href='checkout') Mypage
@@ -78,9 +78,10 @@ html
 								a(href='3dview/qna.html', target='_blank') Q&A
 					.col-sm-5.header-social
 						ul
-							//li
-								a(href='#')
-									i
+							// Seller page
+							li
+								a(href='sellerLogin') 
+									img(src='images/seller.jpg', style='width: 50px; height; 15px;', alt='') 
 							// Facebook Icon
 							li
 								a(href='#')

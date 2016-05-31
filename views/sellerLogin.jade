@@ -53,20 +53,6 @@ block content
         });
       }
 
-      function fb_login(){
-        FB.login(function(response) {
-          if (response.authResponse && response.authResponse.grantedScopes.includes("email")) {
-            go_signup();
-          } else {
-            alert('Board a To z 가입을 위해서 Facebook 기본 프로필, 이메일 정보가 필요합니다.');
-          }
-        }, {
-          scope: 'public_profile, email',
-          auth_type: 'rerequest',
-          return_scopes: true
-        });
-      }
-
       // Load the SDK asynchronously
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -78,6 +64,11 @@ block content
 
   .container
     .login
+      .col-md-6.login-title
+          h3 Log-in page for Seller !
+      .col-md-6.login-title
+          p
+            | Log-in page for Seller !
       form(role='form', action='login_check', method='post')
         .col-md-6.login-do
           .login-mail
@@ -92,14 +83,13 @@ block content
               i  
               | Forget Password
           label.hvr-skew-backward
-            input(type='submit', value='Login')
-          a.hvr-skew-backward(onClick='fb_login()') Login with facebook
+            input(type='submit', value='Login for Seller')
         .col-md-6.login-right
           h3 Join Board a To z !
           p
-            | Hello. Our site is on-line board shopping mall and community site. Especially, our site offer customizing feature as well as selling complete boards. You can customize your own board easily by using out customizing tool. Also our site offer watching board lectures. SO if you join Board a TO z, you can use on everythiing from buying a board to learning how to ride a board.
-            | Join Board a TO z and enjoy our site.
-          a.hvr-skew-backward(href='sign_buyer') Register
+            | Hello. Our site is on-line board shopping mall and community site. Especially, our site offer customizing feature as well as selling complete boards. So, in our site, there are potential customers. Join Board a TO z and enjoy our site. 
+          h5 ..
+          a.hvr-skew-backward(href='sign') Register
         .clearfix
 
 block script

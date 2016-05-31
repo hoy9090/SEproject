@@ -1117,9 +1117,23 @@ nav.nav-sidebar {
     color: #000000;
     font-family: 'Ubuntu-Regular';
 }
+.login-right h5{
+    color: #fff;
+}
 .login-right p {
     font-size: 0.9em;
     color: #B3B3B3;
+    line-height: 1.8em;
+    margin: 1em 0 ;
+}
+.login-title h3{
+	font-size: 1.5em;
+    color: #666666;
+    font-family: 'Ubuntu-Regular';
+}
+.login-title p {
+    font-size: 0.9em;
+    color: #fff;
     line-height: 1.8em;
     margin: 1em 0 ;
 }
@@ -1439,7 +1453,7 @@ ul.tag-in li a:hover{
 	float:right;
 }
 .footer-class a{
-	color:#34B2C1;
+	color:#111111;
 	text-decoration:none;
 }
 .footer-bottom-top{
@@ -2173,6 +2187,15 @@ h4.cate {
     font-size: 1.2em;
 }
 .login-right p {
+    font-size: 0.83em;
+}
+.login-title {
+    padding: 0;
+}
+.login-title h3 {
+    font-size: 1.2em;
+}
+.login-title p {
     font-size: 0.83em;
 }
 .login {

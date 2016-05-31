@@ -32,7 +32,7 @@ router.post('/', function(req, res, next) {
 			});
 		});
 	} else {
-		res.redirect('/log_in');
+		res.redirect('/buyerLogin');
 	}
 });
 

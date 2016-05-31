@@ -8,9 +8,10 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var about = require('./routes/about');
-var sign_buyer = require('./routes/sign_buyer');
+var sign = require('./routes/sign');
 var sign_insert = require('./routes/sign_insert');
-var log_in = require('./routes/log_in');
+var buyerLogin = require('./routes/buyerLogin');
+var sellerLogin = require('./routes/sellerLogin');
 var log_out = require('./routes/log_out');
 var login_check = require('./routes/login_check');
 var sign_buyerFB = require('./routes/sign_buyerFB');
@@ -75,9 +76,10 @@ app.use(function(req, res, next) {
 
 app.use('/', index);
 app.use('/about', about);
-app.use('/sign_buyer', sign_buyer);
+app.use('/sign', sign);
 app.use('/sign_insert', sign_insert);
-app.use('/log_in', log_in);
+app.use('/buyerLogin', buyerLogin);
+app.use('/sellerLogin', sellerLogin);
 app.use('/log_out', log_out);
 app.use('/login_check', login_check);
 app.use('/sign_buyerFB', sign_buyerFB);
