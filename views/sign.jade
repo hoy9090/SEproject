@@ -9,17 +9,17 @@ block content
     function buyerchk(){
       alert("Buyer need not to insert corporate registration number.");
       if (document.regitForm['member'][0].checked) {// check buyer
-        document.regitForm.coopNum.disabled = ture;  // inactive
+        document.regitForm.copNum.disabled = true;  // inactive
       } else { 
-        document.regitForm.coopNum.disabled = ture;
+        document.regitForm.copNum.disabled = true;
       } // inactive
     }
     function sellerchk(){
-      alert("Buyer need not to insert corporate registration number.");
+      alert("Seller have to insert corporate registration number. Please insert corporate registration number");
       if (document.regitForm['member'][1].checked) {// check buyer
-        document.regitForm.coopNum.disabled = false;  // inactive
+        document.regitForm.copNum.disabled = false;  // inactive
       } else { 
-        document.regitForm.coopNum.disabled = ture;
+        document.regitForm.copNum.disabled = true;
       } // inactive
     }
   .container
@@ -53,7 +53,7 @@ block content
             input(type='text', name='address', placeholder='Address', required)
             i.glyphicon.glyphicon-home
           .login-mail
-            input(type='password', name='coopNum', placeholder='corporate registration number (only Seller have to fill this blank)', required, disabled)
+            input(type='password', name='copNum', placeholder='corporate registration number (only Seller have to fill this blank)', required, disabled)
             i.glyphicon.glyphicon-lock
           label.hvr-skew-backward
             input(type='submit', value='Submit')
