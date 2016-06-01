@@ -1016,6 +1016,9 @@ nav.nav-sidebar {
 .login{
 	padding:5em 0 0;
 }
+.login-title {
+	padding: 0.5em 1em;
+}
 .login-bottom h2{
 	font-size: 1.4em;
 	color:#000;

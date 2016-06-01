@@ -5,9 +5,31 @@ block style
     label.hvr-skew-backward {margin-bottom: 50px;}
 
 block content
+  script(language='javascript').
+    function buyerchk(){
+      alert("Buyer need not to insert corporate registration number.");
+      if (document.regitForm['member'][0].checked) {// check buyer
+        document.regitForm.coopNum.disabled = ture;  // inactive
+      } else { 
+        document.regitForm.coopNum.disabled = ture;
+      } // inactive
+    }
+    function sellerchk(){
+      alert("Buyer need not to insert corporate registration number.");
+      if (document.regitForm['member'][1].checked) {// check buyer
+        document.regitForm.coopNum.disabled = false;  // inactive
+      } else { 
+        document.regitForm.coopNum.disabled = ture;
+      } // inactive
+    }
   .container
     .login
-      form(role='form', action='sign_insert', method='post')
+      form(role='form', name='regitForm' action='sign_insert', method='post')
+        .login-title
+          input(type='radio', name='member', value='Buyer', onclick='buyerchk()')
+          |  Buyer  
+          input(type='radio', name='member', value='Seller', onclick='sellerchk()')
+          |  Seller 
         .col-md-12.login-do
           .login-mail
             input(type='text', name='email', placeholder='Email', required, value=(email ? '#{email}' : null))
@@ -31,7 +53,7 @@ block content
             input(type='text', name='address', placeholder='Address', required)
             i.glyphicon.glyphicon-home
           .login-mail
-            input(type='password', name='cooperation', placeholder='Cooperation Number ( only Seller have to fill this blank)', required)
+            input(type='password', name='coopNum', placeholder='corporate registration number (only Seller have to fill this blank)', required, disabled)
             i.glyphicon.glyphicon-lock
           label.hvr-skew-backward
             input(type='submit', value='Submit')
