@@ -15,6 +15,7 @@ var sellerLogin = require('./routes/sellerLogin');
 var log_out = require('./routes/log_out');
 var login_check = require('./routes/login_check');
 var sign_buyerFB = require('./routes/sign_buyerFB');
+var shopping_cart = require('./routes/shopping_cart');
 
 // Notice board
 var notice = require('./routes/notice');
@@ -83,6 +84,7 @@ app.use('/sellerLogin', sellerLogin);
 app.use('/log_out', log_out);
 app.use('/login_check', login_check);
 app.use('/sign_buyerFB', sign_buyerFB);
+app.use('/shopping_cart', shopping_cart);
 
 app.use('/notice', notice);
 app.use('/notice_write', notice_write);

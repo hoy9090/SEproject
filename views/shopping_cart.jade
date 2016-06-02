@@ -1,0 +1,93 @@
+extends layout
+
+block content
+  .banner-top
+    .container
+      h1 Checkout
+      em
+      h2
+        a(href='index.html') Home
+        label /
+        | Checkout
+  // login
+  script.
+    $(document).ready(function(c) {
+    $('.close1').on('click', function(c){
+    $('.cart-header').fadeOut('slow', function(c){
+    $('.cart-header').remove();
+    });
+    });
+    });
+  script.
+    $(document).ready(function(c) {
+    $('.close2').on('click', function(c){
+    $('.cart-header1').fadeOut('slow', function(c){
+    $('.cart-header1').remove();
+    });
+    });
+    });
+  script.
+    $(document).ready(function(c) {
+    $('.close3').on('click', function(c){
+    $('.cart-header2').fadeOut('slow', function(c){
+    $('.cart-header2').remove();
+    });
+    });
+    });
+  .container
+    .check-out
+      .bs-example4(data-example-id='simple-responsive-table')
+        .table-responsive
+          table.table-heading.simpleCart_shelfItem
+            tr
+              th.table-grid Item
+              th Prices
+              th Delivery 
+              th Subtotal
+            tr.cart-header
+              td.ring-in
+                a.at-in(href='single.html')
+                  img.img-responsive(src='images/ch.jpg', alt='')
+                .sed
+                  h5
+                    a(href='single.html') Sed ut perspiciatis unde
+                  p (At vero eos et accusamus et iusto odio dignissimos ducimus ) 
+                .clearfix  
+                .close1  
+              td $100.00
+              td FREE SHIPPING
+              td.item_price $100.00
+              td.add-check
+                a.item_add.hvr-skew-backward(href='#') Add To Cart
+            tr.cart-header1
+              td.ring-in
+                a.at-in(href='single.html')
+                  img.img-responsive(src='images/ch2.jpg', alt='')
+                .sed
+                  h5
+                    a(href='single.html') Sed ut perspiciatis unde
+                  p (At vero eos et accusamus et iusto odio dignissimos ducimus ) 
+                .clearfix  
+                .close2  
+              td $100.00
+              td FREE SHIPPING
+              td.item_price $100.00
+              td.add-check
+                a.item_add.hvr-skew-backward(href='#') Add To Cart
+            tr.cart-header2
+              td.ring-in
+                a.at-in(href='single.html')
+                  img.img-responsive(src='images/ch1.jpg', alt='')
+                .sed
+                  h5
+                    a(href='single.html') Sed ut perspiciatis unde
+                  p (At vero eos et accusamus et iusto odio dignissimos ducimus ) 
+                .clearfix  
+                .close3  
+              td $100.00
+              td FREE SHIPPING
+              td.item_price $100.00
+              td.add-check
+                a.item_add.hvr-skew-backward(href='#') Add To Cart
+      .produced
+        a.hvr-skew-backward(href='single.html') Produced To Buy
