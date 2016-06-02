@@ -33,7 +33,7 @@ block content
                 success: function(data) {
                   var form = document.createElement('form');
                   form.setAttribute('method', 'post');
-                  form.setAttribute('action', '/sign_buyer');
+                  form.setAttribute('action', '/sign');
                   for (var key in data) {
                     var hiddenField = document.createElement("input");
                     hiddenField.setAttribute("type", "hidden");
