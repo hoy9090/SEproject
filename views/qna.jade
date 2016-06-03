@@ -1,51 +1,70 @@
 extends layout
 
 block style
-	style.
-		img {margin: 0 auto;}
+  style.
+    img {margin: 0 auto;}
 
 block content
-	.row.text-center
-		br
-		br		
-		h2 SKKU Software Engineering Team 4
-		label.line
-			
-	.brand
-		.col-lg-1.hidden-sm.hidden-md.hidden-xs
-		.col-sm-6.col-md-4.col-lg-2.col-xs-12.text-center
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', src="images/members/sujin.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em')
-				b Oh Sujin
-			h4 Team Leader
-			h3(style='line-height:2.3em; font-family: BMJUA_ttf; color: #9cbf27') PART
-			hr.hidden-lg
-		.col-sm-6.col-md-4.col-lg-2.col-xs-12.text-center
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', src="images/members/Jeonghun.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em')
-				b Gong Jeonghun
-			h4 role
-			h3(style='line-height:2.3em; font-family: BMJUA_ttf; color: #9cbf27') PART
-			hr.hidden-lg
-		.col-sm-6.col-md-4.col-lg-2.col-xs-12.text-center
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', src="images/members/taejun.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em')
-				b Kim Taejun
-			h4 role
-			h3(style='line-height:2.3em; font-family: BMJUA_ttf; color: #9cbf27') PART
-			hr.hidden-lg
-		.col-sm-6.col-md-4.col-lg-2.col-xs-12.text-center
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', src="images/members/sangkyu.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em')
-				b Lee Sangkyu
-			h4 role
-			h3(style='line-height:2.3em; font-family: BMJUA_ttf; color: #9cbf27') PART
-			hr.hidden-lg
-		.col-sm-6.col-md-4.col-lg-2.col-xs-12.text-center
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', src="images/members/hongryul.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em')
-				b Jung Hongryul
-			h4 Designer
-			h3(style='line-height:2.3em; font-family: BMJUA_ttf; color: #9cbf27') LEMON DIFFUSER
+  .row.col-lg-12.text-center
+    br
+    br
+    h2.section-heading Q & A
+    label.line
+    br
+    h3.section-subheading.text-muted There are the best 10 question.
+    br
+    br
+  .clearfix
+  .container
+    .row
+      .col-lg-12
+        ul.timeline
+          li
+            .timeline-image
+              img.img-circle.img-responsive(src="images/1.jpg", alt='')
+            .timeline-panel
+              .timeline-heading
+                h4 2009-2011
+                h4.subheading Our Humble Beginnings
+              .timeline-body
+                p.text-muted
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+          li.timeline-inverted
+            .timeline-image
+              img.img-circle.img-responsive(src="images/2.jpg", alt='')
+            .timeline-panel
+              .timeline-heading
+                h4 March 2011
+                h4.subheading An Agency is Born
+              .timeline-body
+                p.text-muted
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+          li
+            .timeline-image
+              img.img-circle.img-responsive(src="images/3.jpg", alt='')
+            .timeline-panel
+              .timeline-heading
+                h4 2009-2011
+                h4.subheading Our Humble Beginnings
+              .timeline-body
+                p.text-muted
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+          li.timeline-inverted
+            .timeline-image
+              img.img-circle.img-responsive(src="images/4.jpg", alt='')
+            .timeline-panel
+             .timeline-heading
+                h4 March 2011
+                h4.subheading An Agency is Born
+              .timeline-body
+                p.text-muted
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+          li.timeline-inverted
+            .timeline-image
+              h4
+                | Be Part
+                br
+                | Of Our
+                br
+                | Story!
 
-		.clearfix

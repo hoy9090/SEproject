@@ -8,6 +8,7 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var about = require('./routes/about');
+var qna = require('./routes/qna');
 var sign = require('./routes/sign');
 var sign_insert = require('./routes/sign_insert');
 var buyerLogin = require('./routes/buyerLogin');
@@ -77,6 +78,7 @@ app.use(function(req, res, next) {
 
 app.use('/', index);
 app.use('/about', about);
+app.use('/qna', qna);
 app.use('/sign', sign);
 app.use('/sign_insert', sign_insert);
 app.use('/buyerLogin', buyerLogin);
