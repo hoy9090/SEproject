@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	bottom:0;
 	position:absolute;content:"";
 	width:2px;
-	background-color:#f1f1f1;
+	background-color:#C7DCDE;
 	left:40px;
 	margin-left:-1.5px}
 .timeline>li{
@@ -43,14 +43,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 .timeline>li .timeline-image{
 	left:0;
 	margin-left:0;
-	width:40px;
-	height:40px;
+	width:80px;
+	height:80px;
 	position:absolute;
 	z-index:100;
 	background-color:#ffffff;
 	color:#fff;
 	border-radius:100%;
-	border:7px solid #f1f1f1;
+	border:7px solid #C7DCDE;
 	text-align:center}
 .timeline>li .timeline-image h4{
 	font-size:10px;
@@ -87,8 +87,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		padding:0 20px 20px 30px;
 		text-align:right}
 	.timeline>li .timeline-image{
-		width:100px;
-		height:100px;
+		width:80px;
+		height:80px;
 		left:50%;
 		margin-left:-50px}
 	.timeline>li .timeline-image h4{
@@ -103,8 +103,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	.timeline>li{min-height:150px}
 	.timeline>li .timeline-panel{padding:0 20px 20px}
 	.timeline>li .timeline-image{
-		width:150px;
-		height:150px;
+		width:80px;
+		height:80px;
 		margin-left:-75px}
 	.timeline>li .timeline-image h4{
 		font-size:18px;
@@ -112,11 +112,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		line-height:26px}
 	.timeline>li.timeline-inverted>.timeline-panel{padding:0 20px 20px}}
 @media (min-width:1200px){
-	.timeline>li{min-height:170px}
+	.timeline>li{min-height:100px}
 	.timeline>li .timeline-panel{padding:0 20px 20px 100px}
 	.timeline>li .timeline-image{
-		width:170px;
-		height:170px;
+		width:80px;
+		height:80px;
 		margin-left:-85px}
 	.timeline>li .timeline-image h4{margin-top:40px}
 	.timeline>li.timeline-inverted>.timeline-panel{padding:0 100px 20px 20px}}
