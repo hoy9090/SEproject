@@ -17,9 +17,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	left:40px;
 	margin-left:-1.5px}
 .timeline>li{
-	margin-bottom:50px;
+	margin-bottom:30px;
 	position:relative;
-	min-height:50px}
+	min-height:30px}
 .timeline>li:before,.timeline>li:after{
 	content:" ";
 	display:table}
@@ -50,7 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	background-color:#ffffff;
 	color:#fff;
 	border-radius:100%;
-	border:7px solid #C7DCDE;
+	border:7px solid #DCF6F9;
 	text-align:center}
 .timeline>li .timeline-image h4{
 	font-size:10px;
@@ -79,8 +79,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 @media (min-width:768px){
 	.timeline:before{left:50%}
 	.timeline>li{
-		margin-bottom:100px;
-		min-height:100px}
+		margin-bottom:50px;
+		min-height:30px}
 	.timeline>li .timeline-panel{
 		width:41%;
 		float:left;
@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		text-align:left;
 		padding:0 30px 20px 20px}}
 @media (min-width:992px){
-	.timeline>li{min-height:150px}
+	.timeline>li{min-height:30px}
 	.timeline>li .timeline-panel{padding:0 20px 20px}
 	.timeline>li .timeline-image{
 		width:80px;
@@ -112,13 +112,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		line-height:26px}
 	.timeline>li.timeline-inverted>.timeline-panel{padding:0 20px 20px}}
 @media (min-width:1200px){
-	.timeline>li{min-height:100px}
+	.timeline>li{min-height:30px}
 	.timeline>li .timeline-panel{padding:0 20px 20px 100px}
 	.timeline>li .timeline-image{
 		width:80px;
 		height:80px;
 		margin-left:-85px}
-	.timeline>li .timeline-image h4{margin-top:40px}
+	.timeline>li .timeline-image h4{margin-top:30px}
 	.timeline>li.timeline-inverted>.timeline-panel{padding:0 100px 20px 20px}}
 
 
@@ -1532,7 +1532,7 @@ ul.tag-in li a:hover{
     border: 1px solid #34B2C1;	
 }
 .footer-class a:hover{
-	color:#fff;
+	color:#f1f1f1;
 }
 .footer-middle-in input[type="text"] {
     width: 100%;
@@ -1570,9 +1570,10 @@ ul.tag-in li a:hover{
 	padding:1em 0;	 
 }
 .footer-class{
-	color:#fff;
+	color:#7f7f7f;
 	font-size:1em;
 	float:right;
+	text-decoration:none;
 }
 .footer-class a{
 	color:#111111;
