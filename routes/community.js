@@ -166,7 +166,7 @@ router.get('/:category/view', function(req, res, next) {
 	} else {
 		res.redirect('/');
 	}
-	
+
 	pool.getConnection(function(err, conn) {
 		if (err)
 			console.error(err);
@@ -181,6 +181,10 @@ router.get('/:category/view', function(req, res, next) {
 				res.redirect('/community/'+category);
 		});
 	});
+});
+
+router.post('/:category/search', function(req, res, next) {
+	res.redirect('/community/'+category+'?search_word='+urlencode(req.body.search_word)+'&search_scope='+urlencode(req.body.search_scope));
 });
 
 module.exports = router;
