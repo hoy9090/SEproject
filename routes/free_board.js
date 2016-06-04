@@ -7,22 +7,34 @@ var pool = mysql.createPool({
 	password: '1234'
 });
 var urlencode = require('urlencode');
-var board_title = "Free Topic";
-var category = "free_board";
 
-/* GET free_board. */
-router.get('/', function(req, res, next) {
+/* GET community. */
+router.get('/:category', function(req, res, next) {
 	pool.getConnection(function(err, conn) {
 		if (err)
 			console.error(err);
+		var category = req.param.category;
+		var board_title;
+		if (category == 'Free') {
+			board_title = 'Free Topic';
+		} else if (category == 'Lecture') {
+			board_title = 'Lectures';
+		} else if (category == 'News') {
+			board_title = 'News & Magazines';
+		} else if (category == 'Notice') {
+			board_title = 'Notice';
+		} else {
+			conn.release();
+			res.redirect('/');			
+		}
 		conn.query('use board');
 		if (req.query.search_word == null) {
-			conn.query('select count(*) as count from free_topic', function(err, result, field) {
+			conn.query('select count(*) as count from Community_'+category, function(err, result, field) {
 				if (err)
 					console.error(err);
 				var count = parseInt((result[0].count-1)/10)+1;
 				if (req.query.pageNo == null) {
-					conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=free_topic.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from free_topic order by serial_no desc limit 0, 10', function(err, result, field) {
+					conn.query('select SN as no, title, (select nickname from Member where Member.SN_no=Community_'+category+'.writer_SN) writer, date_format(date, "%Y-%m-%d") date, views from Community_'+category+' order by SN desc limit 0, 10', function(err, result, field) {
 						if (err)
 							console.error(err);
 						conn.release();
@@ -32,11 +44,11 @@ router.get('/', function(req, res, next) {
 								page.push(i+1);
 						else
 							page = [1, 2, 3, 4, 5];
-						res.render('free_board', {board_title: board_title, category: category, contents: result, page: page, endpage: count, search: false});
+						res.render('community', {board_title: board_title, category: category, contents: result, page: page, endpage: count, search: false});
 					});
 				} else {
 					var pageNo = parseInt(req.query.pageNo);
-					conn.query('select serial_no as no, title, (select nickname from buyer where buyer.serial_no=free_topic.writter_SN) writter, date_format(date, "%Y-%m-%d") date, views from free_topic order by serial_no desc limit ?, 10', [(pageNo-1)*10], function(err, result, field) {
+					conn.query('select SN as no, title, (select nickname from Member where Member.SM=Community_'+category+'.writer_SN) writer, date_format(date, "%Y-%m-%d") date, views from Community_'+category+' order by SN desc limit ?, 10', [(pageNo-1)*10], function(err, result, field) {
 						if (err)
 							console.error(err);
 						conn.release();
@@ -52,7 +64,7 @@ router.get('/', function(req, res, next) {
 							if (pageCount == 9)
 								break;
 						}
-						res.render('free_board', {board_title: board_title, category: category, contents: result, page: page, endpage: count, search: false});
+						res.render('community', {board_title: board_title, category: category, contents: result, page: page, endpage: count, search: false});
 					});
 				}
 			});
