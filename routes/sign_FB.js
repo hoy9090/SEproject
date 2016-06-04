@@ -32,11 +32,7 @@ router.post('/', function(req, res, next) {
 			});
 		});
 	} else {
-<<<<<<< HEAD:routes/sign_FB.js
 		res.redirect('/login');
-=======
-		res.redirect('/Login');
->>>>>>> 02580657a5169d59ccdf58f9b043b1c78769f616:routes/sign_FB.js
 	}
 });
 
