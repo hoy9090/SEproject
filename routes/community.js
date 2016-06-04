@@ -71,7 +71,7 @@ router.get('/:category', function(req, res, next) {
 		} else {
 			var search_word = urlencode.decode(req.query.search_word);
 			var search_scope = urlencode.decode(req.query.search_scope);
-			conn.query("select count(*) as count from (select title, (select nickname from Member where Member.SN=Community_"+category+".writer_SN) writer from Community_"+category+") as a where "+search_scope+" like ?", ['%'+search_word+'%'], function(err, result, field) {
+			conn.query("select count(*) as count from (select title, contents, (select nickname from Member where Member.SN=Community_"+category+".writer_SN) writer from Community_"+category+") as a where "+search_scope+" like ?", ['%'+search_word+'%'], function(err, result, field) {
 				if (err)
 					console.error(err);
 				var count = parseInt((result[0].count-1)/10)+1;
