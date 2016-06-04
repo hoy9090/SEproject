@@ -128,7 +128,6 @@ router.get('/:category/write', function(req, res, next) {
 		} else if (category == 'Notice') {
 			board_title = 'Notice';
 		} else {
-			conn.release();
 			res.redirect('/');
 		}
 		res.render('community_write', {board_title: board_title, category: category});
@@ -155,7 +154,19 @@ router.post('/:category/insert', function(req, res, next) {
 
 router.get('/:category/view', function(req, res, next) {
 	var category = req.params.category;
-
+	var board_title;
+	if (category == 'Free') {
+		board_title = 'Free Topic';
+	} else if (category == 'Lecture') {
+		board_title = 'Lectures';
+	} else if (category == 'News') {
+		board_title = 'News & Magazines';
+	} else if (category == 'Notice') {
+		board_title = 'Notice';
+	} else {
+		res.redirect('/');
+	}
+	
 	pool.getConnection(function(err, conn) {
 		if (err)
 			console.error(err);
