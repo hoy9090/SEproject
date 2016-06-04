@@ -15,7 +15,7 @@ router.post('/', function(req, res, next) {
 			if (err) 
 				console.error(err);
 			conn.query('use board');
-			conn.query('select count(*) as count, serial_no from buyer where ID=?', [req.body.email], function(err, result, field) {
+			conn.query('select count(*) as count, SN from Member where ID=?', [req.body.email], function(err, result, field) {
 				if (err)
 					console.error(err);
 				conn.release();
@@ -32,7 +32,7 @@ router.post('/', function(req, res, next) {
 			});
 		});
 	} else {
-		res.redirect('/buyerLogin');
+		res.redirect('/login');
 	}
 });
 

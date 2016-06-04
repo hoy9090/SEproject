@@ -11,11 +11,10 @@ var about = require('./routes/about');
 var qna = require('./routes/qna');
 var sign = require('./routes/sign');
 var sign_insert = require('./routes/sign_insert');
-var buyerLogin = require('./routes/buyerLogin');
-var sellerLogin = require('./routes/sellerLogin');
-var log_out = require('./routes/log_out');
+var login = require('./routes/login');
+var logout = require('./routes/logout');
 var login_check = require('./routes/login_check');
-var sign_buyerFB = require('./routes/sign_buyerFB');
+var sign_FB = require('./routes/sign_FB');
 var shopping_cart = require('./routes/shopping_cart');
 
 // Notice board
@@ -81,11 +80,10 @@ app.use('/about', about);
 app.use('/qna', qna);
 app.use('/sign', sign);
 app.use('/sign_insert', sign_insert);
-app.use('/buyerLogin', buyerLogin);
-app.use('/sellerLogin', sellerLogin);
-app.use('/log_out', log_out);
+app.use('/login', login);
+app.use('/logout', logout);
 app.use('/login_check', login_check);
-app.use('/sign_buyerFB', sign_buyerFB);
+app.use('/sign_FB', sign_FB);
 app.use('/shopping_cart', shopping_cart);
 
 app.use('/notice', notice);

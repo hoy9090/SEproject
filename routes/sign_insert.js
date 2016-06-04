@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
   	if (err)
   		console.error(err);
   	conn.query('use board');
-  	conn.query('insert into buyer(ID, PW, name, nickname, phone_no, address) values(?, ?, ?, ?, ?, ?)', [req.body.email, req.body.pw, req.body.name, req.body.nickname, req.body.phone, req.body.address], function(err, result, field) {
+  	conn.query('insert into Member(ID, PW, name, nickname, phone_number, address, corp_num) values(?, ?, ?, ?, ?, ?, ?)', [req.body.email, req.body.pw, req.body.name, req.body.nickname, req.body.phone, req.body.address, req.body.corp_num], function(err, result, field) {
   		if (err)
   			console.error(err);
   		conn.release();

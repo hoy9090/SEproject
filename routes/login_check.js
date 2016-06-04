@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
   	if (err)
   		console.error(err);
   	conn.query('use board');
-  	conn.query('select count(*) as count, serial_no from buyer where ID=? and PW=?', [req.body.email, req.body.pw], function(err, result, field) {
+  	conn.query('select count(*) as count, SN from Member where ID=? and PW=?', [req.body.email, req.body.pw], function(err, result, field) {
   		if (err)
   			console.error(err);
       conn.release();
@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
         req.session.userno = result[0].serial_no;
         res.redirect('/');
       } else {
-        res.render('log_in', {login_fail: true});
+        res.render('login', {login_fail: true});
       }
   	});
   });
