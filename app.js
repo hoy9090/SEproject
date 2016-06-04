@@ -17,36 +17,7 @@ var login_check = require('./routes/login_check');
 var sign_FB = require('./routes/sign_FB');
 var shopping_cart = require('./routes/shopping_cart');
 
-// // Notice board
-// var notice = require('./routes/notice');
-// var notice_write = require('./routes/notice_write');
-// var notice_insert = require('./routes/notice_insert');
-// var notice_view = require('./routes/notice_view');
-// var notice_search = require('./routes/notice_search');
-
-// // Lectures board
-// var lectures = require('./routes/lectures');
-// var lectures_write = require('./routes/lectures_write');
-// var lectures_insert = require('./routes/lectures_insert');
-// var lectures_view = require('./routes/lectures_view');
-// var lectures_search = require('./routes/lectures_search');
-
-// // Free Topic board
-// var free_board = require('./routes/free_board');
-// var free_board_write = require('./routes/free_board_write');
-// var free_board_insert = require('./routes/free_board_insert');
-// var free_board_view = require('./routes/free_board_view');
-// var free_board_search = require('./routes/free_board_search');
-
-// // News & Magazines board
-// var news = require('./routes/news');
-// var news_write = require('./routes/news_write');
-// var news_insert = require('./routes/news_insert');
-// var news_view = require('./routes/news_view');
-// var news_search = require('./routes/news_search');
-
 var community = require('./routes/community');
-
 
 //product features
 var product = require('./routes/product');
@@ -90,30 +61,6 @@ app.use('/logout', logout);
 app.use('/login_check', login_check);
 app.use('/sign_FB', sign_FB);
 app.use('/shopping_cart', shopping_cart);
-
-// app.use('/notice', notice);
-// app.use('/notice_write', notice_write);
-// app.use('/notice_insert', notice_insert);
-// app.use('/notice_view', notice_view);
-// app.use('/notice_search', notice_search);
-
-// app.use('/lectures', lectures);
-// app.use('/lectures_write', lectures_write);
-// app.use('/lectures_insert', lectures_insert);
-// app.use('/lectures_view', lectures_view);
-// app.use('/lectures_search', lectures_search);
-
-// app.use('/free_board', free_board);
-// app.use('/free_board_write', free_board_write);
-// app.use('/free_board_insert', free_board_insert);
-// app.use('/free_board_view', free_board_view);
-// app.use('/free_board_search', free_board_search);
-
-// app.use('/news', news);
-// app.use('/news_write', news_write);
-// app.use('/news_insert', news_insert);
-// app.use('/news_view', news_view);
-// app.use('/news_search', news_search);
 
 app.use('/community', community);
 
