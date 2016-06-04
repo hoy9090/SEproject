@@ -9,27 +9,32 @@ block content
   .container
     .reg_product
       form(role='form', name='reg_product' action='insert_product', method='post')
-        .col-md-12
+        .col-xs-12
           h2 Register Product
+          h5 Type
           select.form-control(name='type', required)
             option(value='Type', disabled, selected) Type
             option(value='Complete') Complete
             option(value='Component') Component
             option(value='Accessory') Accessory
+          h5 Subtype
           select.form-control(name='subtype', required)
             option(value='Subtype', disabled, selected) Subtype
             option(value='Complete') Complete
             option(value='Component') Component
             option(value='Accessory') Accessory
-          .login-mail
-            input(type='text', name='name', placeholder='Product name', required)
-            //i.glyphicon.glyphicon-user
-          .login-mail
-            input(type='text', name='price', placeholder='Price', required)
-            //i.glyphicon.glyphicon-pencil
-          .login-mail
-            input(type='text', name='stock', placeholder='Stock', required)
-            //i.glyphicon.glyphicon-phone
+          h5 Product Name
+          input.form-control(type='text', name='name', placeholder='Product Name', required)
+          h5 Price
+          input.form-control(type='text', name='price', placeholder='Price', required)
+          h5 Stock
+          input.form-control(type='text', name='stock', placeholder='Stock', required)
+          h5 Color
+          input.form-control(type='text', name='stock', placeholder='Stock', required)
+          h5 Main Image File
+          input.form-control(type='file', name='img', placeholder='Main Image File', required)
+          h5 Comment Image File
+          input.form-control(type='file', name='comment', placeholder='Comment Image File', required)
           //label.hvr-skew-backward
             input(type='submit', value='Submit')
           a.hvr-skew-backward(onClick='register()') Register
