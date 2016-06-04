@@ -86,7 +86,7 @@ router.get('/:category', function(req, res, next) {
 								page.push(i+1);
 						else
 							page = [1, 2, 3, 4, 5];
-						res.render('free_board', {board_title: board_title, category: category, contents: result, page: page, endpage: count, search: true, search_scope: search_scope, search_word: search_word});
+						res.render('community', {board_title: board_title, category: category, contents: result, page: page, endpage: count, search: true, search_scope: search_scope, search_word: search_word});
 					});
 				} else {
 					var pageNo = parseInt(req.query.pageNo);
@@ -185,7 +185,7 @@ router.get('/:category/view', function(req, res, next) {
 
 router.post('/:category/search', function(req, res, next) {
 	var category = req.params.category;
-	
+
 	res.redirect('/community/'+category+'?search_word='+urlencode(req.body.search_word)+'&search_scope='+urlencode(req.body.search_scope));
 });
 
