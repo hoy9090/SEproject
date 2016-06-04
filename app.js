@@ -11,8 +11,13 @@ var about = require('./routes/about');
 var qna = require('./routes/qna');
 var sign = require('./routes/sign');
 var sign_insert = require('./routes/sign_insert');
+<<<<<<< HEAD
 var login = require('./routes/login');
 var logout = require('./routes/logout');
+=======
+var Login = require('./routes/Login');
+var log_out = require('./routes/log_out');
+>>>>>>> 02580657a5169d59ccdf58f9b043b1c78769f616
 var login_check = require('./routes/login_check');
 var sign_FB = require('./routes/sign_FB');
 var shopping_cart = require('./routes/shopping_cart');
@@ -80,8 +85,13 @@ app.use('/about', about);
 app.use('/qna', qna);
 app.use('/sign', sign);
 app.use('/sign_insert', sign_insert);
+<<<<<<< HEAD
 app.use('/login', login);
 app.use('/logout', logout);
+=======
+app.use('/Login', Login);
+app.use('/log_out', log_out);
+>>>>>>> 02580657a5169d59ccdf58f9b043b1c78769f616
 app.use('/login_check', login_check);
 app.use('/sign_FB', sign_FB);
 app.use('/shopping_cart', shopping_cart);

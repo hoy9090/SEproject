@@ -7,7 +7,7 @@ var pool = mysql.createPool({
 	password: '1234'
 });
 
-/* POST sign_buyerFB. */
+/* POST sign_FB. */
 router.post('/', function(req, res, next) {
 	var userid = req.body.id;
 	if (userid) {
@@ -32,7 +32,11 @@ router.post('/', function(req, res, next) {
 			});
 		});
 	} else {
+<<<<<<< HEAD:routes/sign_FB.js
 		res.redirect('/login');
+=======
+		res.redirect('/Login');
+>>>>>>> 02580657a5169d59ccdf58f9b043b1c78769f616:routes/sign_FB.js
 	}
 });
 

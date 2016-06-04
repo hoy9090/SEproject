@@ -29,7 +29,7 @@ block content
                 type: 'POST',
                 data: response, 
                 dataType: "JSON",
-                url: '/sign_buyerFB',
+                url: '/sign_FB',
                 success: function(data) {
                   var form = document.createElement('form');
                   form.setAttribute('method', 'post');
@@ -79,10 +79,10 @@ block content
   .container
     .login
       .col-md-6.login-title
-          h3 Log-in page for Buyer !
+          h3 Log-in page!
       .col-md-6.login-title
           p
-            | Log-in page for Buyer !
+            | Log-in page!
       form(role='form', action='login_check', method='post')
         .col-md-6.login-do
           .login-mail
@@ -91,13 +91,8 @@ block content
           .login-mail
             input(type='password', name='pw', placeholder='Password', required)
             i.glyphicon.glyphicon-lock
-          //a.news-letter(href='#')
-            label.checkbox1
-              input(type='checkbox', name='checkbox')
-              i  
-              | Forget Password
           label.hvr-skew-backward
-            input(type='submit', value='Login for Buyer')
+            input(type='submit', value='Login')
           a.hvr-skew-backward(onClick='fb_login()') Login with facebook
         .col-md-6.login-right
           h3 Join Board a To z !
