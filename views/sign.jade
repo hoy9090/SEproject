@@ -58,33 +58,21 @@ block content
 block script
   script.
     function register() {
-      var reg_check = true;
       $.each($('input'), function(index, value) {
-        console.log(value);
-        if (value.val() == '') {
-          value.closest('div').css('border', '2px solid red');
-          reg_check = false;
-        }
-      })
-      if (!reg_check) {
-        alert('Fill the blanks for your registration.')
-      } else {
-        $.each($('input'), function(index, value) {
-          value.closest('div').css('border', '');
-        });
-        $.ajax({
-          url: '/sign_insert',
-          type: "POST",
-          data: {email:$("input[name='email']").val(), pw:$("input[name='pw']").val(), name:$("input[name='name']").val(), nickname:$("input[name='nickname']").val(), phone:$("input[name='phone']").val(), address:$("input[name='address']").val(), corp_num:$("input[name='corp_num']").val()},
-          success: function(data) {
-            if (data.reg_success) {
-              alert('Your registration is successful.');
-              location.href = '/';
-            }
-            else {
-              alert('Your email or nickname are duplicated. Change and try again.');
-            }
+        value.closest('div').css('border', '');
+      });
+      $.ajax({
+        url: '/sign_insert',
+        type: "POST",
+        data: {email:$("input[name='email']").val(), pw:$("input[name='pw']").val(), name:$("input[name='name']").val(), nickname:$("input[name='nickname']").val(), phone:$("input[name='phone']").val(), address:$("input[name='address']").val(), corp_num:$("input[name='corp_num']").val()},
+        success: function(data) {
+          if (data.reg_success) {
+            alert('Your registration is successful.');
+            location.href = '/';
           }
-        });
-      }
+          else {
+            alert('Your email or nickname are duplicated. Change and try again.');
+          }
+        }
+      });
     }
