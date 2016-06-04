@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
 				conn.release();
 				var isAlreadyUser = result[0].count;
 				if (isAlreadyUser == 1) {
-					req.session.userno = result[0].serial_no;
+					req.session.userno = result[0].SN;
 					res.end();
 				} else {
 					res.json({
