@@ -18,7 +18,10 @@ block content
 	.container
 		h2= board_title
 		.col-xs-12
-			button.btn.btn-info.write(onClick="location.href='/community/#{category}/write';") Write
+			if (loggedIn)
+				button.btn.btn-info.write(onClick="location.href='/community/#{category}/write';") Write
+			else
+				button.btn.btn-info.write(onClick="alert('Insufficient Permission. Please login.';") Write
 		.col-xs-12(style='overflow: auto;')
 			table.table.table-hover.table-striped
 				thead
@@ -38,7 +41,10 @@ block content
 							td= val.date
 							td= val.views
 		.col-xs-12
-			button.btn.btn-info.write(onClick="location.href='/community/#{category}/write';") Write
+			if (loggedIn)
+				button.btn.btn-info.write(onClick="location.href='/community/#{category}/write';") Write
+			else
+				button.btn.btn-info.write(onClick="alert('Insufficient Permission. Please login.';") Write
 		.col-xs-12
 			.text-center
 				ul.pagination

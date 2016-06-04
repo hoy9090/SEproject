@@ -132,7 +132,7 @@ router.get('/:category/write', function(req, res, next) {
 		}
 		res.render('community_write', {board_title: board_title, category: category});
 	}	else {
-		res.redirect('/community/'+category);
+		res.render('/community/'+category);
 	}
 });
 
