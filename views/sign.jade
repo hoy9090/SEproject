@@ -58,9 +58,6 @@ block content
 block script
   script.
     function register() {
-      $.each($('input'), function(index, value) {
-        value.closest('div').css('border', '');
-      });
       $.ajax({
         url: '/sign_insert',
         type: "POST",
