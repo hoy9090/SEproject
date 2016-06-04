@@ -60,6 +60,7 @@ block script
     function register() {
       var reg_check = true;
       $.each($('input'), function(index, value) {
+        console.log(value);
         if (value.val() == '') {
           value.closest('div').css('border', '2px solid red');
           reg_check = false;
