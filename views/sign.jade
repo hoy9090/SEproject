@@ -31,24 +31,25 @@ block content
             i.glyphicon.glyphicon-envelope
           if (!email)
             .login-mail
-              input(type='password', name='pw', placeholder='Password', required, value=(null))
+              input(type='password', name='pw', placeholder='Password', required)
               i.glyphicon.glyphicon-lock
           else
-            input(type='hidden', name='pw', placeholder='Password', required, value='thisuserfacebook')
+            .login-mail(style='display: none;')
+              input(type='hidden', name='pw', placeholder='Password', required, value='thisuserfacebook')
           .login-mail
             input(type='text', name='name', placeholder='Name', required, value=(name ? '#{name}' : null))
             i.glyphicon.glyphicon-user
           .login-mail
-            input(type='text', name='nickname', placeholder='Nickname', required, value=(null))
+            input(type='text', name='nickname', placeholder='Nickname', required)
             i.glyphicon.glyphicon-pencil
           .login-mail
-            input(type='text', name='phone', placeholder='Phone Number', required, value=(null))
+            input(type='text', name='phone', placeholder='Phone Number', required)
             i.glyphicon.glyphicon-phone
           .login-mail
-            input(type='text', name='address', placeholder='Address', required, value=(null))
+            input(type='text', name='address', placeholder='Address', required)
             i.glyphicon.glyphicon-home
           .login-mail#corp_num
-            input(type='password', name='corp_num', placeholder='Corporate registration number', required, value=('0000000000'))
+            input(type='password', name='corp_num', placeholder='Corporate registration number', required)
             i.glyphicon.glyphicon-lock
           //label.hvr-skew-backward
             input(type='submit', value='Submit')
@@ -57,18 +58,32 @@ block content
 block script
   script.
     function register() {
-      $.ajax({
-        url: '/sign_insert',
-        type: "POST",
-        data: {email:$("input[name='email']").val(), pw:$("input[name='pw']").val(), name:$("input[name='name']").val(), nickname:$("input[name='nickname']").val(), phone:$("input[name='phone']").val(), address:$("input[name='address']").val(), corp_num:$("input[name='corp_num']").val()},
-        success: function(data) {
-          if (data.reg_success) {
-            alert('Your registration is successful.');
-            location.href = '/';
-          }
-          else {
-            alert('Your registration failed. Edit your information and try again.');
-          }
+      var reg_check = true;
+      $.each($('input'), function(index, value) {
+        if (value.val() == '') {
+          value.closest('div').css('border', '2px solid red');
+          reg_check = false;
         }
-      });
+      })
+      if (!reg_check) {
+        alert('Fill the blanks for your registration.')
+      } else {
+        $.each($('input'), function(index, value) {
+          value.closest('div').css('border', '');
+        });
+        $.ajax({
+          url: '/sign_insert',
+          type: "POST",
+          data: {email:$("input[name='email']").val(), pw:$("input[name='pw']").val(), name:$("input[name='name']").val(), nickname:$("input[name='nickname']").val(), phone:$("input[name='phone']").val(), address:$("input[name='address']").val(), corp_num:$("input[name='corp_num']").val()},
+          success: function(data) {
+            if (data.reg_success) {
+              alert('Your registration is successful.');
+              location.href = '/';
+            }
+            else {
+              alert('Your email or nickname are duplicated. Change and try again.');
+            }
+          }
+        });
+      }
     }
