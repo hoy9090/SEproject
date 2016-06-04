@@ -12,7 +12,7 @@ block content
 	.container
 		h2= board_title
 		.col-md-12
-			form.form(role='form', action='#{category}_insert', method='post')
+			form.form(role='form', action='/community_insert', method='post')
 				input(type='text', name='title', placeholder='Title', required)
 				textarea(name='content', placeholder='Write text.', required)
 				button(type='submit').btn.btn-info Write

@@ -7,7 +7,7 @@ var category = "free_board";
 router.get('/', function(req, res, next)
 {
 	if (req.session.userno)
-		res.render('free_board_write', {board_title: board_title, category: category});
+		res.render('community_write', {board_title: board_title, category: category});
 	else
 		res.redirect('free_board');
 });

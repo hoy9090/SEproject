@@ -114,4 +114,8 @@ router.get('/:category', function(req, res, next) {
 	});
 });
 
+router.get('/:category/write', function(req, res, next) {
+	res.send('<script>alert("aaa")</script>;');
+});
+
 module.exports = router;
