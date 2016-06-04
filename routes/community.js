@@ -34,7 +34,7 @@ router.get('/:category', function(req, res, next) {
 					console.error(err);
 				var count = parseInt((result[0].count-1)/10)+1;
 				if (req.query.pageNo == null) {
-					conn.query('select SN as no, title, (select nickname from Member where Member.SN_no=Community_'+category+'.writer_SN) writer, date_format(date, "%Y-%m-%d") date, views from Community_'+category+' order by SN desc limit 0, 10', function(err, result, field) {
+					conn.query('select SN as no, title, (select nickname from Member where Member.SN=Community_'+category+'.writer_SN) writer, date_format(date, "%Y-%m-%d") date, views from Community_'+category+' order by SN desc limit 0, 10', function(err, result, field) {
 						if (err)
 							console.error(err);
 						conn.release();
@@ -48,7 +48,7 @@ router.get('/:category', function(req, res, next) {
 					});
 				} else {
 					var pageNo = parseInt(req.query.pageNo);
-					conn.query('select SN as no, title, (select nickname from Member where Member.SM=Community_'+category+'.writer_SN) writer, date_format(date, "%Y-%m-%d") date, views from Community_'+category+' order by SN desc limit ?, 10', [(pageNo-1)*10], function(err, result, field) {
+					conn.query('select SN as no, title, (select nickname from Member where Member.SN=Community_'+category+'.writer_SN) writer, date_format(date, "%Y-%m-%d") date, views from Community_'+category+' order by SN desc limit ?, 10', [(pageNo-1)*10], function(err, result, field) {
 						if (err)
 							console.error(err);
 						conn.release();
