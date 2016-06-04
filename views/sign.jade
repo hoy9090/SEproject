@@ -3,6 +3,7 @@ extends layout
 block style
   style.
     label.hvr-skew-backward {margin-bottom: 50px;}
+    #corp_num {display: none;}
 
 block content
   script(language='javascript').
@@ -16,7 +17,6 @@ block content
       $('#corp_num').show();
       $('#corp_num input').val('');
     }
-    buyerchk();
   .container
     .login
       form(role='form', name='regitForm' action='sign_insert', method='post')
