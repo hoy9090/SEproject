@@ -90,7 +90,7 @@ router.get('/:category', function(req, res, next) {
 					});
 				} else {
 					var pageNo = parseInt(req.query.pageNo);
-					conn.query("select * from (select SN as no, title, (select nickname from Member where Member.SN=Community_"+category+".writer_SN) writer, date_format(date, '%Y-%m-%d') date, views from Community_"+category+") as a where "+search_scope+" like ? order by no desc limit ?, 10", ['%'+search_word+'%', (pageNo-1)*10], function(err, result, field) {
+					conn.query("select * from (select SN as no, title, contents, (select nickname from Member where Member.SN=Community_"+category+".writer_SN) writer, date_format(date, '%Y-%m-%d') date, views from Community_"+category+") as a where "+search_scope+" like ? order by no desc limit ?, 10", ['%'+search_word+'%', (pageNo-1)*10], function(err, result, field) {
 						if (err)
 							console.error(err);
 						conn.release();
