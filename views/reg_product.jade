@@ -1,0 +1,29 @@
+extends layout
+type, subtype, name, price, stock, img_url, comment_url, color
+block content
+  .container
+    .reg_product
+      form(role='form', name='reg_product' action='insert_product', method='post')
+        .col-md-12
+          .login-mail
+            select(name='type', placeholder='Type', required)
+              option(value='Complete')
+              option(value='Component')
+              option(value='Accessory')
+          .login-mail
+            select(name='subtype', placeholder='Subtype', required)
+              option(value='Complete')
+              option(value='Component')
+              option(value='Accessory')
+          .login-mail
+            input(type='text', name='name', placeholder='Product name', required)
+            //i.glyphicon.glyphicon-user
+          .login-mail
+            input(type='text', name='price', placeholder='Price', required)
+            //i.glyphicon.glyphicon-pencil
+          .login-mail
+            input(type='text', name='stock', placeholder='Stock', required)
+            //i.glyphicon.glyphicon-phone
+          //label.hvr-skew-backward
+            input(type='submit', value='Submit')
+          a.hvr-skew-backward(onClick='register()') Register

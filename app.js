@@ -21,7 +21,7 @@ var community = require('./routes/community');
 
 //product features
 var product = require('./routes/product');
-
+var reg_product = require('./routes/reg_product');
 
 var app = express();
 
@@ -65,6 +65,7 @@ app.use('/shopping_cart', shopping_cart);
 app.use('/community', community);
 
 app.use('/product', product);
+app.use('/reg_product', reg_product);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');
