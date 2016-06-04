@@ -14,10 +14,14 @@ router.post('/', function(req, res, next) {
   		console.error(err);
   	conn.query('use board');
   	conn.query('insert into Member(ID, PW, name, nickname, phone_number, address, corp_num) values(?, ?, ?, ?, ?, ?, ?)', [req.body.email, req.body.pw, req.body.name, req.body.nickname, req.body.phone, req.body.address, req.body.corp_num], function(err, result, field) {
-  		if (err)
+  		if (err) {
   			console.error(err);
-  		conn.release();
-  		res.redirect('/');
+        conn.release();
+        res.send({reg_success: false});
+      } else {
+    		conn.release();
+    		res.send({reg_success: true});
+      }
   	});
   });
 });

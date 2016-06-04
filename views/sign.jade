@@ -50,5 +50,25 @@ block content
           .login-mail#corp_num
             input(type='password', name='corp_num', placeholder='Corporate registration number', required)
             i.glyphicon.glyphicon-lock
-          label.hvr-skew-backward
+          //label.hvr-skew-backward
             input(type='submit', value='Submit')
+          a.hvr-skew-backward(onClick='register()') Register
+
+block script
+  script.
+    function register() {
+      $.ajax({
+        url: '/sign_insert',
+        type: "POST",
+        data: {email:$("input[name='email']").val(), pw:$("input[name='pw']").val(), name:$("input[name='name']").val(), nickname:$("input[name='nickname']").val(), phone:$("input[name='phone']").val(), address:$("input[name='address']").val(), corp_num:$("input[name='corp_num']").val()},
+        success: function(data) {
+          if (data.reg_success) {
+            alert('Your registration is successful.');
+            location.href = '/';
+          }
+          else {
+            alert('Your registration failed. Edit your information and try again.');
+          }
+        }
+      });
+    }
