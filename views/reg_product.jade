@@ -1,10 +1,15 @@
 extends layout
-type, subtype, name, price, stock, img_url, comment_url, color
+
+block style
+  style.
+    h2, select {margin_bottom: 2em;}
+
 block content
   .container
     .reg_product
       form(role='form', name='reg_product' action='insert_product', method='post')
         .col-md-12
+          h2 Register Product
           select.form-control(name='type', required)
             option(value='Type', disabled, selected)
             option(value='Complete')
