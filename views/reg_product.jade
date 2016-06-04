@@ -5,16 +5,16 @@ block content
     .reg_product
       form(role='form', name='reg_product' action='insert_product', method='post')
         .col-md-12
-          .login-mail
-            select(name='type', placeholder='Type', required)
-              option(value='Complete')
-              option(value='Component')
-              option(value='Accessory')
-          .login-mail
-            select(name='subtype', placeholder='Subtype', required)
-              option(value='Complete')
-              option(value='Component')
-              option(value='Accessory')
+          select.form-control(name='type', required)
+            option(value='Type', disabled, selected)
+            option(value='Complete')
+            option(value='Component')
+            option(value='Accessory')
+          select.form-control(name='subtype', required)
+            option(value='Subtype', disabled, selected)
+            option(value='Complete')
+            option(value='Component')
+            option(value='Accessory')
           .login-mail
             input(type='text', name='name', placeholder='Product name', required)
             //i.glyphicon.glyphicon-user
