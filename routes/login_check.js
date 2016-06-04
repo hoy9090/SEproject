@@ -19,9 +19,9 @@ router.post('/', function(req, res, next) {
       conn.release();
       if (result[0].count == 1) {
         req.session.userno = result[0].SN;
-        res.redirect('/');
+        res.send({login_success: true});
       } else {
-        res.render('login', {login_fail: true});
+        res.send({login_success: false});
       }
   	});
   });
