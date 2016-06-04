@@ -4,7 +4,7 @@ block style
   style.
     h2, a {margin: 2em 0;}
     h5 {margin: 1em 0;}
-    button.btn {width: 30px; height: 30px; margin-right:10px;}
+    button.btn {width: 30px; height: 30px; margin-right:10px; border: 2px solid black;}
 block content
   .container
     .reg_product
@@ -29,12 +29,16 @@ block content
           input.form-control(type='text', name='price', placeholder='Price', required)
           h5 Stock
           input.form-control(type='text', name='stock', placeholder='Stock', required)
-          h5 Color
+          h5 Color검정, 흰색, 빨강, 주황, 노랑, 초록, 파랑, 보라, 민트
+          button.btn(type='button' style='background-color: black;')
+          button.btn(type='button' style='background-color: white;')
           button.btn(type='button' style='background-color: red;')
+          button.btn(type='button' style='background-color: orange;')
+          button.btn(type='button' style='background-color: yellow;')
           button.btn(type='button' style='background-color: green;')
           button.btn(type='button' style='background-color: blue;')
-          button.btn(type='button' style='background-color: black;')
-          button.btn(type='button' style='background-color: pink;')
+          button.btn(type='button' style='background-color: #7925CB;')
+
           h5 Main Image File
           input.form-control(type='file', name='img', placeholder='Main Image File', required)
           h5 Comment Image File
