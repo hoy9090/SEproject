@@ -2,9 +2,9 @@ extends layout
 
 block style
   style.
-    h2 {margin: 2em 0;}
-    .form-control {margin: 1em 0;}
-
+    h2, a {margin: 2em 0;}
+    h5 {margin: 1em 0;}
+    button.btn {width: 30px; height: 30px; margin-right:10px;}
 block content
   .container
     .reg_product
@@ -30,7 +30,11 @@ block content
           h5 Stock
           input.form-control(type='text', name='stock', placeholder='Stock', required)
           h5 Color
-          input.form-control(type='text', name='stock', placeholder='Stock', required)
+          button.btn(type='button' style='backgroud-color: red;')
+          button.btn(type='button' style='backgroud-color: green;')
+          button.btn(type='button' style='backgroud-color: blue;')
+          button.btn(type='button' style='backgroud-color: black;')
+          button.btn(type='button' style='backgroud-color: pink;')
           h5 Main Image File
           input.form-control(type='file', name='img', placeholder='Main Image File', required)
           h5 Comment Image File
