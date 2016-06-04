@@ -13,7 +13,7 @@ router.get('/:category', function(req, res, next) {
 	pool.getConnection(function(err, conn) {
 		if (err)
 			console.error(err);
-		var category = req.param.category;
+		var category = req.params.category;
 		var board_title;
 		if (category == 'Free') {
 			board_title = 'Free Topic';
