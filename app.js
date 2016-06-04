@@ -68,6 +68,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/community', express.static(path.join(__dirname, 'public')));
 app.use('/community/:type', express.static(path.join(__dirname, 'public')));
+
 // session config
 app.use(session({
   secret: 'keyboard cat',
