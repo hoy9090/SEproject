@@ -64,18 +64,18 @@ html
 						ul
 							if (loggedIn)
 								li
-									a(href='logout') Logout
+									a(href='/logout') Logout
 							else
 								li
-									a(href='login') Login
+									a(href='/login') Login
 							if (!loggedIn)
 								li
-									a(href='sign') Register
+									a(href='/sign') Register
 							else
 								li
-									a(href='checkout') Mypage
+									a(href='/checkout') Mypage
 							li
-								a(href='qna') Q&A
+								a(href='/qna') Q&A
 					.col-sm-5.header-social
 						ul
 							// Seller page
@@ -121,11 +121,11 @@ html
 														//h4 Submenu1
 														ul
 															li
-																a(href='product') Longboard
+																a(href='/product') Longboard
 															li
-																a(href='product') Cruserboard
+																a(href='/product') Cruserboard
 															li
-																a(href='product') Skateboard
+																a(href='/product') Skateboard
 												//.col1.col5
 													img.img-responsive(src='images/me.png', alt='')
 												.clearfix
@@ -140,29 +140,29 @@ html
 														h4 Completes
 														ul
 															li
-																a(href='product') Longboard
+																a(href='/product') Longboard
 															li
-																a(href='product') Cruserboard
+																a(href='/product') Cruserboard
 															li
-																a(href='product') Skateboard
+																a(href='/product') Skateboard
 												.col1
 													.h_nav
 														h4 Component
 														ul
 															li
-																a(href='product') Truck
+																a(href='/product') Truck
 															li
-																a(href='product') Wheel
+																a(href='/product') Wheel
 															li
-																a(href='product') Deck
+																a(href='/product') Deck
 												.col1
 													.h_nav
-														h4 Accessoriy
+														h4 Accessory
 														ul
 															li
-																a(href='product') Cleaning
+																a(href='/product') Cleaning
 															li
-																a(href='product') Protects
+																a(href='/product') Protects
 												//.col1.col5
 													img.img-responsive(src='images/me1.png', alt='')
 												.clearfix
@@ -177,29 +177,29 @@ html
 														//h4 Submenu1
 														ul
 															li
-																a(href='community/Notice') Notice
+																a(href='/community/Notice') Notice
 															li
-																a(href='community/Lecture') Lectures
+																a(href='/community/Lecture') Lectures
 															li
-																a(href='community/Free') Free Topic
+																a(href='/community/Free') Free Topic
 															li
-																a(href='community/News') News & Magazines
+																a(href='/community/News') News & Magazines
 												//.col1.col5
 													img.img-responsive(src='images/me.png', alt='')
 												.clearfix
 									li
-										a.color4(href='about') About Us
+										a.color4(href='/about') About Us
 							// /.navbar-collapse
 					.col-sm-2.search-right
 						ul.heart
 							li
-								a(href='wishlist')
+								a(href='/wishlist')
 									span.glyphicon.glyphicon-heart(aria-hidden='true')
 							li
-								a.play-icon.popup-with-zoom-anim(href='#small-dialog')
+								a.play-icon.popup-with-zoom-anim(href='/#small-dialog')
 									i.glyphicon.glyphicon-search  
 						.cart.box_1
-							a(href='shopping_cart')
+							a(href='/shopping_cart')
 								h3
 									.total
 										span.simpleCart_total

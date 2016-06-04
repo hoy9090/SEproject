@@ -18,7 +18,7 @@ block content
 	.container
 		h2= board_title
 		.col-xs-12
-			button.btn.btn-info.write(onClick="location.href='community/#{category}/write';") Write
+			button.btn.btn-info.write(onClick="location.href='/community/#{category}/write';") Write
 		.col-xs-12(style='overflow: auto;')
 			table.table.table-hover.table-striped
 				thead
@@ -33,33 +33,33 @@ block content
 						tr
 							td= val.no
 							td
-								a(href='community/#{category}/view?no=#{val.no}')= val.title
+								a(href='/community/#{category}/view?no=#{val.no}')= val.title
 							td= val.writer
 							td= val.date
 							td= val.views
 		.col-xs-12
-			button.btn.btn-info.write(onClick="location.href='community/#{category}/write';") Write
+			button.btn.btn-info.write(onClick="location.href='/community/#{category}/write';") Write
 		.col-xs-12
 			.text-center
 				ul.pagination
 					li 
 						if (search)
-							a(href='community/#{category}?pageNo=1&search_scope=#{search_scope}&search_word=#{search_word}') FIRST
+							a(href='/community/#{category}?pageNo=1&search_scope=#{search_scope}&search_word=#{search_word}') FIRST
 						else
-							a(href='community/#{category}?pageNo=1') FIRST
+							a(href='/community/#{category}?pageNo=1') FIRST
 					each val in page
 						li
 							if (search)
-								a(href='community/#{category}?pageNo=#{val}&search_scope=#{search_scope}&search_word=#{search_word}')= val
+								a(href='/community/#{category}?pageNo=#{val}&search_scope=#{search_scope}&search_word=#{search_word}')= val
 							else	
-								a(href='community/#{category}?pageNo=#{val}')= val
+								a(href='/community/#{category}?pageNo=#{val}')= val
 					li
 						if (search)
-							a(href='community/#{category}?pageNo=#{endpage}&search_scope=#{search_scope}&search_word=#{search_word}') END
+							a(href='/community/#{category}?pageNo=#{endpage}&search_scope=#{search_scope}&search_word=#{search_word}') END
 						else
-							a(href='community/#{category}?pageNo=#{endpage}') END
+							a(href='/community/#{category}?pageNo=#{endpage}') END
 		.col-xs-12.text-center
-			form.form-inline(role='form', action='community/#{category}/search', method='post')
+			form.form-inline(role='form', action='/community/#{category}/search', method='post')
 				.form-group
 					select.form-control#search_scope(name='search_scope')
 						option(value='title') Title
