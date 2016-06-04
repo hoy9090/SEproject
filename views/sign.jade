@@ -8,19 +8,13 @@ block content
   script(language='javascript').
     function buyerchk(){
       alert("Buyer need not to insert corporate registration number.");
-      if (document.regitForm['member'][0].checked) {// check buyer
-        document.regitForm.copNum.disabled = true;  // inactive
-      } else { 
-        document.regitForm.copNum.disabled = true;
-      } // inactive
+      $('#corp_num').hide();
+      $('#corp_num input').val('0000000000');
     }
     function sellerchk(){
-      alert("Seller have to insert corporate registration number. Please insert corporate registration number");
-      if (document.regitForm['member'][1].checked) {// check buyer
-        document.regitForm.copNum.disabled = false;  // inactive
-      } else { 
-        document.regitForm.copNum.disabled = true;
-      } // inactive
+      alert("Seller have to insert corporate registration number. Please insert corporate registration number.");
+      $('#corp_num').show();
+      $('#corp_num input').val('');
     }
   .container
     .login
