@@ -27,8 +27,9 @@ block content
 
 	.container
 		.col-md-6.text-center.profile_left
+			br
 			h3(align = 'left') Buyer Information
-
+			br
 			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', align = 'center',src="images/members/Jeonghun.jpg", data-holder-rendered='true')
 			h3(style='line-height:2.3em', align = 'center')
 				b Gong Jeonghun - change to DB data
@@ -51,6 +52,7 @@ block content
 						td Secret
 
 		.col-md-6.myinfo_detail-right
+			br
 			h3 My Boards
 			br
 			br
@@ -79,5 +81,6 @@ block content
 		.col-md-12.private_area
 
 			br
-			h3 - Profile change
-			h3 - Password change
+			form
+				input(type='button', value='Profile change')
+				input(type='button', value='Password Change')
