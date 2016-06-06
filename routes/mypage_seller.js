@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var mysql = mysql.createPool(
+var mysql = require('mysql');
+var pool = mysql.createPool(
 {
 	host: 'localhost',
 	user: 'root',
