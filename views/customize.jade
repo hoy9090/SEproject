@@ -1,0 +1,17 @@
+extends layout
+
+//first. how to get parameter when linking?
+
+block style
+
+	style.
+		label.hvr-skew-backward {margin-bottom: 50px;}
+
+	//parameter 1 : product type
+	//parameter 2 :
+block content
+	form(role = 'form', action = 'type_select', method = 'post')
+
+		select(id = 'text', name = 'product type')
+			option(value = 'first', name = 'first')
+			option(vaule = 'second', name = 'second')

@@ -20,6 +20,8 @@ var shopping_cart = require('./routes/shopping_cart');
 var community = require('./routes/community');
 
 //product features
+
+var product = require('./routes/customize');
 var product = require('./routes/product');
 var reg_product = require('./routes/reg_product');
 
@@ -68,6 +70,7 @@ app.use('/shopping_cart', shopping_cart);
 
 app.use('/community', community);
 
+app.use('/customize', customize);
 app.use('/product', product);
 app.use('/reg_product', reg_product);
 

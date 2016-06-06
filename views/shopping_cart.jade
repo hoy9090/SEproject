@@ -34,6 +34,22 @@ block content
     });
     });
     });
+     script.
+    $(document).ready(function(c) {
+    $('.close4').on('click', function(c){
+    $('.cart-header3').fadeOut('slow', function(c){
+    $('.cart-header3').remove();
+    });
+    });
+    });
+     script.
+    $(document).ready(function(c) {
+    $('.close5').on('click', function(c){
+    $('.cart-header4').fadeOut('slow', function(c){
+    $('.cart-header4').remove();
+    });
+    });
+    });
   script.
     function calcBook(idx) {
     if(idx < "1" && idx > "5") {
@@ -68,7 +84,7 @@ block content
                 th Delivery 
                 th Amount
                 th Subtotal
-              tr.cart-header1
+              tr.cart-header
                 td.ring-in
                   a.at-in(href='single.html')
                     img.img-responsive(src='images/ch.jpg', alt='')
@@ -83,7 +99,7 @@ block content
                 td
                   input#number1(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('1');")
                 td
-              tr.cart-header2
+              tr.cart-header1
                   td.ring-in
                     a.at-in(href='single.html')
                       img.img-responsive(src='images/ch.jpg', alt='')
@@ -98,7 +114,7 @@ block content
                   td
                     input#number2(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('2');")
                   td
-                tr.cart-header3
+                tr.cart-header2
                   td.ring-in
                     a.at-in(href='single.html')
                       img.img-responsive(src='images/ch.jpg', alt='')
@@ -113,7 +129,7 @@ block content
                   td
                     input#number3(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('3');")
                   td
-                tr.cart-header4
+                tr.cart-header3
                   td.ring-in
                     a.at-in(href='single.html')
                       img.img-responsive(src='images/ch.jpg', alt='')
@@ -128,7 +144,7 @@ block content
                   td
                     input#number4(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('4');")
                   td
-                tr.cart-header5
+                tr.cart-header4
                   td.ring-in
                     a.at-in(href='single.html')
                       img.img-responsive(src='images/ch.jpg', alt='')
