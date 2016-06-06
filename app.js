@@ -23,6 +23,10 @@ var community = require('./routes/community');
 var product = require('./routes/product');
 var reg_product = require('./routes/reg_product');
 
+var mypage_buyer = require('./routes/mypage_buyer');
+var mypage_seller = require('./routes/mypage_seller');
+
+
 var app = express();
 
 // view engine setup
@@ -66,6 +70,9 @@ app.use('/community', community);
 
 app.use('/product', product);
 app.use('/reg_product', reg_product);
+
+app.use('/mypage_buyer', mypage_buyer);
+app.use('/mypage_seller', mypage_seller);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');
