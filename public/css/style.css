@@ -1466,7 +1466,7 @@ a.at-in {
 .ring-in{
   position: relative;
 }
-.close1, .close2, .close3 {
+.close1, .close2, .close3, .close4, .close5 {
   background: url('../images/close.png') no-repeat 0px 0px ;
   cursor: pointer;
   width: 28px;

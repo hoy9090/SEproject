@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .banner-top
+  .banner-top-checkout
     .container
       h1 Shopping Cart
       em
@@ -34,60 +34,115 @@ block content
     });
     });
     });
+  script.
+    function calcBook(idx) {
+    if(idx < "1" && idx > "5") {
+    return;
+    }
+    var myTable = document.getElementById('cart');
+    var total;
+    var price=0;
+    var num = document.getElementById('number' + idx).value;
+    if(isNaN(num)) {
+    alert("입력한 수량이 숫자가 아닙니다.");
+    document.getElementById('number' + idx).value = "0";
+    return;
+    }
+    if(parseInt(num) < 0) {
+    alert("입력한 수량은 음수를 입력할 수 없습니다.");
+    document.getElementById('number' + idx).value = "0";
+    return;
+    }
+    price += (+myTable.rows[idx].cells[1].innerHTML);
+    total = price * num;
+    myTable.rows[idx].cells[4].innerHTML = total;
+    }
   .container
-    .check-out
-      .bs-example4(data-example-id='simple-responsive-table')
-        .table-responsive
-          table.table-heading.simpleCart_shelfItem
-            tr
-              th.table-grid Item
-              th Prices
-              th Subtotal 
-              th Amount
-            tr.cart-header
-              td.ring-in
-                a.at-in(href='single.html')
-                  img.img-responsive(src='images/ch.jpg', alt='')
-                .sed
-                  h5
-                    a(href='single.html') Sed ut perspiciatis unde
-                  p (At vero eos et accusamus et iusto odio dignissimos ducimus ) 
-                .clearfix  
-                .close1  
-              td $100.00
-              td FREE SHIPPING
-              td.item_price $100.00
-              td.add-check
-                a.item_add.hvr-skew-backward(href='#') Add To Cart
-            tr.cart-header1
-              td.ring-in
-                a.at-in(href='single.html')
-                  img.img-responsive(src='images/ch2.jpg', alt='')
-                .sed
-                  h5
-                    a(href='single.html') Sed ut perspiciatis unde
-                  p (At vero eos et accusamus et iusto odio dignissimos ducimus ) 
-                .clearfix  
-                .close2  
-              td $100.00
-              td FREE SHIPPING
-              td.item_price $100.00
-              td.add-check
-                a.item_add.hvr-skew-backward(href='#') Add To Cart
-            tr.cart-header2
-              td.ring-in
-                a.at-in(href='single.html')
-                  img.img-responsive(src='images/ch1.jpg', alt='')
-                .sed
-                  h5
-                    a(href='single.html') Sed ut perspiciatis unde
-                  p (At vero eos et accusamus et iusto odio dignissimos ducimus ) 
-                .clearfix  
-                .close3  
-              td $100.00
-              td FREE SHIPPING
-              td.item_price $100.00
-              td.add-check
-                a.item_add.hvr-skew-backward(href='#') Add To Cart
+      .check-out
+        .bs-example4(data-example-id='simple-responsive-table')
+          .table-responsive
+            table#cart.table-heading.simpleCart_shelfItem
+              tr
+                th.table-grid Item
+                th Prices
+                th Delivery 
+                th Amount
+                th Subtotal
+              tr.cart-header1
+                td.ring-in
+                  a.at-in(href='single.html')
+                    img.img-responsive(src='images/ch.jpg', alt='')
+                  .sed
+                    h5
+                      a(href='single.html') Example 1
+                    p explaination 1 
+                  .clearfix  
+                  .close1  
+                td 100
+                td FREE SHIPPING
+                td
+                  input#number1(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('1');")
+                td
+              tr.cart-header2
+                  td.ring-in
+                    a.at-in(href='single.html')
+                      img.img-responsive(src='images/ch.jpg', alt='')
+                    .sed
+                      h5
+                        a(href='single.html') Example 2
+                      p explaination 2 
+                    .clearfix  
+                    .close2  
+                  td 100
+                  td FREE SHIPPING
+                  td
+                    input#number2(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('2');")
+                  td
+                tr.cart-header3
+                  td.ring-in
+                    a.at-in(href='single.html')
+                      img.img-responsive(src='images/ch.jpg', alt='')
+                    .sed
+                      h5
+                        a(href='single.html') Example 3
+                      p explaination 3 
+                    .clearfix  
+                    .close3  
+                  td 100
+                  td FREE SHIPPING
+                  td
+                    input#number3(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('3');")
+                  td
+                tr.cart-header4
+                  td.ring-in
+                    a.at-in(href='single.html')
+                      img.img-responsive(src='images/ch.jpg', alt='')
+                    .sed
+                      h5
+                        a(href='single.html') Example 4
+                      p explaination 4 
+                    .clearfix  
+                    .close4  
+                  td 100
+                  td FREE SHIPPING
+                  td
+                    input#number4(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('4');")
+                  td
+                tr.cart-header5
+                  td.ring-in
+                    a.at-in(href='single.html')
+                      img.img-responsive(src='images/ch.jpg', alt='')
+                    .sed
+                      h5
+                        a(href='single.html') Example 5
+                      p explaination 5 
+                    .clearfix  
+                    .close5  
+                  td 100
+                  td FREE SHIPPING
+                  td
+                    input#number5(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('5');")
+                  td
+            input(type='button', value='합계계산', onclick='calcTotal();')
       .produced
         a.hvr-skew-backward(href='single.html') Produced To Buy
