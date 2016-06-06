@@ -3,12 +3,12 @@ extends layout
 block content
   .banner-top
     .container
-      h1 Checkout
+      h1 Shopping Cart
       em
       h2
-        a(href='index.html') Home
+        a(href='main') Home
         label /
-        | Checkout
+        | Shopping cart
   // login
   script.
     $(document).ready(function(c) {
@@ -42,8 +42,8 @@ block content
             tr
               th.table-grid Item
               th Prices
-              th Delivery 
-              th Subtotal
+              th Subtotal 
+              th Amount
             tr.cart-header
               td.ring-in
                 a.at-in(href='single.html')
