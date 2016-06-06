@@ -21,7 +21,7 @@ var community = require('./routes/community');
 
 //product features
 
-var product = require('./routes/customize');
+var customize = require('./routes/customize');
 var product = require('./routes/product');
 var reg_product = require('./routes/reg_product');
 
