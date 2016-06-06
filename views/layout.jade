@@ -57,7 +57,6 @@ html
 					.logo
 						a(href='/')
 							img(src='images/logo.png', alt='')
-							//, style='width: 160px;')
 			.header-top
 				.container
 					.col-sm-5.col-md-offset-2.header-login
@@ -65,17 +64,15 @@ html
 							if (loggedIn)
 								li
 									a(href='/logout') Logout
-								//if(buyer)	//how to get parameter?
-									li
-										a(href='/mypage_seller') Mypage
-								//else
-									li
-										a(href='/mypage_buyer') Mypage
 							else
 								li
 									a(href='/login') Login
-
-
+							//if(seller)	//how to get parameter?
+								li
+									a(href='/mypage_seller') Mypage
+							//else
+								li
+									a(href='/mypage_buyer') Mypage
 							if (!loggedIn)
 								li
 									a(href='/sign') Register
