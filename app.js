@@ -23,6 +23,7 @@ var community = require('./routes/community');
 
 var customize = require('./routes/customize');
 var product = require('./routes/product');
+var product_list = require('./routes/product_list');
 var reg_product = require('./routes/reg_product');
 
 var mypage_buyer = require('./routes/mypage_buyer');
@@ -72,6 +73,7 @@ app.use('/community', community);
 
 app.use('/customize', customize);
 app.use('/product', product);
+app.use('/product_list', product_list);
 app.use('/reg_product', reg_product);
 
 app.use('/mypage_buyer', mypage_buyer);
