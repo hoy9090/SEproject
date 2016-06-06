@@ -6,12 +6,87 @@ block style
 
 	style.
 		label.hvr-skew-backward {margin-bottom: 50px;}
+		img {margin:0 auto;}
+
+		table td {color: black; word-break: break-all; border: 1px solid #ddd !important;}
+		table {min-width: 450px; margin-bottom: 0 !important;}
+		thead {font-weight: bold;}
+		td.title {min-width: 370px;}
+		td.views {min-width: 80px;}
+
+		table-info2 td {color: black; word-break: break-all; border: 1px solid #ddd !important;}
+		table-info2 {min-width: 450px; margin-bottom: 0 !important;}
+		thead-info2 {font-weight: bold;}
+		td.category {width: 150px;}
+		td.detail {max-width: 300px;}
+
+		h2 {margin: 30px 0; text-align: center;}
+		button.btn.btn-info.write {margin: 10px 0; float: right;}
+		ul.pagination > li > a:hover {background-color: #5BC0DE; color: #FFFFFF;}
+		.form-group {display: inline-block !important; margin-right: 5px;}
 
 	//parameter 1 : product type
 	//parameter 2 :
 block content
-	form(role = 'form', action = 'type_select', method = 'post')
+	.container
+		.col-md-6.text-center.profile_left
+			h3(align = 'left') Buyer Information
 
-		select(id = 'text', name = 'product type')
-			option(value = 'first', name = 'first')
-			option(vaule = 'second', name = 'second')
+			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', align = 'center',src="images/members/Jeonghun.jpg", data-holder-rendered='true')
+			h3(style='line-height:2.3em', align = 'center')
+				b Gong Jeonghun - change to DB data
+
+			table.table-info2.table-hover.table-striped
+				thead
+					tr
+						td.category category
+						td.detali detali
+				tbody
+					tr
+						td phone number
+						td 010-xxxx-xxxx
+					tr
+						td address
+						td suwon-city
+
+					tr
+						td occupation
+						td Secret
+
+		.col-md-6.myinfo_detail-right
+			h3 My Boards
+			br
+			br
+			br
+			select(id = 'text', name = 'product type')
+				option(value = 'first', name = 'first') Long board
+				option(vaule = 'second', name = 'second') Cruser board
+				option(vaule = 'second', name = 'second') Skate board
+			h4(align = 'center')	place 3 or 4 square image in here
+			br
+			br
+			br
+
+			h3 posts by me
+			br
+
+			table.table.table-hover.table-striped
+				thead
+					tr
+						td.title Title
+						td.views Views
+				tbody
+					tr
+						td Replace to database data
+						td 5555555
+
+			h4(align = 'right')	view all post by user(BTN)
+
+	.container
+		.col-md-12.private_area
+
+			br
+			h3 - Profile change
+			h3 - Password change
+
+
