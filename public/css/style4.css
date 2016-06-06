@@ -34,6 +34,18 @@
     font-family:'Delta_Universe';
     src:url(../fonts/Delta_Universe.ttf) format('truetype');
 }
+.font-koolbean{
+    font-family: 'KoolBean'
+}
+.font-delta{
+    font-family: 'Delta_Universe'
+}
+.font-bmjua{
+    font-family: 'BMJUA_ttf'
+}
+.font-bmhanna{
+    font-family: 'BMHANNA_11yrs_ttf'
+}
 .rw-wrapper{
 	position: relative;
 	padding: 7em 0 0;
