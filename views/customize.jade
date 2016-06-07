@@ -8,8 +8,9 @@ block style
 		label.hvr-skew-backward {margin-bottom: 50px;}
 		img {margin:0 auto;}
 
-		table td {color: black; word-break: break-all; border: 1px solid #ddd !important;}
-		table {min-width: 450px; margin-bottom: 0 !important;}
+		table.filter tr {max-width: 50px; max-height:20px; margin-bottom: 0 !important;}
+		//table td {color: black; word-break: break-all; border: 1px solid #ddd !important;}
+		//table {min-width: 450px; margin-bottom: 0 !important;}
 		thead {font-weight: bold;}
 		td.title {min-width: 370px;}
 		td.views {min-width: 80px;}
@@ -24,6 +25,8 @@ block style
 		button.btn.btn-info.write {margin: 10px 0; float: right;}
 		ul.pagination > li > a:hover {background-color: #5BC0DE; color: #FFFFFF;}
 		.form-group {display: inline-block !important; margin-right: 5px;}
+
+
 
 
 
@@ -81,12 +84,13 @@ block content
 						td Secret
 
 		.col-md-6.myinfo_detail-right		
-			h3 Search Filter
-			hr
-			form(action='#', accept-charset='utf-8', name='datalist', method='get').font-ubuntubold
+			//h3 Search Filter
+			//hr
+			form(action='#', accept-charset='utf-8', name='datalist', method='get')
 				fieldset(style='width:350, border=1 solid black')
-					legend Price
-						h4
+					legend
+						h4.cate Price
+						h4.font-ubuntureg
 							| minimum : 
 							input(type='number', size='', name='text')
 							|  KRW
@@ -96,28 +100,56 @@ block content
 							|  KRW
 						br
 						br
-					legend Main Color
-						label.checkbox
+					legend
+						h4.cate Color
+						.row.row1.scroll-pane
+							.col.col-4
+							table.filter(width='30')
+								tr(align='center' height='5%')
+									td(width='10%')
+										label.checkbok
+											input(type='checkbox', name='checkbox')
+									td(width='10%')
+										label.checkbok
+											input(type='checkbox', name='checkbox')
+									td(width='10%')
+										label.checkbok
+											input(type='checkbox', name='checkbox')
+									td(width='10%')
+										label.checkbok
+											input(type='checkbox', name='checkbox')
+									td(width='10%')
+										label.checkbok
+											input(type='checkbox', name='checkbox')
+									td(width='10%')
+										label.checkbok
+											input(type='checkbox', name='checkbox')
+									td(width='10%')
+										label.checkbok
+											input(type='checkbox', name='checkbox')
+									td(width='10%')
+										label.checkbok
+											input(type='checkbox', name='checkbox')
+									td(width='10%')
+										label.checkbok
+											input(type='checkbox', name='checkbox')
+								tr(alig='center')
+									td(width='10%', bgcolor='black')
+									td(width='10%', bgcolor='white')
+									td(width='10%', bgcolor='red')
+									td(width='10%', bgcolor='orange')
+									td(width='10%', bgcolor='yellow')
+									td(width='10%', bgcolor='green')
+									td(width='10%', bgcolor='blue')
+									td(width='10%', bgcolor='purple')
+									td(width='10%', bgcolor='#14ffd6')
+						label
+							h4.cate Name
 							// black
-							input(type='checkbox', name='checkbox')
-							img.img-circle(alt='160x160', style='width: 20px; height; 20px;', align = 'center',src="images/color/black.jpg", data-holder-rendered='true')
-							p   
-						input(type='range', min='0', max='100', STEP='10', name='range')
-						input(type='range', min='5', max='10')
-					p
-						output(name='o1') 00:00
-						| a
-						output(name='o2') 00:00
-						| b
-					input(type='range' multiple, min='0', max='24', value='0,24', STEP='1.0', ...='', oninput="o1.value = valueLow + ':00'; o2.value = valueHigh + ':00'")
-					br
-					br
 			input(type='submit', value='PREV').font-ubuntureg
 			input(type='reset', value='reset').font-ubuntureg
 			input(type='submit', value='NEXT').font-ubuntureg
 			br
-			input(type='radio', value='val', name='radiotest')
-			| select
 			br
 			select(id = 'text', name = 'product type')
 				option(value = 'first', name = 'first') Long board
