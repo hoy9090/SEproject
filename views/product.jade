@@ -1,5 +1,9 @@
 extends layout
 
+block style
+  style.
+    table.filter tr {max-width: 50px; max-height:20px; margin-bottom: 0 !important;}
+
 block content
     // banner
     .banner-top
@@ -13,7 +17,108 @@ block content
     // content
     .product
       .container
-        .col-md-9
+        .col-lg-12.text-center
+          // categories
+          .col-md-4
+            h4.cate Categories
+            ul.menu-drop
+              li.item1
+                a(href='#') Completes 
+                ul.cute
+                  li.subitem1
+                    a(href='product_list') Longboard 
+                  li.subitem2
+                    a(href='product_list') Cruserboard
+                  li.subitem3
+                    a(href='product_list') Skateboard 
+              li.item2
+                a(href='#') Component 
+                ul.cute
+                  li.subitem1
+                    a(href='product_list') Truch 
+                  li.subitem2
+                    a(href='product_list') Wheel
+                  li.subitem3
+                    a(href='product_list') Deck 
+              li.item3
+                a(href='#') Accessory
+                ul.cute
+                  li.subitem1
+                    a(href='product_list') Cleaning 
+                  li.subitem2
+                    a(href='product_list') Protects 
+            script(type='text/javascript').
+              $(function() {
+              var menu_ul = $('.menu-drop > li > ul'),
+              menu_a  = $('.menu-drop > li > a');
+              menu_ul.hide();
+              menu_a.click(function(e) {
+              e.preventDefault();
+              if(!$(this).hasClass('active')) {
+              menu_a.removeClass('active');
+              menu_ul.filter(':visible').slideUp('normal');
+              $(this).addClass('active').next().stop(true,true).slideDown('normal');
+              } else {
+              $(this).removeClass('active');
+              $(this).next().stop(true,true).slideUp('normal');
+              }
+              });
+              });        
+          .col-md-4
+            h4.cate color
+            .row.row1.scroll-pane
+              .col.col-4
+                table.filter(width='30')
+                  tr(align='center' height='5%')
+                    td(width='10%')
+                      label.checkbok
+                        input(type='checkbox', name='checkbox')
+                    td(width='10%')
+                      label.checkbok
+                        input(type='checkbox', name='checkbox')
+                    td(width='10%')
+                      label.checkbok
+                        input(type='checkbox', name='checkbox')
+                    td(width='10%')
+                      label.checkbok
+                        input(type='checkbox', name='checkbox')
+                    td(width='10%')
+                      label.checkbok
+                        input(type='checkbox', name='checkbox')
+                    td(width='10%')
+                      label.checkbok
+                        input(type='checkbox', name='checkbox')
+                    td(width='10%')
+                      label.checkbok
+                        input(type='checkbox', name='checkbox')
+                    td(width='10%')
+                      label.checkbok
+                        input(type='checkbox', name='checkbox')
+                    td(width='10%')
+                      label.checkbok
+                        input(type='checkbox', name='checkbox')
+                  tr(align='center')
+                    td(width='10%', bgcolor='black')
+                    td(width='10%', bgcolor='white')
+                    td(width='10%', bgcolor='red')
+                    td(width='10%', bgcolor='orange')
+                    td(width='10%', bgcolor='yellow')
+                    td(width='10%', bgcolor='green')
+                    td(width='10%', bgcolor='blue')
+                    td(width='10%', bgcolor='purple')
+                    td(width='10%', bgcolor='#14ffd6')
+          h4.cate Price
+          .row.row1.scroll-pane
+            .col.col-4
+              label
+                i
+                | minimum :
+                input(type='text', size='5', name='text')
+                br 
+                i
+                | maximum :
+                input(type='text', size='5', name='text')
+        .col-md-11
           .mid-popular
             .col-md-4.item-grid1.simpleCart_shelfItem
               .mid-pop
@@ -172,107 +277,3 @@ block content
                       .starbox.small.ghosting  
                     .clearfix
             .clearfix
-        .col-md-3.product-bottom
-          // categories
-          .rsidebar.span_1_of_left
-            h4.cate Categories
-            ul.menu-drop
-              li.item1
-                a(href='#') Completes 
-                ul.cute
-                  li.subitem1
-                    a(href='product_list') Longboard 
-                  li.subitem2
-                    a(href='product_list') Cruserboard
-                  li.subitem3
-                    a(href='product_list') Skateboard 
-              li.item2
-                a(href='#') Component 
-                ul.cute
-                  li.subitem1
-                    a(href='product_list') Truch 
-                  li.subitem2
-                    a(href='product_list') Wheel
-                  li.subitem3
-                    a(href='product_list') Deck 
-              li.item3
-                a(href='#') Accessory
-                ul.cute
-                  li.subitem1
-                    a(href='product_list') Cleaning 
-                  li.subitem2
-                    a(href='product_list') Protects 
-          // initiate accordion
-          script(type='text/javascript').
-            $(function() {
-            var menu_ul = $('.menu-drop > li > ul'),
-            menu_a  = $('.menu-drop > li > a');
-            menu_ul.hide();
-            menu_a.click(function(e) {
-            e.preventDefault();
-            if(!$(this).hasClass('active')) {
-            menu_a.removeClass('active');
-            menu_ul.filter(':visible').slideUp('normal');
-            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-            } else {
-            $(this).removeClass('active');
-            $(this).next().stop(true,true).slideUp('normal');
-            }
-            });
-            });
-          // //menu
-          br
-          section.sky-form
-            h4.cate color
-            .row.row1.scroll-pane
-              .col.col-4
-                label.checkbox
-                  input(type='checkbox', name='checkbox')
-                  i
-                  | black
-                label.checkbox
-                  input(type='checkbox', name='checkbox')
-                  i
-                  | white
-                label.checkbox
-                  input(type='checkbox', name='checkbox')
-                  i
-                  | red
-                label.checkbox
-                  input(type='checkbox', name='checkbox')
-                  i
-                  | orange
-                label.checkbox
-                  input(type='checkbox', name='checkbox')
-                  i
-                  | yellow
-                label.checkbox
-                  input(type='checkbox', name='checkbox')
-                  i
-                  | green
-                label.checkbox
-                  input(type='checkbox', name='checkbox')
-                  i
-                  | blue
-                label.checkbox
-                  input(type='checkbox', name='checkbox')
-                  i
-                  | purple
-                label.checkbox
-                  input(type='checkbox', name='checkbox')
-                  i
-                  | mint
-          br
-          section.sky-form
-            h4.cate Price
-            .row.row1.scroll-pane
-              .col.col-4
-                label
-                  i
-                  | minimum :
-                  input(type='text', size='5', name='text')
-                  br 
-                  i
-                  | maximum :
-                  input(type='text', size='5', name='text')
-    // products
