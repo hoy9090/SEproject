@@ -34,6 +34,8 @@
     font-family:'BMJUA_ttf';
     src:url(../fonts/BMJUA_ttf.ttf) format('truetype');
 }
+
+
 @font-face{
     font-family:'Delta_Universe';
     src:url(../fonts/Delta_Universe.ttf) format('truetype');

@@ -29,6 +29,7 @@ var reg_product = require('./routes/reg_product');
 var mypage_buyer = require('./routes/mypage_buyer');
 var mypage_seller = require('./routes/mypage_seller');
 
+var order_list = require('./routes/order_list');
 
 var app = express();
 
@@ -78,6 +79,8 @@ app.use('/reg_product', reg_product);
 
 app.use('/mypage_buyer', mypage_buyer);
 app.use('/mypage_seller', mypage_seller);
+
+app.use('/order_list', order_list);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');
