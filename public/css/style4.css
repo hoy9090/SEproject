@@ -2,6 +2,10 @@
     font-family: 'Ubuntu-Regular';
     src:url(../fonts/Ubuntu-Regular.ttf) format('truetype');
 }
+@font-face {
+    font-family: 'Ubuntu-Bold';
+    src:url(../fonts/Ubuntu-Bold.ttf) format('truetype');
+}
 @font-face{
 	font-family:'Oxygen-Regular';
 	src:url(../fonts/Oxygen-Regular.ttf) format('truetype');
@@ -33,6 +37,12 @@
 @font-face{
     font-family:'Delta_Universe';
     src:url(../fonts/Delta_Universe.ttf) format('truetype');
+}
+.font-ubuntureg{
+    font-family: 'Ubuntu-Regular'
+}
+.font-ubuntubold{
+    font-family: 'Ubuntu-Bold'
 }
 .font-koolbean{
     font-family: 'KoolBean'

@@ -37,18 +37,18 @@ block content
 						td.category category
 						td.detali detali
 		hr
-		.col-sm-3.custom_step-current
-			h1(align='center').font-bmjua
-				| step1
-		.col-sm-3.custom_step-current
-			h1(align='center').font-bmjua
-				| step2
-		.col-sm-3.custom_step-next
-			h1(align='center').font-bmjua
-				| step3
-		.col-sm-3.custom_step-next
-			h1(align='center').font-bmjua
-				| step4
+		.col-sm-3.custom_STEP-current
+			h1(align='center').font-ubuntubold
+				| STEP1
+		.col-sm-3.custom_STEP-current
+			h1(align='center').font-ubuntubold
+				| STEP2
+		.col-sm-3.custom_STEP-next
+			h1(align='center').font-ubuntubold
+				| STEP3
+		.col-sm-3.custom_STEP-next
+			h1(align='center').font-ubuntubold
+				| STEP4
 		br.hidden-xs
 		br.hidden-xs
 		hr
@@ -80,31 +80,41 @@ block content
 						td occupation
 						td Secret
 
-		.col-md-6.myinfo_detail-right
-			h3 Filter
-			form(action='#', accept-charset='utf-8', name='datalist', method='get')
-				fieldset(style='width:350')
-					legend HTML5 < number >
-					|                    number :
-					input(type='number', min='0', max='100', step='10', name='number')
-				br
-				br
-				br
-				fieldset(style='width:350')
-					legend HTML5 < number >
-						|                    number :
-						input(type='range', min='0', max='100', step='10', name='range')
+		.col-md-6.myinfo_detail-right		
+			h3 Search Filter
+			hr
+			form(action='#', accept-charset='utf-8', name='datalist', method='get').font-ubuntubold
+				fieldset(style='width:350, border=1 solid black')
+					legend Price
+						h4
+							| minimum : 
+							input(type='number', size='', name='text')
+							|  KRW
+							br
+							| maximum : 
+							input(type='number', size='5', name='text')
+							|  KRW
+						br
+						br
+					legend Main Color
+						label.checkbox
+							// black
+							input(type='checkbox', name='checkbox')
+							img.img-circle(alt='160x160', style='width: 20px; height; 20px;', align = 'center',src="images/color/black.jpg", data-holder-rendered='true')
+							p   
+						input(type='range', min='0', max='100', STEP='10', name='range')
 						input(type='range', min='5', max='10')
 					p
 						output(name='o1') 00:00
-						|	a
+						| a
 						output(name='o2') 00:00
 						| b
-					input(type='range' multiple, min='0', max='24', value='0,24', step='1.0', ...='', oninput="o1.value = valueLow + ':00'; o2.value = valueHigh + ':00'")
+					input(type='range' multiple, min='0', max='24', value='0,24', STEP='1.0', ...='', oninput="o1.value = valueLow + ':00'; o2.value = valueHigh + ':00'")
 					br
 					br
-				input(type='submit', value='submit')
-				input(type='reset', value='reset')
+			input(type='submit', value='PREV').font-ubuntureg
+			input(type='reset', value='reset').font-ubuntureg
+			input(type='submit', value='NEXT').font-ubuntureg
 			br
 			input(type='radio', value='val', name='radiotest')
 			| select
