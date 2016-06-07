@@ -5,11 +5,11 @@ block style
 		table td {color: black; word-break: break-all; border: 1px solid #ddd !important;}
 		table {min-width: 600px; margin-bottom: 0 !important;}
 		thead {font-weight: bold;}
-		td.orderno {min-width: 50px;}
-		td.picture {width: 100px;}
-		td.name {width: 350px;}
+		td.orderno {width: 50px;}
+		td.picture {min-width: 100px;}
+		td.name {min-width: 350px;}
 
-		td.date {min-width: 100px;}
+		td.date {width: 100px;}
 		h2 {margin: 30px 0; text-align: center;}
 		button.btn.btn-info.write {margin: 10px 0; float: right;}
 		ul.pagination > li > a:hover {background-color: #5BC0DE; color: #FFFFFF;}
@@ -30,3 +30,9 @@ block content
 						td.picture image
 						td.name product name
 						td.date order date
+
+				tbody
+					tr
+						td. 1
+						td img.img-circle(alt = '160x160', style='width : 160px; height: 160px;', align = 'center, src = "images/members/jeonghun.jpg", data-holder-rendered='true')
+						
