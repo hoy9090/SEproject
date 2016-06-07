@@ -15,7 +15,7 @@ block content
       .container
         .col-lg-11.text-center
           // categories
-          .col-md-4
+          .categories
             h4.cate Categories
             ul.menu-drop
               li.item1
@@ -43,6 +43,7 @@ block content
                     a(href='product_list') Cleaning 
                   li.subitem2
                     a(href='product_list') Protects 
+            .clearfix
             script(type='text/javascript').
               $(function() {
               var menu_ul = $('.menu-drop > li > ul'),
@@ -60,12 +61,12 @@ block content
               }
               });
               });        
-          .col-md-4
+          .categories
             h4.cate color
             .row.row1.scroll-pane
               .col-col-4
                 table.filter
-                  tr(align='center' height='5%')
+                  tr(align='center')
                     td(width='10%')
                       label.checkbok
                         input(type='checkbox', name='checkbox')
@@ -103,7 +104,8 @@ block content
                     td(width='10%', bgcolor='blue')
                     td(width='10%', bgcolor='purple')
                     td(width='10%', bgcolor='#14ffd6')
-          .col.md-4
+            .clearfix
+          .categories
             h4.cate Price
             .row.row1.scroll-pane
               .col-col-4
@@ -112,6 +114,7 @@ block content
                 br
                 | maximum :
                 input(type='text', size='4', name='text')
+            .clearfix
         .col-md-11
           .mid-popular
             .col-md-4.item-grid1.simpleCart_shelfItem

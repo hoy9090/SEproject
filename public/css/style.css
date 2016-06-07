@@ -4,6 +4,17 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 
+.categories{width: 33.33333333%;}
+@media (min-width:768px){
+	.categories
+		{float: left;width: 33.33333333%;}}
+@media (min-width:992px){
+	.categories
+		{float: left;width: 33.33333333%;}}
+@media (min-width:1200px){
+	.categories
+		{float: left;width: 33.33333333%;}}
+
 .timeline{
 	list-style:none;
 	padding:0;
