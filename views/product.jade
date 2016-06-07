@@ -1,9 +1,5 @@
 extends layout
 
-block style
-  style.
-    table.filter tr {max-width: 50px; max-height:20px; margin-bottom: 0 !important;}
-
 block content
     // banner
     .banner-top
@@ -17,7 +13,7 @@ block content
     // content
     .product
       .container
-        .col-lg-12.text-center
+        .col-lg-11.text-center
           // categories
           .col-md-4
             h4.cate Categories
@@ -67,8 +63,8 @@ block content
           .col-md-4
             h4.cate color
             .row.row1.scroll-pane
-              .col.col-4
-                table.filter(width='30')
+              .col-col-4
+                table.filter
                   tr(align='center' height='5%')
                     td(width='10%')
                       label.checkbok
@@ -107,17 +103,15 @@ block content
                     td(width='10%', bgcolor='blue')
                     td(width='10%', bgcolor='purple')
                     td(width='10%', bgcolor='#14ffd6')
-          h4.cate Price
-          .row.row1.scroll-pane
-            .col.col-4
-              label
-                i
+          .col.md-4
+            h4.cate Price
+            .row.row1.scroll-pane
+              .col-col-4
                 | minimum :
-                input(type='text', size='5', name='text')
-                br 
-                i
+                input(type='text', size='4', name='text')
+                br
                 | maximum :
-                input(type='text', size='5', name='text')
+                input(type='text', size='4', name='text')
         .col-md-11
           .mid-popular
             .col-md-4.item-grid1.simpleCart_shelfItem
