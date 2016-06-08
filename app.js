@@ -25,7 +25,7 @@ var customize = require('./routes/customize');
 var product = require('./routes/product');
 var product_list = require('./routes/product_list');
 var reg_product = require('./routes/reg_product');
-var payment = require('./rotues/payment');
+var payment = require('./routes/payment');
 
 var mypage_buyer = require('./routes/mypage_buyer');
 var mypage_seller = require('./routes/mypage_seller');

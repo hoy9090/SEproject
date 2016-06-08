@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/', function(req, res, next)
 {
-	res.render('mypage_buyer');
+	res.render('payment');
 });
 
 module.exports = router;
