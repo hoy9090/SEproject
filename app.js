@@ -28,6 +28,8 @@ var reg_product = require('./routes/reg_product');
 var insert_product = require('./routes/insert_product');
 var payment = require('./routes/payment');
 
+var product_pallette = require('./routes/product_pallette');
+
 var mypage_buyer = require('./routes/mypage_buyer');
 var mypage_seller = require('./routes/mypage_seller');
 var MYpage_change_profile_buyer = require('./routes/MYpage_change_profile_buyer');
@@ -88,6 +90,8 @@ app.use('/product_list', product_list);
 app.use('/reg_product', reg_product);
 app.use('/insert_product', insert_product);
 app.use('/thread', thread);
+
+app.use('/product_pallette', product_pallette);
 
 app.use('/mypage_buyer', mypage_buyer);
 app.use('/mypage_seller', mypage_seller);
