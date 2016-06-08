@@ -29,10 +29,13 @@ router.post('/', function(req, res, next)
 			queryString.append("corp_num='"+corp_num+"', ");
 		queryString = queryString.slice(0, -2);
 		conn.query('update Member set '+queryString+' where SN='+req.session.userno, function(err, result, field) {
-			if (err)
-				console.error(err);
 			conn.release();
-			res.render('mypage_seller', {info: result[0]});		
+			if (err) {
+				console.error(err);
+				res.send({reg_success: false});
+			} else {
+				res.send({reg_success: true});
+			}
 		});
 	});
 });
