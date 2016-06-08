@@ -15,7 +15,7 @@ var md5 = require('md5');
 router.post('/', function(req, res, next) {
 	var image_path = md5(new Date()+'boardatoz');
 	var upload = multer({dest: 'public/images/products/'+image_path}).array('file');
-	upload(req_u, res_u, function (err) {
+	upload(req, res, function (err) {
 		if (!err)
 	  	pool.getConnection(function(err, conn) {
 				conn.query('use board');
