@@ -58,6 +58,7 @@ app.use(session({
 }));
 app.use(function(req, res, next) {
   res.locals.loggedIn = req.session.userno ? true : false;
+  res.locals.isBuyer = req.session.isBuyer ? true : false;
   next();
 });
 

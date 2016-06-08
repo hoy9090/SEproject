@@ -72,10 +72,10 @@ html
 							else
 								li
 									a(href='/login') Login
-							//if(seller)	//how to get parameter?
+							if (!isBuyer)
 								li
 									a(href='/mypage_seller') Mypage
-							//else
+							else
 								li
 									a(href='/mypage_buyer') Mypage
 							if (!loggedIn)
