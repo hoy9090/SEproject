@@ -3,11 +3,14 @@ extends layout
 block style
 	style.
 		img {margin: 0 auto;}
+		.img-div {height: 500px;}
+		.center-div {position: center center; top:0; left:0; width: 100%; height: 100%; max-height: 560px; z-index: 0;}
 
 block content
 	hr
 	br
-	br
-	img(src='images/custom/order-complete.jpg')
-	input.form-control#search_word(type='submit', name='Purchase now')
-	input.form-control#search_word(type='submit', name=' Go to Home ')
+	.img-div
+		img(src='images/custom/order-complete.jpg').center-div
+	input(type='submit', name='Purchase now')
+	|  .
+	input(type='submit', name=' Go to Home ')
