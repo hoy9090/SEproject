@@ -1,8 +1,7 @@
 doctype html
 html
-	script(language='javascript').
-		function popupClose() {	alert("No change password"); window.close(); }
-		function popupSaveClose() {	alert("Change password"); window.close(); }
+	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
+
 	body(onload='window.resizeTo(400,300)')
 		h2
 			| Password Changing Page
@@ -15,3 +14,8 @@ html
 					input(type='password', placeholder='Write your new Password')
 		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
 		input(type='button', value='Close', onclick='popupClose();')
+		script(language='javascript').
+			function popupClose() {	alert("No change password"); window.close(); }
+			function popupSaveClose() {	alert("Change password"); window.close(); }
+		script(src='js/jquery.min.js')
+		script(src='js/bootstrap.min.js')
