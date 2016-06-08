@@ -28,7 +28,9 @@ router.post('/', function(req, res, next) {
 						fs.rename('public/images/products/'+image_path+'/'+req.files[index].filename, 'public/images/products/'+image_path+'/'+index);
 					res.redirect('/');
 				});
-			});  
+			});
+	 	else
+	 		console.error(err);
   });
 });
 
