@@ -28,7 +28,7 @@ block style
 		.form-group {display: inline-block !important; margin-right: 5px;}
 
 		.img-div {height: 500px;}
-		.outer-div {position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 0; background-color: blue;}
+		.outer-div {position: absolute; top:0; left: 0; width: 100%; height: auto;max-height: 100%; z-index: 0; background-color: blue;}
 		.inner-div {position: absolute; top:30%; left:30%; width: 40%; height: 40%; z-index: 1; background-color: red;}
 
 	//parameter 1 : product type
@@ -59,12 +59,12 @@ block content
 		hr
 		.col-md-6.text-center.profile_left
 			h3(align = 'left') Preview
-			//canvas#canvas(width='400px', height='400px').hidden-xs.hidden-sm
+			canvas#canvas(width='400px', height='400px').hidden-xs.hidden-sm
 			canvas#canvas(width='600px', height='400px').hidden-xs.hidden-md.hidden-lg
-			//canvas#canvas(width=auto, height='300px').hidden-sm.hidden-md.hidden-lg
+			canvas#canvas(width=auto, height='300px').hidden-sm.hidden-md.hidden-lg
 				| This browser do not support canvas.
 			.img-div.col-xs-12
-				.outer-div
+				img(src='images/custom/example.jpg').outer-div
 				.inner-div
 
 			table.table-info2.table-hover.table-striped
