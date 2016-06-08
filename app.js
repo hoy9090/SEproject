@@ -37,6 +37,7 @@ var MYpage_change_profile_seller = require('./routes/MYpage_change_profile_selle
 var MYpage_change_pw = require('./routes/MYpage_change_pw');
 var MYpage_show_order_list = require('./routes/MYpage_show_order_list');
 var MYpage_show_order_detail = require('./routes/MYpage_show_order_detail');
+var change_profile = require('./routes/change_profile');
 
 var thread = require('./routes/thread');
 var order_list = require('./routes/order_list');
@@ -100,6 +101,7 @@ app.use('/MYpage_change_profile_buyer', MYpage_change_profile_buyer);
 app.use('/MYpage_change_pw', MYpage_change_pw);
 app.use('/MYpage_show_order_detail', MYpage_show_order_detail);
 app.use('/MYpage_show_order_list', MYpage_show_order_list);
+app.use('/change_profile', change_profile);
 
 app.use('/order_list', order_list);
 
