@@ -29,6 +29,7 @@ var payment = require('./routes/payment');
 
 var mypage_buyer = require('./routes/mypage_buyer');
 var mypage_seller = require('./routes/mypage_seller');
+var MYpage_change_profile = require('./routes/MYpage_change_profile');
 
 var thread = require('./routes/thread');
 var order_list = require('./routes/order_list');
@@ -84,6 +85,7 @@ app.use('/thread', thread);
 
 app.use('/mypage_buyer', mypage_buyer);
 app.use('/mypage_seller', mypage_seller);
+app.use('/MYpage_change_profile', MYpage_change_profile);
 
 app.use('/order_list', order_list);
 
