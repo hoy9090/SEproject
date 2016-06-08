@@ -28,6 +28,7 @@ router.post('/', function(req, res, next)
 		if (corp_num != '')
 			queryString = queryString.concat("corp_num='"+corp_num+"', ");
 		queryString = queryString.slice(0, -2);
+		console.log(queryString);
 		conn.query('update Member set '+queryString+' where SN='+req.session.userno, function(err, result, field) {
 			conn.release();
 			if (err) {
