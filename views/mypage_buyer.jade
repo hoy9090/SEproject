@@ -21,7 +21,7 @@ block style
 		button.btn.btn-info.write {margin: 10px 0; float: right;}
 		ul.pagination > li > a:hover {background-color: #5BC0DE; color: #FFFFFF;}
 		.form-group {display: inline-block !important; margin-right: 5px;}
-
+		.board-desc {resize: none; height: 75px;}
 block content
 	.container
 		.col-md-6.text-center.profile_left
@@ -54,7 +54,7 @@ block content
 			br
 			img.img-circle(alt='160x160', style='width: 160px; height: 160px;', align = 'left',src="images/skateboard/example3.jpg", data-holder-rendered='true')
 			h4(style='line-height:1.3em')
-				textarea(size='20')
+				textarea.board-desc(size='20')
 			br
 			input(type='button', value = 'modify', align='right')
 			br
