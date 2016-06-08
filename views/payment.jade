@@ -19,7 +19,12 @@ block content
 		.payinfo
 			form(role = 'form', name = 'payform', method = 'post')
 
-				input(type = 'radio', name = 'method', value = 'credit')
-				|	creditcard
-				input(type = 'radio', name = 'method', value = 'transfer')
+				input(type = 'radio', name = 'method', value = 'credit', onclick = 'credit()')
+				|	credit card  
+				input(type = 'radio', name = 'method', value = 'transfer', onclick = 'transfer()')
 				|	account
+
+				.col-md-12
+					input(type = 'text', name = 'address', palceholder = 'write your address here');
+
+					input(type = 'text', name = 'phone number', placeholder = 'write your phone number here');
