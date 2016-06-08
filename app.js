@@ -43,7 +43,6 @@ var MYpage_show_bid = require('./routes/MYpage_show_bid');
 var MYpage_show_bid_detail = require('./routes/MYpage_show_bid_detail');
 var MYpage_show_bid_candidate = require('./routes/MYpage_show_bid_candidate');
 var MYpage_show_customizing = require('./routes/MYpage_show_customizing');
-var MYpage_show_customizing_detail = require('./routes/MYpage_show_customizing_detail');
 var MYpage_show_deal = require('./routes/MYpage_show_deal');
 var MYpage_show_deal_detail = require('./routes/MYpage_show_deal_detail');
 var change_profile = require('./routes/change_profile');
@@ -117,7 +116,6 @@ app.use('/MYpage_show_bid_candidate', MYpage_show_bid_candidate);
 app.use('/MYpage_show_deal', MYpage_show_deal);
 app.use('/MYpage_show_deal_detail', MYpage_show_deal_detail);
 app.use('/MYpage_show_customizing', MYpage_show_customizing);
-app.use('/MYpage_show_customizing_detail', MYpage_show_customizing_detail);
 app.use('/change_profile', change_profile);
 
 app.use('/order_list', order_list);
