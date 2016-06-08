@@ -13,23 +13,26 @@ block content
 		}
 		function transfer()
 		{
-			alert("Using account transfer to pay."):
+			alert("Using account transfer to pay.");
 		}
 	.container
+		br
+		br
+
 		.payinfo
 			form(role = 'form', name = 'payform', method = 'post')
 
-				input(type = 'radio', name = 'method', value = 'credit', onclick = 'credit()')
+				input(type = 'radio', name = 'method', value = 'credit', onclick = 'credit()', checked)
 				|	credit card  
 				input(type = 'radio', name = 'method', value = 'transfer', onclick = 'transfer()')
 				|	account
 
 				.col-md-12.login-do
 					.login-mail
-						input(type = 'text', name = 'address', palceholder = 'write your address here')
+						input(type = 'text', name = 'address', placeholder = 'write your address here')
 
 					.login-mail
 						input(type = 'text', name = 'phone number', placeholder = 'write your phone number here')
 
 					.login-mail
-						input(type = 'text', name = 'comment to delivary service')
+						input(type = 'text', name = 'comment', placeholder = 'comment to delivary service')
