@@ -25,6 +25,7 @@ var customize = require('./routes/customize');
 var product = require('./routes/product');
 var product_list = require('./routes/product_list');
 var reg_product = require('./routes/reg_product');
+var payment = require('./rotues/payment');
 
 var mypage_buyer = require('./routes/mypage_buyer');
 var mypage_seller = require('./routes/mypage_seller');
@@ -72,6 +73,7 @@ app.use('/sign_FB', sign_FB);
 app.use('/shopping_cart', shopping_cart);
 
 app.use('/community', community);
+app.use('/payment', payment);
 
 app.use('/customize', customize);
 app.use('/product', product);
