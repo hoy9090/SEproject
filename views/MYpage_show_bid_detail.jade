@@ -3,22 +3,28 @@ html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
 	
 	body(onload='window.resizeTo(600,700)')
-		.container
-		h3
+		h2
 			| Bid Detail view page
-		br
-		.payinfo
-			h4
-			b Bid Information 
-			br
-			| - Bid number : 
-			//bid db
-			br
-			| - Customizing number : 
-			br
-			| - Price : 
-			br
-			| - comment :
-
+		table
+			tr
+				td Bid number
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='Cannot change this part', disabled)
+			tr
+				td Customizing number
+				td(align='center') ~~
+				td 
+					input#custom_SN(type='text', size='36', placeholder='Cannot change this part', disabled)
+			tr
+				td price
+				td(align='center') ~~
+				td 
+					input#price(type='text', size='36', placeholder='Change price')
+			tr
+				td commment
+				td(align='center') ~~
+				td 
+					input#comment(type='text', size='36', placeholder='Change comment')
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')

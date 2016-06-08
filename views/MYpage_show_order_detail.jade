@@ -2,26 +2,40 @@ doctype html
 html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
 	
-	body(onload='window.resizeTo(600,700)')
-		.container
-		h3
-			| Order Detail view page
-		br
-		.payinfo
-			h4
-			b Order Information 
-			br
-			| - Order number :
-			br
-			| - Date : 
-			br
-			| - seller : 
-			br
-			| - buyer :
-			br
-			| - total price : 
-			br
-			| - state : 
+	body(onload='window.resizeTo(600,500)')
+		h2
+			| Order Detail view Page for seller
+		table
+			tr
+				td Order number
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='Cannot change this part', disabled)
+			tr
+				td Date
+				td(align='center') ~~
+				td 
+					input#date(type='text', size='36', placeholder='Cannot change this part', disabled)
+			tr
+				td Seller
+				td(align='center') ~~
+				td 
+					input#Seller(type='text', size='36', placeholder='Cannot change this part', disabled)
+			tr
+				td Buyer
+				td(align='center') ~~
+				td 
+					input#Buyer(type='text', size='36', placeholder='Cannot change this part', disabled)
+			tr
+				td Total Price
+				td(align='center') ~~
+				td 
+					input#price(type='text', size='36', placeholder='Can change Total price')
+			tr
+				td state
+				td(align='center') ~~
+				td 
+					input#state(type='text', size='36', placeholder='Can change state')
 		input(type='button', value = 'Deal')
 
 		script(src='js/jquery.min.js')

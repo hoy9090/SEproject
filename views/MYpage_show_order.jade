@@ -29,7 +29,9 @@ block content
 					each val in contents
 						tr
 							td
-								a(href='')= val.SN //주문 번호를 누르면 해당 주문 정보가 보이도록
-							td= val.date // ORDER DB
-							td= val.total_price // ORDER DB
-							td= val.state     // payment DB JOIN WITH ORDER DB
+								a(href='')= val.SN  // 주문 번호를 누르면 해당 주문 정보가 보이도록 from ORDER DB
+												 	// 셀러일 경우 MYpage_show_order_detail_seller로 이동 
+													//	바이어일 경우 MYpage_show_order_detail_buyer로 이동 
+							td= val.date 			// from ORDER DB
+							td= val.total_price // from ORDER DB
+							td= val.state     // from payment DB JOIN WITH ORDER DB

@@ -3,23 +3,23 @@ html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
 	
 	body(onload='window.resizeTo(600,700)')
-		.container
-		h3
+		h2
 			| Deal Detail view page
-		br
-		.payinfo
-			h4
-			b Deal Information 
-			br
-			| - Deal number :
-			br
-			| - Order number : 
-			br
-			| - Date : 
-			br
-			| - seller comment : 
-			br
-			| - buyer comment :
-
+		table
+			tr
+				td Deal number
+				td(align='center') ~~
+			tr
+				td Order number
+				td(align='center') ~~
+			tr
+				td Date
+				td(align='center') ~~
+			tr
+				td Seller comment
+				td(align='center') ~~ // 샐러는 샐러 코멘트 수정가능
+			tr
+				td Buyer comment
+				td(align='center') ~~ // 바이어는 바이어 코멘트 수정가능
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')

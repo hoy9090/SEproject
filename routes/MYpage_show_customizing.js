@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET MYpage_show_customizing */
+/* GET MYpage_show_customizing_detail */
 router.get('/', function(req, res, next) {
-	res.render('MYpage_show_customizing');
+	res.render('MYpage_show_customizing_detail');
 });
 
 module.exports = router;

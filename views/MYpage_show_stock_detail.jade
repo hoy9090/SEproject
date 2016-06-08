@@ -3,32 +3,53 @@ html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
 	
 	body(onload='window.resizeTo(600,700)')
-		.container
-		h3
-			| Stock Detail view page
-		br
-		.payinfo
-			h4
-			b Stock Information 
-			br
-			| - Product number :
-			br
-			| - Type : 
-			br
-			| - Sub-type : 
-			br
-			| - name :
-			br
-			| - price : 
-			br
-			| - stock : 
-			br
-			| - date : 
-			br
-			| - img-url :
-			br
-			| - color : 
-
-
+		h2
+			| Stock Detail view page for seller
+		table
+			tr
+				td Product number
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='Cannot change this part', disabled)
+			tr
+				td Type
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='change type')
+			tr
+				td Sub-type
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='Change sub type')
+			tr
+				td name
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='Change name')
+			tr
+				td price
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='Change price')
+			tr
+				td stock
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='Change stock')
+			tr
+				td date
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='Cannot change this part', disabled)
+			tr
+				td img-url
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='Change img-url')
+			tr
+				td color
+				td(align='center') ~~
+				td 
+					input#SN(type='text', size='36', placeholder='Change color')
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')

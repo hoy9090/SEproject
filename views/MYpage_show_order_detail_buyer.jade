@@ -1,0 +1,30 @@
+doctype html
+html
+	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
+	
+	body(onload='window.resizeTo(600,500)')
+		h2
+			| Order Detail view Page for Seller
+		table
+			tr
+				td Order number
+				td(align='center') ~~
+			tr
+				td Date
+				td(align='center') ~~
+			tr
+				td Seller
+				td(align='center') ~~
+			tr
+				td Buyer
+				td(align='center') ~~
+			tr
+				td Total Price
+				td(align='center') ~~
+			tr
+				td state
+				td(align='center') ~~
+		input(type='button', value = 'Deal') // 바이어는 딜버튼을 눌러 딜 가능
+
+		script(src='js/jquery.min.js')
+		script(src='js/bootstrap.min.js')
