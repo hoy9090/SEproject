@@ -69,17 +69,15 @@ html
 							if (loggedIn)
 								li
 									a(href='/logout') Logout
-							else
-								li
-									a(href='/login') Login
-							if (loggedIn) {
 								if (!isBuyer)
 									li
 										a(href='/mypage_seller') Mypage
 								else
 									li
 										a(href='/mypage_buyer') Mypage
-							}
+							else
+								li
+									a(href='/login') Login
 							if (!loggedIn)
 								li
 									a(href='/sign') Register
