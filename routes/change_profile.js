@@ -14,10 +14,10 @@ router.post('/', function(req, res, next)
 		if (err)
 			console.error(err);
 		conn.query('use board');
-		var nickname = req.nickname;
-		var phone_number = req.phone_number;
-		var address = req.address;
-		var corp_num = req.corp_num;
+		var nickname = req.body.nickname;
+		var phone_number = req.body.phone_number;
+		var address = req.body.address;
+		var corp_num = req.body.corp_num;
 		var queryString = "";
 		if (nickname != '')
 			queryString = queryString.concat("nickname='"+nickname+"', ");
