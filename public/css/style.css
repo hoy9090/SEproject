@@ -364,7 +364,7 @@ a.item_add {
 .banner{
 	width: 100%;
   display: block;
-  background: url(../images/ba11.jpg)no-repeat center top; background-size: cover;
+  background: url(../images/ba11.jpg)no-repeat center center; background-size: cover;
 	overflow-x:hidden;
 }
 .no-cssanimations .rw-wrapper .rw-sentence span:first-child{
