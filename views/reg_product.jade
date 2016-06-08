@@ -14,9 +14,9 @@ block content
           h5 Type
           select#type.form-control(name='type', required)
             option(value='Type', disabled, selected) Type
-            option(value='Complete') Complete
-            option(value='Component') Component
-            option(value='Accessory') Accessory
+            option(value='0') Complete
+            option(value='1') Component
+            option(value='2') Accessory
           h5 Subtype
           select#subtype.form-control(name='subtype', required)
             option(value='Subtype', disabled, selected) Select type first
@@ -26,16 +26,16 @@ block content
           input.form-control(type='text', name='price', placeholder='Price', required)
           h5 Stock
           input.form-control(type='text', name='stock', placeholder='Stock', required)
-          h5 Color검정, 흰색, 빨강, 주황, 노랑, 초록, 파랑, 보라, 민트
-          button.btn(type='button' style='background-color: black;')
-          button.btn(type='button' style='background-color: white;')
-          button.btn(type='button' style='background-color: red;')
-          button.btn(type='button' style='background-color: orange;')
-          button.btn(type='button' style='background-color: yellow;')
-          button.btn(type='button' style='background-color: green;')
-          button.btn(type='button' style='background-color: blue;')
-          button.btn(type='button' style='background-color: purple;')
-          button.btn(type='button' style='background-color: #79E5CB;')
+          h5 Color
+          button.btn.color-btn(type='button', style='background-color: black;', val='0')
+          button.btn.color-btn(type='button', style='background-color: white;', val='1')
+          button.btn.color-btn(type='button', style='background-color: red;', val='2')
+          button.btn.color-btn(type='button', style='background-color: orange;', val='3')
+          button.btn.color-btn(type='button', style='background-color: yellow;', val='4')
+          button.btn.color-btn(type='button', style='background-color: green;', val='5')
+          button.btn.color-btn(type='button', style='background-color: blue;', val='6')
+          button.btn.color-btn(type='button', style='background-color: purple;', val='7')
+          button.btn.color-btn(type='button', style='background-color: #79E5CB;', val='8')
 
           h5 Main Image File
           input.form-control(type='file', name='img', placeholder='Main Image File', required)
@@ -47,30 +47,39 @@ block content
 
 block script
   script.
+    var color = null;
     $(document).ready(function() {
       $('#type').change(function() {
         var type = $('#type').val();
-          if (type == 'Complete') {
+          if (type == '0') {
             $('#subtype').html('');
             $('#subtype').append("<option value='Subtype' disabled selected>Subtype</option>");
-            $('#subtype').append("<option value='Longboard'>Longboard</option>");
-            $('#subtype').append("<option value='Cruserboard'>Cruserboard</option>");
-            $('#subtype').append("<option value='Skateboard'>Skateboard</option>");
-          } else if (type == 'Component') {
+            $('#subtype').append("<option value='0'>Longboard</option>");
+            $('#subtype').append("<option value='1'>Cruserboard</option>");
+            $('#subtype').append("<option value='2'>Skateboard</option>");
+          } else if (type == '1') {
             $('#subtype').html('');
             $('#subtype').append("<option value='Subtype' disabled selected>Subtype</option>");
-            $('#subtype').append("<option value='Truck'>Truck</option>");
-            $('#subtype').append("<option value='Wheel'>Wheel</option>");
-            $('#subtype').append("<option value='Deck'>Deck</option>");
-          } else if (type == 'Accessory') {
+            $('#subtype').append("<option value='0'>Truck</option>");
+            $('#subtype').append("<option value='1'>Wheel</option>");
+            $('#subtype').append("<option value='2'>Deck</option>");
+          } else if (type == '2') {
             $('#subtype').html('');
             $('#subtype').append("<option value='Subtype' disabled selected>Subtype</option>");
-            $('#subtype').append("<option value='Cleaning'>Cleaning</option>");
-            $('#subtype').append("<option value='Protects'>Protects</option>");
+            $('#subtype').append("<option value='0'>Cleaning</option>");
+            $('#subtype').append("<option value='1'>Protects</option>");
           }
       })
+      $('.color-btn').click(function() {
+        $('color-btn').each(function() {
+          $(this).css('border', '2px solid black');
+        })
+        $(this).css('border', '3px solid skyblue');
+        color = $(this).val();
+      });
     });
     function register() {
+
 
     }
 

@@ -6,14 +6,28 @@ var pool = mysql.createPool({
 	user: 'root',
 	password: '1234'
 });
+var path = require('path');
+var fs = require('fs');
+var multer = require('multer');
+var md5 = require('md5');
 
-router.post('/', function(req, res, next)
-{
-	pool.getConnection(function(err, conn)
-	{
-		if(err)
-			console.error(err);
+/* POST insert_product. */
+router.post('/', upload.array('file'), function(req, res, next) {
+	var image_path = md5(new Date()+'boardatoz');
+	var upload = multer({dest: 'public/images/products/'+image_path});
+
+	pool.getConnection(function(err, conn) {
 		conn.query('use board');
-		
+		conn.query('insert into Product(type, subtype, name, price, stock, date, img_url, color, Seller_SN) values(?, ?, ?, ?, ?, now(), ?, ?, ?)', [req.body.type, req.body.subtype, req.body.name, req.body.price, req.body.stock, img_path, req.body.color, req.session.userno], function(err, result, field) {
+			if (err) {
+				console.error(err);
+			}
+			conn.release();
+			for (var index in req.files)
+				fs.rename('public/images/products/'+image_path+'/'+req.files[index].filename, 'public/images/products/'+image_path+'/'+index);
+			res.redirect('/');
+		});
 	});
 });
+
+module.exports = router;
