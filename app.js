@@ -27,7 +27,7 @@ var product_list = require('./routes/product_list');
 var reg_product = require('./routes/reg_product');
 var insert_product = require('./routes/insert_product');
 var payment = require('./routes/payment');
-var order_complete = require('./routes/order_complete');
+var order_com = require('./routes/order_com');
 var product_pallette = require('./routes/product_pallette');
 
 var mypage_buyer = require('./routes/mypage_buyer');
@@ -93,7 +93,7 @@ app.use('/shopping_cart', shopping_cart);
 
 app.use('/community', community);
 app.use('/payment', payment);
-app.use('/order_complete', order_complete);
+app.use('/order_com', order_com);
 
 app.use('/customize', customize);
 app.use('/product', product);
