@@ -5,6 +5,7 @@ extends layout
 block style
 
 	style.
+		canvas {border:1px solid black}
 		label.hvr-skew-backward {margin-bottom: 50px;}
 		img {margin:0 auto;}
 
@@ -18,7 +19,7 @@ block style
 		table-info2 td {color: black; word-break: break-all; border: 1px solid #ddd !important;}
 		table-info2 {min-width: 450px; margin-bottom: 0 !important;}
 		thead-info2 {font-weight: bold;}
-		td.category {width: 150px;}
+		td.category {width: 100px;}
 		td.detail {max-width: 300px;}
 
 		h2 {margin: 30px 0; text-align: center;}
@@ -39,42 +40,54 @@ block content
 					tr
 						td.category category
 						td.detali detali
-		hr
+		hr.hidden-xs
+		// show the step of current
 		.col-sm-3.custom_STEP-current
 			h1(align='center').font-ubuntubold
 				| STEP1
 		.col-sm-3.custom_STEP-current
-			h1(align='center').font-ubuntubold
+			h1(align='center').font-ubuntubold.hidden-xs
 				| STEP2
 		.col-sm-3.custom_STEP-next
-			h1(align='center').font-ubuntubold
+			h1(align='center').font-ubuntubold.hidden-xs
 				| STEP3
 		.col-sm-3.custom_STEP-next
-			h1(align='center').font-ubuntubold
+			h1(align='center').font-ubuntubold.hidden-xs
 				| STEP4
 		br.hidden-xs
 		br.hidden-xs
 		hr
-		br
-
-
 		.col-md-6.text-center.profile_left
 			h3(align = 'left') Preview
-
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', align = 'center',src="images/members/Jeonghun.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em', align = 'center')
-				b Customizer
-			font(size='30px').font-bmjua
-				| ddddd
+			canvas#canvas(width='400px', height='400px').hidden-xs.hidden-sm
+			canvas#canvas(width='600px', height='400px').hidden-xs.hidden-md.hidden-lg
+			canvas#canvas(width=auto, height='300px').hidden-sm.hidden-md.hidden-lg
+				| This browser do not support canvas.
+			script.
+				var canvas;
+				var ctx;
+				window.onload = function() {
+				canvas = document.getElementByID("canvas");
+				if (canvas == null || canvas.getContext == null) return;
+				ctx = canvas.getContext("2d");
+				draw();
+				}
+				function draw() {
+				ctx.strokeRect(10, 10, 100, 100)
+				}
 			table.table-info2.table-hover.table-striped
 				thead
 					tr
-						td.category category
-						td.detali detali
+						td.category
+							font(color='black') category
+						td.detali
+							font(color='black') values
 				tbody
 					tr
-						td phone number
-						td 010-xxxx-xxxx
+						td
+							font(color='black') Board Type
+						td
+							font(color='#42BD71', size='6px').font-koolbean Long Board
 					tr
 						td address
 						td suwon-city
@@ -82,7 +95,7 @@ block content
 					tr
 						td occupation
 						td Secret
-
+		hr.hidden-md.hidden-lg
 		.col-md-6.myinfo_detail-right		
 			//h3 Search Filter
 			//hr
@@ -91,12 +104,15 @@ block content
 					legend
 						h4.cate Price
 						h4.font-ubuntureg
+						label
 							| minimum : 
-							input(type='number', size='', name='text')
+							input(type='number', name='text', style='text-align: right; width:200px').hidden-xs
+							input(type='number', name='text', style='text-align: right; width:100px').hidden-sm.hidden-md.hidden-lg
 							|  KRW
 							br
 							| maximum : 
-							input(type='number', size='5', name='text')
+							input(type='number', name='text', style='text-align: right; width:200px').hidden-xs
+							input(type='number', name='text', style='text-align: right; width:100px').hidden-sm.hidden-md.hidden-lg
 							|  KRW
 						br
 						br
@@ -145,6 +161,9 @@ block content
 									td(width='10%', bgcolor='#14ffd6')
 						label
 							h4.cate Name
+							input(type='text', name='text', style='text-align: right; width:250px').hidden-xs
+							input(type='text', name='text', style='text-align: right; width:200px').hidden-sm.hidden-md.hidden-lg
+
 							// black
 			input(type='submit', value='PREV').font-ubuntureg
 			input(type='reset', value='reset').font-ubuntureg
