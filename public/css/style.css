@@ -3,7 +3,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-
+.pay{display:none;}
 .categories{width: 33.33333333%;}
 @media (min-width:768px){
 	.categories
