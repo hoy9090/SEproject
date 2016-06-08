@@ -12,17 +12,14 @@ block content
         .col-xs-12
           h2 Register Product
           h5 Type
-          select.form-control(name='type', required)
+          select#type.form-control(name='type', required)
             option(value='Type', disabled, selected) Type
             option(value='Complete') Complete
             option(value='Component') Component
             option(value='Accessory') Accessory
           h5 Subtype
-          select.form-control(name='subtype', required)
-            option(value='Subtype', disabled, selected) Subtype
-            option(value='Complete') Complete
-            option(value='Component') Component
-            option(value='Accessory') Accessory
+          select#subtype.form-control(name='subtype', required)
+            option(value='Subtype', disabled, selected) Select type first
           h5 Product Name
           input.form-control(type='text', name='name', placeholder='Product Name', required)
           h5 Price
@@ -47,3 +44,34 @@ block content
           //label.hvr-skew-backward
             input(type='submit', value='Submit')
           a.hvr-skew-backward(onClick='register()') Register
+
+block script
+  script.
+    $(document).ready(function() {
+      $('#type').change(function() {
+        var type = $('#type').val();
+          if (type == 'Complete') {
+            $('#subtype').html('');
+            $('#subtype').append("<option value='Subtype' disabled selected>Subtype</option>");
+            $('#subtype').append("<option value='Longboard'>Longboard</option>");
+            $('#subtype').append("<option value='Cruserboard'>Cruserboard</option>");
+            $('#subtype').append("<option value='Skateboard'>Skateboard</option>");
+          } else if (type == 'Component') {
+            $('#subtype').html('');
+            $('#subtype').append("<option value='Subtype' disabled selected>Subtype</option>");
+            $('#subtype').append("<option value='Truck'>Truck</option>");
+            $('#subtype').append("<option value='Wheel'>Wheel</option>");
+            $('#subtype').append("<option value='Deck'>Deck</option>");
+          } else if (type == 'Accessory') {
+            $('#subtype').html('');
+            $('#subtype').append("<option value='Subtype' disabled selected>Subtype</option>");
+            $('#subtype').append("<option value='Cleaning'>Cleaning</option>");
+            $('#subtype').append("<option value='Protects'>Protects</option>");
+          }
+      })
+    });
+    function register() {
+
+    }
+
+
