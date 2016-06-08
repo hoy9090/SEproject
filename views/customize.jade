@@ -59,22 +59,11 @@ block content
 		hr
 		.col-md-6.text-center.profile_left
 			h3(align = 'left') Preview
-			canvas#canvas(width='400px', height='400px').hidden-xs.hidden-sm
+			//canvas#canvas(width='400px', height='400px').hidden-xs.hidden-sm
 			canvas#canvas(width='600px', height='400px').hidden-xs.hidden-md.hidden-lg
-			canvas#canvas(width=auto, height='300px').hidden-sm.hidden-md.hidden-lg
+			//canvas#canvas(width=auto, height='300px').hidden-sm.hidden-md.hidden-lg
 				| This browser do not support canvas.
-			script.
-				var canvas;
-				var ctx;
-				window.onload = function() {
-				canvas = document.getElementByID("canvas");
-				if (canvas == null || canvas.getContext == null) return;
-				ctx = canvas.getContext("2d");
-				draw();
-				}
-				function draw() {
-				ctx.strokeRect(10, 10, 100, 100)
-				}
+
 			table.table-info2.table-hover.table-striped
 				thead
 					tr
@@ -300,3 +289,25 @@ block content
 										.starbox.small.ghosting  
 									.clearfix
 					.clearfix
+block script
+	script.
+		var canvas;
+		var ctx;
+		window.onload = function() {
+		canvas = document.getElementByID("canvas");
+		if (canvas == null || canvas.getContext == null) return;
+		ctx = canvas.getContext("2d");
+		draw();
+		}
+		function draw() {
+		var img = new Image();
+		img.src='images/custom/example.jpg';
+		img.onload = function() {
+		ctx.drawImage(img, 50, 0);
+		var img2 = new Image();
+		img2.src="rose.png";
+		img2.onload = function() {         
+		ctx.drawImage(img2, 100, 0);      
+		}
+		}
+		}
