@@ -118,51 +118,21 @@ block content
 						br
 					legend
 						h4.cate Color
-						.row.row1.scroll-pane
-							.col.col-4
-							table.filter(width='30')
-								tr(align='center' height='5%')
-									td(width='10%')
-										label.checkbok
-											input(type='checkbox', name='checkbox')
-									td(width='10%')
-										label.checkbok
-											input(type='checkbox', name='checkbox')
-									td(width='10%')
-										label.checkbok
-											input(type='checkbox', name='checkbox')
-									td(width='10%')
-										label.checkbok
-											input(type='checkbox', name='checkbox')
-									td(width='10%')
-										label.checkbok
-											input(type='checkbox', name='checkbox')
-									td(width='10%')
-										label.checkbok
-											input(type='checkbox', name='checkbox')
-									td(width='10%')
-										label.checkbok
-											input(type='checkbox', name='checkbox')
-									td(width='10%')
-										label.checkbok
-											input(type='checkbox', name='checkbox')
-									td(width='10%')
-										label.checkbok
-											input(type='checkbox', name='checkbox')
-								tr(alig='center')
-									td(width='10%', bgcolor='black')
-									td(width='10%', bgcolor='white')
-									td(width='10%', bgcolor='red')
-									td(width='10%', bgcolor='orange')
-									td(width='10%', bgcolor='yellow')
-									td(width='10%', bgcolor='green')
-									td(width='10%', bgcolor='blue')
-									td(width='10%', bgcolor='purple')
-									td(width='10%', bgcolor='#14ffd6')
+						button.btn.color-btn(type='button', style='background-color: black;', value='0')
+						button.btn.color-btn(type='button', style='background-color: white;', value='1')
+						button.btn.color-btn(type='button', style='background-color: red;', value='2')
+						button.btn.color-btn(type='button', style='background-color: orange;', value='3')
+						button.btn.color-btn(type='button', style='background-color: yellow;', value='4')
+						button.btn.color-btn(type='button', style='background-color: green;', value='5')
+						button.btn.color-btn(type='button', style='background-color: blue;', value='6')
+						button.btn.color-btn(type='button', style='background-color: purple;', value='7')
+						button.btn.color-btn(type='button', style='background-color: #79E5CB;', value='8')
+					legend
+						h4.cate Name
 						label
-							h4.cate Name
 							input(type='text', name='text', style='text-align: right; width:250px').hidden-xs
 							input(type='text', name='text', style='text-align: right; width:200px').hidden-sm.hidden-md.hidden-lg
+							input(type='submit', value='search').font-ubuntureg
 
 							// black
 			input(type='submit', value='PREV').font-ubuntureg
@@ -170,7 +140,3 @@ block content
 			input(type='submit', value='NEXT').font-ubuntureg
 			br
 			br
-			select(id = 'text', name = 'product type')
-				option(value = 'first', name = 'first') Long board
-				option(vaule = 'second', name = 'second') Cruser board
-				option(vaule = 'second', name = 'second') Skate board
