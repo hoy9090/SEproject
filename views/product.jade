@@ -1,276 +1,276 @@
 extends layout
 
 block content
-    // banner
-    .banner-top
-      .container
-        h1 Products
-        em
-        h2
-          a(href='index.html') Home
-          label /
-          | Products
-    // content
-    .product
-      .container
-        .col-lg-11.text-center
-          // categories
-          .categories
-            h4.cate Categories
-            ul.menu-drop
-              li.item1
-                a(href='#') Completes 
-                ul.cute
-                  li.subitem1
-                    a(href='product_list') Longboard 
-                  li.subitem2
-                    a(href='product_list') Cruserboard
-                  li.subitem3
-                    a(href='product_list') Skateboard 
-              li.item2
-                a(href='#') Component 
-                ul.cute
-                  li.subitem1
-                    a(href='product_list') Truch 
-                  li.subitem2
-                    a(href='product_list') Wheel
-                  li.subitem3
-                    a(href='product_list') Deck 
-              li.item3
-                a(href='#') Accessory
-                ul.cute
-                  li.subitem1
-                    a(href='product_list') Cleaning 
-                  li.subitem2
-                    a(href='product_list') Protects 
-            .clearfix
-            script(type='text/javascript').
-              $(function() {
-              var menu_ul = $('.menu-drop > li > ul'),
-              menu_a  = $('.menu-drop > li > a');
-              menu_ul.hide();
-              menu_a.click(function(e) {
-              e.preventDefault();
-              if(!$(this).hasClass('active')) {
-              menu_a.removeClass('active');
-              menu_ul.filter(':visible').slideUp('normal');
-              $(this).addClass('active').next().stop(true,true).slideDown('normal');
-              } else {
-              $(this).removeClass('active');
-              $(this).next().stop(true,true).slideUp('normal');
-              }
-              });
-              });        
-          .categories
-            h4.cate color
-            .row.row1.scroll-pane
-              .col-col-4
-                table.filter
-                  tr(align='center')
-                    td(width='10%')
-                      label.checkbok
-                        input(type='checkbox', name='checkbox')
-                    td(width='10%')
-                      label.checkbok
-                        input(type='checkbox', name='checkbox')
-                    td(width='10%')
-                      label.checkbok
-                        input(type='checkbox', name='checkbox')
-                    td(width='10%')
-                      label.checkbok
-                        input(type='checkbox', name='checkbox')
-                    td(width='10%')
-                      label.checkbok
-                        input(type='checkbox', name='checkbox')
-                    td(width='10%')
-                      label.checkbok
-                        input(type='checkbox', name='checkbox')
-                    td(width='10%')
-                      label.checkbok
-                        input(type='checkbox', name='checkbox')
-                    td(width='10%')
-                      label.checkbok
-                        input(type='checkbox', name='checkbox')
-                    td(width='10%')
-                      label.checkbok
-                        input(type='checkbox', name='checkbox')
-                  tr(align='center')
-                    td(width='10%', bgcolor='black')
-                    td(width='10%', bgcolor='white')
-                    td(width='10%', bgcolor='red')
-                    td(width='10%', bgcolor='orange')
-                    td(width='10%', bgcolor='yellow')
-                    td(width='10%', bgcolor='green')
-                    td(width='10%', bgcolor='blue')
-                    td(width='10%', bgcolor='purple')
-                    td(width='10%', bgcolor='#14ffd6')
-            .clearfix
-          .categories
-            h4.cate Price
-            .row.row1.scroll-pane
-              .col-col-4
-                | minimum :
-                input(type='text', size='4', name='text')
-                br
-                | maximum :
-                input(type='text', size='4', name='text')
-            .clearfix
-        .col-md-11
-          .mid-popular
-            .col-md-4.item-grid1.simpleCart_shelfItem
-              .mid-pop
-                .pro-img
-                  img.img-responsive(src='images/pc.jpg', alt='')
-                  .zoom-icon
-                    a.picture(href='images/pc.jpg', rel='title')
-                      i.glyphicon.glyphicon-search.icon
-                    a(href='single.html')
-                      i.glyphicon.glyphicon-menu-right.icon
-                .mid-1
-                  .women
-                    .women-top
-                      span Women
-                      h6
-                        a(href='single.html') Sed ut perspiciati
-                    .img.item_add
-                      a(href='#')
-                        img(src='images/ca.png', alt='')
-                    .clearfix
-                  .mid-2
-                    p
-                      label $100.00
-                      em.item_price $70.00
-                    .block
-                      .starbox.small.ghosting  
-                    .clearfix
-            .col-md-4.item-grid1.simpleCart_shelfItem
-              .mid-pop
-                .pro-img
-                  img.img-responsive(src='images/pc1.jpg', alt='')
-                  .zoom-icon
-                    a.picture(href='images/pc1.jpg', rel='title')
-                      i.glyphicon.glyphicon-search.icon
-                    a(href='single.html')
-                      i.glyphicon.glyphicon-menu-right.icon
-                .mid-1
-                  .women
-                    .women-top
-                      span Women
-                      h6
-                        a(href='single.html') At vero eos
-                    .img.item_add
-                      a(href='#')
-                        img(src='images/ca.png', alt='')
-                    .clearfix
-                  .mid-2
-                    p
-                      label $100.00
-                      em.item_price $70.00
-                    .block
-                      .starbox.small.ghosting  
-                    .clearfix
-            .col-md-4.item-grid1.simpleCart_shelfItem
-              .mid-pop
-                .pro-img
-                  img.img-responsive(src='images/pc2.jpg', alt='')
-                  .zoom-icon
-                    a.picture(href='images/pc2.jpg', rel='title')
-                      i.glyphicon.glyphicon-search.icon
-                    a(href='single.html')
-                      i.glyphicon.glyphicon-menu-right.icon
-                .mid-1
-                  .women
-                    .women-top
-                      span Men
-                      h6
-                        a(href='single.html') Sed ut perspiciati
-                    .img.item_add
-                      a(href='#')
-                        img(src='images/ca.png', alt='')
-                    .clearfix
-                  .mid-2
-                    p
-                      label $100.00
-                      em.item_price $70.00
-                    .block
-                      .starbox.small.ghosting  
-                    .clearfix
-            .col-md-4.item-grid1.simpleCart_shelfItem
-              .mid-pop
-                .pro-img
-                  img.img-responsive(src='images/pc3.jpg', alt='')
-                  .zoom-icon
-                    a.picture(href='images/pc3.jpg', rel='title')
-                      i.glyphicon.glyphicon-search.icon
-                    a(href='single.html')
-                      i.glyphicon.glyphicon-menu-right.icon
-                .mid-1
-                  .women
-                    .women-top
-                      span Women
-                      h6
-                        a(href='single.html') On the other
-                    .img.item_add
-                      a(href='#')
-                        img(src='images/ca.png', alt='')
-                    .clearfix
-                  .mid-2
-                    p
-                      label $100.00
-                      em.item_price $70.00
-                    .block
-                      .starbox.small.ghosting  
-                    .clearfix
-            .col-md-4.item-grid1.simpleCart_shelfItem
-              .mid-pop
-                .pro-img
-                  img.img-responsive(src='images/pc4.jpg', alt='')
-                  .zoom-icon
-                    a.picture(href='images/pc4.jpg', rel='title')
-                      i.glyphicon.glyphicon-search.icon
-                    a(href='single.html')
-                      i.glyphicon.glyphicon-menu-right.icon
-                .mid-1
-                  .women
-                    .women-top
-                      span Men
-                      h6
-                        a(href='single.html') On the other
-                    .img.item_add
-                      a(href='#')
-                        img(src='images/ca.png', alt='')
-                    .clearfix
-                  .mid-2
-                    p
-                      label $100.00
-                      em.item_price $70.00
-                    .block
-                      .starbox.small.ghosting  
-                    .clearfix
-            .col-md-4.item-grid1.simpleCart_shelfItem
-              .mid-pop
-                .pro-img
-                  img.img-responsive(src='images/pc5.jpg', alt='')
-                  .zoom-icon
-                    a.picture(href='images/pc5.jpg', rel='title')
-                      i.glyphicon.glyphicon-search.icon
-                    a(href='single.html')
-                      i.glyphicon.glyphicon-menu-right.icon
-                .mid-1
-                  .women
-                    .women-top
-                      span Men
-                      h6
-                        a(href='single.html') Sed ut perspiciati
-                    .img.item_add
-                      a(href='#')
-                        img(src='images/ca.png', alt='')
-                    .clearfix
-                  .mid-2
-                    p
-                      label $100.00
-                      em.item_price $70.00
-                    .block
-                      .starbox.small.ghosting  
-                    .clearfix
-            .clearfix
+		// banner
+		.banner-top
+			.container
+				h1 Products
+				em
+				h2
+					a(href='index.html') Home
+					label /
+					| Products
+		// content
+		.product
+			.container
+				.col-lg-11.text-center
+					// categories
+					.categories
+						h4.cate Categories
+						ul.menu-drop
+							li.item1
+								a(href='#') Completes 
+								ul.cute
+									li.subitem1
+										a(href='product_list') Longboard 
+									li.subitem2
+										a(href='product_list') Cruserboard
+									li.subitem3
+										a(href='product_list') Skateboard 
+							li.item2
+								a(href='#') Component 
+								ul.cute
+									li.subitem1
+										a(href='product_list') Truch 
+									li.subitem2
+										a(href='product_list') Wheel
+									li.subitem3
+										a(href='product_list') Deck 
+							li.item3
+								a(href='#') Accessory
+								ul.cute
+									li.subitem1
+										a(href='product_list') Cleaning 
+									li.subitem2
+										a(href='product_list') Protects 
+						.clearfix
+						script(type='text/javascript').
+							$(function() {
+							var menu_ul = $('.menu-drop > li > ul'),
+							menu_a  = $('.menu-drop > li > a');
+							menu_ul.hide();
+							menu_a.click(function(e) {
+							e.preventDefault();
+							if(!$(this).hasClass('active')) {
+							menu_a.removeClass('active');
+							menu_ul.filter(':visible').slideUp('normal');
+							$(this).addClass('active').next().stop(true,true).slideDown('normal');
+							} else {
+							$(this).removeClass('active');
+							$(this).next().stop(true,true).slideUp('normal');
+							}
+							});
+							});        
+					.categories
+						h4.cate color
+						.row.row1.scroll-pane
+							.col-col-4
+								table.filter
+									tr(align='center')
+										td(width='10%')
+											label.checkbok
+												input(type='checkbox', name='checkbox')
+										td(width='10%')
+											label.checkbok
+												input(type='checkbox', name='checkbox')
+										td(width='10%')
+											label.checkbok
+												input(type='checkbox', name='checkbox')
+										td(width='10%')
+											label.checkbok
+												input(type='checkbox', name='checkbox')
+										td(width='10%')
+											label.checkbok
+												input(type='checkbox', name='checkbox')
+										td(width='10%')
+											label.checkbok
+												input(type='checkbox', name='checkbox')
+										td(width='10%')
+											label.checkbok
+												input(type='checkbox', name='checkbox')
+										td(width='10%')
+											label.checkbok
+												input(type='checkbox', name='checkbox')
+										td(width='10%')
+											label.checkbok
+												input(type='checkbox', name='checkbox')
+									tr(align='center')
+										td(width='10%', bgcolor='black')
+										td(width='10%', bgcolor='white')
+										td(width='10%', bgcolor='red')
+										td(width='10%', bgcolor='orange')
+										td(width='10%', bgcolor='yellow')
+										td(width='10%', bgcolor='green')
+										td(width='10%', bgcolor='blue')
+										td(width='10%', bgcolor='purple')
+										td(width='10%', bgcolor='#14ffd6')
+						.clearfix
+					.categories
+						h4.cate Price
+						.row.row1.scroll-pane
+							.col-col-4
+								| minimum :
+								input(type='text', size='4', name='text')
+								br
+								| maximum :
+								input(type='text', size='4', name='text')
+						.clearfix
+				.col-md-11
+					.mid-popular
+						.col-md-4.item-grid1.simpleCart_shelfItem
+							.mid-pop
+								.pro-img
+									img.img-responsive(src='images/pc.jpg', alt='')
+									.zoom-icon
+										a.picture(href='images/pc.jpg', rel='title')
+											i.glyphicon.glyphicon-search.icon
+										a(href='single.html')
+											i.glyphicon.glyphicon-menu-right.icon
+								.mid-1
+									.women
+										.women-top
+											span Women
+											h6
+												a(href='single.html') Sed ut perspiciati
+										.img.item_add
+											a(href='#')
+												img(src='images/ca.png', alt='')
+										.clearfix
+									.mid-2
+										p
+											label $100.00
+											em.item_price $70.00
+										.block
+											.starbox.small.ghosting  
+										.clearfix
+						.col-md-4.item-grid1.simpleCart_shelfItem
+							.mid-pop
+								.pro-img
+									img.img-responsive(src='images/pc1.jpg', alt='')
+									.zoom-icon
+										a.picture(href='images/pc1.jpg', rel='title')
+											i.glyphicon.glyphicon-search.icon
+										a(href='single.html')
+											i.glyphicon.glyphicon-menu-right.icon
+								.mid-1
+									.women
+										.women-top
+											span Women
+											h6
+												a(href='single.html') At vero eos
+										.img.item_add
+											a(href='#')
+												img(src='images/ca.png', alt='')
+										.clearfix
+									.mid-2
+										p
+											label $100.00
+											em.item_price $70.00
+										.block
+											.starbox.small.ghosting  
+										.clearfix
+						.col-md-4.item-grid1.simpleCart_shelfItem
+							.mid-pop
+								.pro-img
+									img.img-responsive(src='images/pc2.jpg', alt='')
+									.zoom-icon
+										a.picture(href='images/pc2.jpg', rel='title')
+											i.glyphicon.glyphicon-search.icon
+										a(href='single.html')
+											i.glyphicon.glyphicon-menu-right.icon
+								.mid-1
+									.women
+										.women-top
+											span Men
+											h6
+												a(href='single.html') Sed ut perspiciati
+										.img.item_add
+											a(href='#')
+												img(src='images/ca.png', alt='')
+										.clearfix
+									.mid-2
+										p
+											label $100.00
+											em.item_price $70.00
+										.block
+											.starbox.small.ghosting  
+										.clearfix
+						.col-md-4.item-grid1.simpleCart_shelfItem
+							.mid-pop
+								.pro-img
+									img.img-responsive(src='images/pc3.jpg', alt='')
+									.zoom-icon
+										a.picture(href='images/pc3.jpg', rel='title')
+											i.glyphicon.glyphicon-search.icon
+										a(href='single.html')
+											i.glyphicon.glyphicon-menu-right.icon
+								.mid-1
+									.women
+										.women-top
+											span Women
+											h6
+												a(href='single.html') On the other
+										.img.item_add
+											a(href='#')
+												img(src='images/ca.png', alt='')
+										.clearfix
+									.mid-2
+										p
+											label $100.00
+											em.item_price $70.00
+										.block
+											.starbox.small.ghosting  
+										.clearfix
+						.col-md-4.item-grid1.simpleCart_shelfItem
+							.mid-pop
+								.pro-img
+									img.img-responsive(src='images/pc4.jpg', alt='')
+									.zoom-icon
+										a.picture(href='images/pc4.jpg', rel='title')
+											i.glyphicon.glyphicon-search.icon
+										a(href='single.html')
+											i.glyphicon.glyphicon-menu-right.icon
+								.mid-1
+									.women
+										.women-top
+											span Men
+											h6
+												a(href='single.html') On the other
+										.img.item_add
+											a(href='#')
+												img(src='images/ca.png', alt='')
+										.clearfix
+									.mid-2
+										p
+											label $100.00
+											em.item_price $70.00
+										.block
+											.starbox.small.ghosting  
+										.clearfix
+						.col-md-4.item-grid1.simpleCart_shelfItem
+							.mid-pop
+								.pro-img
+									img.img-responsive(src='images/pc5.jpg', alt='')
+									.zoom-icon
+										a.picture(href='images/pc5.jpg', rel='title')
+											i.glyphicon.glyphicon-search.icon
+										a(href='single.html')
+											i.glyphicon.glyphicon-menu-right.icon
+								.mid-1
+									.women
+										.women-top
+											span Men
+											h6
+												a(href='single.html') Sed ut perspiciati
+										.img.item_add
+											a(href='#')
+												img(src='images/ca.png', alt='')
+										.clearfix
+									.mid-2
+										p
+											label $100.00
+											em.item_price $70.00
+										.block
+											.starbox.small.ghosting  
+										.clearfix
+						.clearfix

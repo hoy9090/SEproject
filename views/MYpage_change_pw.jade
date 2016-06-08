@@ -1,12 +1,17 @@
 doctype html
 html
-	body(onload='window.resizeTo(400,200)')
-		br
-		br
+	script(language='javascript').
+		function popupClose() {	alert("No change password"); window.close(); }
+		function popupSaveClose() {	alert("Change password"); window.close(); }
+	body(onload='window.resizeTo(400,300)')
+		h2
+			| Password Changing Page
 		table
 			tr
-				td ~~
+				td 
+					input(type='password', placeholder='Write your original Password')
 			tr
-				td ~~
-		input(type='button', value = 'orderlist', onclick='save_and_close();')
-		input(type='button', value='Close', onclick='window.close();')
+				td
+					input(type='password', placeholder='Write your new Password')
+		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
+		input(type='button', value='Close', onclick='popupClose();')

@@ -1,12 +1,39 @@
 doctype html
 html
-	body(onload='window.resizeTo(400,200)')
-		br
-		br
+	script(language='javascript').
+		function popupClose() {	alert("No change password"); window.close(); }
+		function popupSaveClose() {	alert("Change Complete"); window.close(); }
+	body(onload='window.resizeTo(600,700)')
+		h2
+			| Seller Profile Page
 		table
+			tr 
+				th
+				th Detail
+				th If want to change, please write down.
 			tr
+				td Name
 				td ~~
+				td 
 			tr
+				td Nickname
 				td ~~
-		input(type='button', value = 'orderlist', onclick='save_and_close();')
-		input(type='button', value='Close', onclick='window.close();')
+				td 
+					input(type='text', placeholder='New')
+			tr
+				td Phone number
+				td ~~
+				td 
+					input(type='text', placeholder='New')
+			tr
+				td Address
+				td ~~
+				td 
+					input(type='text', placeholder='New')
+			tr
+				td Corporation number
+				td ~~
+				td 
+					input(type='text', placeholder='New')
+		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
+		input(type='button', value='Close', onclick='popupClose();')
