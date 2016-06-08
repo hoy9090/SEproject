@@ -14,26 +14,51 @@ html
 				td Name
 				td(align='center')= info.name
 				td 
-					input(type='text', size='36', placeholder='Cannot change this part', disabled)
+					input#name(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Nickname
 				td(align='center')= info.nickname
 				td 
-					input(type='text', size='36', placeholder='Change Nickname')
+					input#nickname(type='text', size='36', placeholder='Change Nickname')
 			tr
 				td Phone number
 				td(align='center')= info.phone_number
 				td 
-					input(type='text', size='36', placeholder='Change Phone number')
+					input#phone(type='text', size='36', placeholder='Change Phone number')
 			tr
 				td Address
 				td(align='center')= info.address
 				td 
-					textarea(size='25', placeholder='Change Address')
+					textarea#address(size='25', placeholder='Change Address')
 		br
 		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
 		input(type='button', value='Close', onclick='popupClose();')
 		script(language='javascript').
 			function popupClose() {	alert("No change"); window.close(); }
-			function popupSaveClose() {	alert("Change Complete"); window.close(); }
+			function popupSaveClose() {
+				var sendData = {};
+				if ($('#nickname').val() != '')
+					sendData.nickname = $('#nickname').val();
+				if ($('#phone').val() != '')
+					sendData.phone_number = $('#phone').val();
+				if ($('#address').val() != '')
+					sendData.address = $('#address').val();
+				if (sendData != {})
+					$.ajax({
+						url: '/change_profile',
+			      type: "POST",
+			      data: sendData,
+			      success: function(data) {
+			        if (data.reg_success) {
+								alert("Change Complete.");
+								window.close();
+								window.opener.location.reload();
+			        } else {
+			          alert('Change failed. Please modify your changes.');
+			        }
+			      }
+					});
+				else
+					alert('No change detected.');
+			}
 		script(src='js/bootstrap.min.js')
