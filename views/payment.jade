@@ -19,11 +19,37 @@ block content
 			$('#credit_card_list').hide();
 			$('#transfer_bank_list').show();
 		}
+		function receiveadd()
+		{
+
+		}
 	.container
 		br
 		br
-
+		h3
+			| payment page
+		br
 		.payinfo
+			h4
+			b Order Information 
+			br
+			| - total price :
+			br
+			| - number of product : 
+			br
+			| - Delivery state : Free shipping
+			br
+			br
+			b Address Selector
+			br
+			form(role = 'form', name = 'payform', method = 'post')
+				input(type = 'radio', name = 'method', value = 'credit')
+				|	New Delivery Address  
+				| &nbsp;
+				input(type = 'radio', name = 'method', value = 'transfer', onclick = 'receiveadd()')
+				|	Existing Delivery Address
+			br
+			b Method of Payment Selector 	
 			form(role = 'form', name = 'payform', method = 'post')
 				input(type = 'radio', name = 'method', value = 'credit', onclick = 'credit()')
 				|	Credit card  
