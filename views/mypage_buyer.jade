@@ -76,12 +76,12 @@ block content
 						td 5555555
 
 			h4(align = 'right')	view all post by user(BTN)
-
+		script(language='javascript').
+		      function showPopup() { window.open("MYpage_change_profile", "TEST", "width=400, height=300, left=100, top=50"); }
 	.container
 		.col-md-12.mypage_private_area
-
 			br
 			form
-				input(type='button', value='Profile change')
+				input(type='button', value='Profile change', onclick='showPopup();')
 				input(type='button', value='Password Change')
 				input(type='button', value = 'orderlist')
