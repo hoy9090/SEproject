@@ -1,17 +1,28 @@
 doctype html
 html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
-
-	body(onload='window.resizeTo(400,200)')
+	
+	body(onload='window.resizeTo(600,700)')
+		.container
+		h3
+			| Order Detail view page
 		br
-		br
-		table
-			tr
-				td ~~
-			tr
-				td ~~
-		input(type='button', value = 'orderlist', onclick='save_and_close();')
-		input(type='button', value='Close', onclick='window.close();')
+		.payinfo
+			h4
+			b Order Information 
+			br
+			| - Order number :
+			br
+			| - Date : 
+			br
+			| - seller : 
+			br
+			| - buyer :
+			br
+			| - total price : 
+			br
+			| - state : 
+		input(type='button', value = 'Deal')
 
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')

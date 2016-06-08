@@ -1,17 +1,35 @@
 doctype html
 html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
-
-	body(onload='window.resizeTo(400,200)')
+	
+	body(onload='window.resizeTo(600,700)')
+		.container
+		h3
+			| Customizing Detail view page
 		br
-		br
-		table
-			tr
-				td ~~
-			tr
-				td ~~
-		input(type='button', value = 'orderlist', onclick='save_and_close();')
-		input(type='button', value='Close', onclick='window.close();')
+		.payinfo
+			h4
+			b Customizing Information 
+			br
+			| - Board-type :
+			br
+			| - Buyer : 
+			br
+			| - Deck : 
+			br
+			| - Deck color :
+			br
+			| - Wheel : 
+			br
+			| - Wheel color :
+			br
+			| - Truck : 
+			br
+			| - Truck color : 
+			br
+			| - Comment :
+			br
+			| - img-url : 
 
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')
