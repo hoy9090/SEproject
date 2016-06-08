@@ -28,8 +28,10 @@ block style
 		.form-group {display: inline-block !important; margin-right: 5px;}
 
 		.img-div {height: 500px;}
-		.outer-div {position: absolute; top:0; left: 0; width: 100%; height: auto;max-height: 100%; z-index: 0; background-color: blue;}
-		.inner-div {position: absolute; top:30%; left:30%; width: 40%; height: 40%; z-index: 1; background-color: red;}
+		.back-div {position: absolute; top:10px; left: 55px; width: 130px; height: 420px; max-height: 560px; z-index: 0; background-color: brown;}
+		.middle-div {position: absolute; top:0; left: 0; width: 430px; height: 430px; z-index: 1;}
+		.front-div {position: absolute; top:0; left: 0; width: 430px; height: 430px; z-index: 2;}
+		//.middle-div {position: absolute; top:30%; left:30%; width: 40%; height: 40%; z-index: 1; background-color: red;}
 
 	//parameter 1 : product type
 	//parameter 2 :
@@ -43,29 +45,38 @@ block content
 		hr.hidden-xs
 		// show the step of current
 		.col-sm-3.custom_STEP-current
-			h1(align='center').font-ubuntubold
+			h3(align='center').font-ubuntubold
 				| STEP1
+				br
+				| Select Parts
 		.col-sm-3.custom_STEP-current
-			h1(align='center').font-ubuntubold.hidden-xs
+			h3(align='center').font-ubuntubold.hidden-xs
 				| STEP2
+				br
+				| Upload Image
 		.col-sm-3.custom_STEP-next
-			h1(align='center').font-ubuntubold.hidden-xs
+			h3(align='center').font-ubuntubold.hidden-xs
 				| STEP3
+				br
+				| Design Colors
 		.col-sm-3.custom_STEP-next
-			h1(align='center').font-ubuntubold.hidden-xs
+			h3(align='center').font-ubuntubold.hidden-xs
 				| STEP4
+				br
+				| Submit and Finish!
 		br.hidden-xs
 		br.hidden-xs
 		hr
 		.col-md-6.text-center.profile_left
 			h3(align = 'left') Preview
-			canvas#canvas(width='400px', height='400px').hidden-xs.hidden-sm
-			canvas#canvas(width='600px', height='400px').hidden-xs.hidden-md.hidden-lg
-			canvas#canvas(width=auto, height='300px').hidden-sm.hidden-md.hidden-lg
+			//canvas#canvas(width='400px', height='400px').hidden-xs.hidden-sm
+			//canvas#canvas(width='600px', height='400px').hidden-xs.hidden-md.hidden-lg
+			//canvas#canvas(width=auto, height='300px').hidden-sm.hidden-md.hidden-lg
 				| This browser do not support canvas.
 			.img-div.col-xs-12
-				img(src='images/custom/example.jpg').outer-div
-				.inner-div
+				img(src='images/custom/test.jpg').back-div
+				img(src='images/custom/custom-view.png').middle-div
+				img(src='images/custom/wheel-white.png').front-div
 
 			table.table-info2.table-hover.table-striped
 				thead
@@ -81,33 +92,26 @@ block content
 						td
 							font(color='#42BD71', size='6px').font-koolbean Long Board
 					tr
-						td address
-						td suwon-city
-
+						td
+							font(color='black') Deck Name
+						td
+							font(color='#42BD71', size='5px') #######
 					tr
-						td occupation
-						td Secret
+						td
+							font(color='black') Truck Name
+						td
+							font(color='#42BD71', size='5px') #######
+					tr
+						td
+							font(color='black') Wheel Name
+						td
+							font(color='#42BD71', size='5px') #######
 		hr.hidden-md.hidden-lg
 		.col-md-6.myinfo_detail-right		
 			//h3 Search Filter
 			//hr
 			form(action='#', accept-charset='utf-8', name='datalist', method='get')
 				fieldset(style='width:350, border=1 solid black')
-					legend
-						h4.cate Price
-						h4.font-ubuntureg
-						label
-							| minimum : 
-							input(type='number', name='text', style='text-align: right; width:200px').hidden-xs
-							input(type='number', name='text', style='text-align: right; width:100px').hidden-sm.hidden-md.hidden-lg
-							|  KRW
-							br
-							| maximum : 
-							input(type='number', name='text', style='text-align: right; width:200px').hidden-xs
-							input(type='number', name='text', style='text-align: right; width:100px').hidden-sm.hidden-md.hidden-lg
-							|  KRW
-						br
-						br
 					legend
 						h4.cate Color
 						button.btn.color-btn(type='button', style='background-color: black;', value='0')
@@ -120,11 +124,31 @@ block content
 						button.btn.color-btn(type='button', style='background-color: purple;', value='7')
 						button.btn.color-btn(type='button', style='background-color: #79E5CB;', value='8')
 					legend
-						h4.cate Name
+						h4.cate Image Upload
+						h4
+							| Please upload high quality image with [width 100pixel, height 350pixel].
+						// upload
+						input#img.form-control(type='file', name='file', placeholder='Main Image File', required)
+					legend
+						h4.cate Search
+						h3 Price
+						h4.font-ubuntureg
+						label
+							| minimum : 
+							input(type='number', name='text', style='text-align: right; width:200px').hidden-xs
+							input(type='number', name='text', style='text-align: right; width:100px').hidden-sm.hidden-md.hidden-lg
+							|  KRW
+							br
+							| maximum : 
+							input(type='number', name='text', style='text-align: right; width:200px').hidden-xs
+							input(type='number', name='text', style='text-align: right; width:100px').hidden-sm.hidden-md.hidden-lg
+							|  KRW
+						h3 Name
 						label
 							input(type='text', name='text', style='text-align: right; width:250px').hidden-xs
 							input(type='text', name='text', style='text-align: right; width:200px').hidden-sm.hidden-md.hidden-lg
 							input(type='submit', value='search').font-ubuntureg
+
 
 							// black
 			input(type='submit', value='PREV').font-ubuntureg
@@ -292,25 +316,3 @@ block content
 										.starbox.small.ghosting  
 									.clearfix
 					.clearfix
-block script
-	script.
-		var canvas;
-		var ctx;
-		window.onload = function() {
-		canvas = document.getElementByID("canvas");
-		if (canvas == null || canvas.getContext == null) return;
-		ctx = canvas.getContext("2d");
-		draw();
-		}
-		function draw() {
-		var img = new Image();
-		img.src='images/custom/example.jpg';
-		img.onload = function() {
-		ctx.drawImage(img, 50, 0);
-		var img2 = new Image();
-		img2.src="rose.png";
-		img2.onload = function() {         
-		ctx.drawImage(img2, 100, 0);      
-		}
-		}
-		}
