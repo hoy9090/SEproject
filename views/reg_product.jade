@@ -21,11 +21,11 @@ block content
           select#subtype.form-control(name='subtype', required)
             option(value='Subtype', disabled, selected) Select type first
           h5 Product Name
-          input.form-control(type='text', name='name', placeholder='Product Name', required)
+          input#name.form-control(type='text', name='name', placeholder='Product Name', required)
           h5 Price
-          input.form-control(type='text', name='price', placeholder='Price', required)
+          input#price.form-control(type='text', name='price', placeholder='Price', required)
           h5 Stock
-          input.form-control(type='text', name='stock', placeholder='Stock', required)
+          input#stock.form-control(type='text', name='stock', placeholder='Stock', required)
           h5 Color
           button.btn.color-btn(type='button', style='background-color: black;', value='0')
           button.btn.color-btn(type='button', style='background-color: white;', value='1')
@@ -36,12 +36,12 @@ block content
           button.btn.color-btn(type='button', style='background-color: blue;', value='6')
           button.btn.color-btn(type='button', style='background-color: purple;', value='7')
           button.btn.color-btn(type='button', style='background-color: #79E5CB;', value='8')
-          input.form-control(type='hidden', name='color', placeholder='color', required)
+          input#color.form-control(type='hidden', name='color', placeholder='color', required)
           h5 Main Image File
-          input.form-control(type='file', name='img', placeholder='Main Image File', required)
+          input#img.form-control(type='file', name='img', placeholder='Main Image File', required)
           h5 Comment Image File
-          input.form-control(type='file', name='comment', placeholder='Comment Image File', required)
-          a.hvr-skew-backward(onClick="$(this).closest('form').submit();") Register
+          input#comment.form-control(type='file', name='comment', placeholder='Comment Image File', required)
+          a.hvr-skew-backward(onClick='register();') Register
 
 block script
   script.
@@ -72,6 +72,13 @@ block script
           $(this).css('border', '2px solid black');
         })
         $(this).css('border', '3px solid skyblue');
-        $("input[name='color']").val($(this).val());
+        $("#color").val($(this).val());
       });
     });
+
+    function register() {
+      if ($('#type').val() && $('#subtype').val() && $('#name').val() != "" && $('#price').val() != "" && $('#stock').val() != "" && $('#color').val() != "" && $('#img').val() != "" && $('#comment').val() != "")
+        $('form').submit();
+      else
+        alert('Please fill all the contents.');
+    }
