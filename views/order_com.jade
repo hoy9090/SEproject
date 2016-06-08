@@ -7,10 +7,13 @@ block style
 		.center-div {position: 'center'; top:0; left:0; width: 100%; height: auto; max-width: 400px; z-index: 0;}
 
 block content
-	hr
-	br
-	.img-div
-		img(src='images/custom/order-complete.jpg').center-div
-	input(type='submit', name='Purchase now')
-	|  .
-	input(type='submit', name=' Go to Home ')
+
+	.container
+		.col-md-12.text-center.profile_left
+			br
+			img(src = 'images/custom/order-complete.jpg')
+			br
+
+			input(type='submit', name='Purchase now', value = 'Purchase now')
+			|  
+			input(type='submit', name=' Go to Home ', value = 'Return to home')
