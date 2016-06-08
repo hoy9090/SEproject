@@ -18,7 +18,7 @@ router.get('/', function(req, res, next)
 			if (err)
 				console.error(err);
 			conn.release();
-			res.render('mypage_seller');		
+			res.render('mypage_seller', {info: result[0]});		
 		});
 	});
 });
