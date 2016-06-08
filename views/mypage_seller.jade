@@ -17,9 +17,6 @@ block style
 		td.category {width: 130px;}
 		td.detail {max-width: 320px;}
 
-		background {color : green}
-		
-
 		h2 {margin: 30px 0; text-align: center;}
 		button.btn.btn-info.write {margin: 10px 0; float: right;}
 		ul.pagination > li > a:hover {background-color: #5BC0DE; color: #FFFFFF;}
@@ -32,30 +29,26 @@ block content
 			br
 			h3(align = 'left') Seller Information
 			br
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', align = 'center',src="images/members/Jeonghun.jpg", data-holder-rendered='true')
+			img.img-circle(alt='160x160', style='width: 160px; height: 160px;', align = 'center',src="images/members/temp.jpg", data-holder-rendered='true')
 			h3(style='line-height:2.3em', align = 'center')
 				b Gong Jeonghun - change to DB data
-
 			table.table-info2.table-hover.table-striped
 				thead
 					tr
 						td.category category
 						td.detali detali
+						td profile change
 				tbody
 					tr
-						td phone(shop)
-						td 031-xxx-xxxx
-
+						td nickname
+						td ~
 					tr
-						td phone(mobile)
+						td phone number
 						td 010-xxxx-xxxx
 					tr
 						td address
-						td 2066 Seobu-ro, Jangan-gu, Suwon-city, Gyeonggi-do
+						td suwon-city
 
-					tr
-						td corp.no
-						td xxx-xx-xxxxx
 
 		.col-md-6.myinfo_detail-right
 			br
@@ -82,11 +75,13 @@ block content
 						td 5555555
 
 			h4(align = 'right')	view all posts by user(BTN)
-			//iframe(width='400', height='280', src='https://www.youtube.com/embed/drlB2RT_XiA', frameboarder='0', allowfullscreen='')
+		script(language='javascript').
+					function showPopup() { window.open("MYpage_change_profile_seller", "TEST", "width=400, height=300, left=100, top=50"); }
+					function showPopup_pw() { window.open("MYpage_change_pw", "TEST", "width=400, height=300, left=100, top=50"); }
 	.container
-		.col-md-12.background.private_area
-
+		.col-md-12.mypage_private_area
 			br
 			form
-				input(type='button', value='Profile change')
-				input(type='button', value='Password Change')
+				input(type='button', value = 'Change Profile', onclick='showPopup();')
+				input(type='button', value = 'Change Password', onclick='showPopup_pw();')
+				input(type='button', value = 'orderlist', href='/MYpage_show_order')

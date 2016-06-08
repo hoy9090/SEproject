@@ -29,7 +29,11 @@ var payment = require('./routes/payment');
 
 var mypage_buyer = require('./routes/mypage_buyer');
 var mypage_seller = require('./routes/mypage_seller');
-var MYpage_change_profile = require('./routes/MYpage_change_profile');
+var MYpage_change_profile_buyer = require('./routes/MYpage_change_profile_buyer');
+var MYpage_change_profile_seller = require('./routes/MYpage_change_profile_seller');
+var MYpage_change_pw = require('./routes/MYpage_change_pw');
+var MYpage_show_order_list = require('./routes/MYpage_show_order_list');
+var MYpage_show_order_detail = require('./routes/MYpage_show_order_detail');
 
 var thread = require('./routes/thread');
 var order_list = require('./routes/order_list');
@@ -85,7 +89,11 @@ app.use('/thread', thread);
 
 app.use('/mypage_buyer', mypage_buyer);
 app.use('/mypage_seller', mypage_seller);
-app.use('/MYpage_change_profile', MYpage_change_profile);
+app.use('/MYpage_change_profile_seller', MYpage_change_profile_seller);
+app.use('/MYpage_change_profile_buyer', MYpage_change_profile_buyer);
+app.use('/MYpage_change_pw', MYpage_change_pw);
+app.use('/MYpage_show_order_detail', MYpage_show_order_detail);
+app.use('/MYpage_show_order_list', MYpage_show_order_list);
 
 app.use('/order_list', order_list);
 

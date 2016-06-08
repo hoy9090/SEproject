@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET about. */
 router.get('/', function(req, res, next) {
-	res.render('MYpage_change_profile');
+	res.render('MYpage_change_pw');
 });
 
 module.exports = router;
