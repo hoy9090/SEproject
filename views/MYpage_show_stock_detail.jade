@@ -1,17 +1,34 @@
 doctype html
 html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
+	
+	body(onload='window.resizeTo(600,700)')
+		.container
+		h3
+			| Stock Detail view page
+		br
+		.payinfo
+			h4
+			b Stock Information 
+			br
+			| - Product number :
+			br
+			| - Type : 
+			br
+			| - Sub-type : 
+			br
+			| - name :
+			br
+			| - price : 
+			br
+			| - stock : 
+			br
+			| - date : 
+			br
+			| - img-url :
+			br
+			| - color : 
 
-	body(onload='window.resizeTo(400,200)')
-		br
-		br
-		table
-			tr
-				td ~~
-			tr
-				td ~~
-		input(type='button', value = 'orderlist', onclick='save_and_close();')
-		input(type='button', value='Close', onclick='window.close();')
 
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')

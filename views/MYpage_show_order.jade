@@ -24,14 +24,12 @@ block content
 						td.no Order Number
 						td.date Date
 						td.views Total_price
-						td.seller_SN Seller
-						td.buyer Buyer
+						td.state State
 				tbody
 					each val in contents
 						tr
 							td
 								a(href='')= val.SN //주문 번호를 누르면 해당 주문 정보가 보이도록
-							td= val.date
-							td= val.total_price
-							td= val.Seller_SN
-							td= val.Buyer_SN
+							td= val.date // ORDER DB
+							td= val.total_price // ORDER DB
+							td= val.state     // payment DB JOIN WITH ORDER DB

@@ -16,22 +16,16 @@ block style
 
 block content
 	.container
-		h2 Order list
+		h2 Stock list
 		.col-xs-12(style='overflow: auto;')
 			table.table.table-hover.table-striped
 				thead
 					tr
-						td.no Order Number
-						td.date Date
-						td.views Total_price
-						td.seller_SN Seller
-						td.buyer Buyer
+						td.no Product Number
+						td.name Name
 				tbody
 					each val in contents
 						tr
 							td
 								a(href='')= val.SN //주문 번호를 누르면 해당 주문 정보가 보이도록
-							td= val.date
-							td= val.total_price
-							td= val.Seller_SN
-							td= val.Buyer_SN
+							td= val.Name
