@@ -13,9 +13,9 @@ block content
 		// content
 		.product
 			.container
-				.col-lg-11.text-center
+					//.col-md-12.text-center
 					// categories
-					.categories
+					.col-md-4.text-center
 						h4.cate Categories
 						ul.menu-drop
 							li.item1
@@ -43,7 +43,7 @@ block content
 										a(href='product_list') Cleaning 
 									li.subitem2
 										a(href='product_list') Protects 
-						.clearfix
+						//.clearfix
 						script(type='text/javascript').
 							$(function() {
 							var menu_ul = $('.menu-drop > li > ul'),
@@ -61,66 +61,71 @@ block content
 							}
 							});
 							});        
-					.categories
+					.col-md-4.text-center
 						h4.cate color
 						.row.row1.scroll-pane
-							.col-col-4
+							.col-col-12
 								table.filter
 									tr(align='center')
-										td(width='10%')
+										td(width='9%')
 											label.checkbok
 												input(type='checkbox', name='checkbox')
-										td(width='10%')
+										td(width='9%')
 											label.checkbok
 												input(type='checkbox', name='checkbox')
-										td(width='10%')
+										td(width='9%')
 											label.checkbok
 												input(type='checkbox', name='checkbox')
-										td(width='10%')
+										td(width='9%')
 											label.checkbok
 												input(type='checkbox', name='checkbox')
-										td(width='10%')
+										td(width='9%')
 											label.checkbok
 												input(type='checkbox', name='checkbox')
-										td(width='10%')
+										td(width='9%')
 											label.checkbok
 												input(type='checkbox', name='checkbox')
-										td(width='10%')
+										td(width='9%')
 											label.checkbok
 												input(type='checkbox', name='checkbox')
-										td(width='10%')
+										td(width='9%')
 											label.checkbok
 												input(type='checkbox', name='checkbox')
-										td(width='10%')
+										td(width='9%')
 											label.checkbok
 												input(type='checkbox', name='checkbox')
 									tr(align='center')
-										td(width='10%', bgcolor='black')
-										td(width='10%', bgcolor='white')
-										td(width='10%', bgcolor='red')
-										td(width='10%', bgcolor='orange')
-										td(width='10%', bgcolor='yellow')
-										td(width='10%', bgcolor='green')
-										td(width='10%', bgcolor='blue')
-										td(width='10%', bgcolor='purple')
-										td(width='10%', bgcolor='#14ffd6')
-						.clearfix
-					.categories
+										td(width='9%', bgcolor='black')
+										td(width='9%', bgcolor='white')
+										td(width='9%', bgcolor='red')
+										td(width='9%', bgcolor='orange')
+										td(width='9%', bgcolor='yellow')
+										td(width='9%', bgcolor='green')
+										td(width='9%', bgcolor='blue')
+										td(width='9%', bgcolor='purple')
+										td(width='9%', bgcolor='#14ffd6')
+						//.clearfix
+					.col-md-4.text-center
 						h4.cate Price
 						.row.row1.scroll-pane
-							.col-col-4
-								| minimum :
+							.col-col-12
+								a(align = 'center')      Mimimum  : 
+
+								//| minimum :
 								input(type='text', size='4', name='text')
 								br
-								| maximum :
+
+								a(align = 'center')      Maximum  : 
 								input(type='text', size='4', name='text')
-						.clearfix
-				.col-md-11
-					.mid-popular
-						.col-md-4.item-grid1.simpleCart_shelfItem
+						//.clearfix
+							//.col-md-11
+							//.mid-popular
+
+					
+				.col-md-3.item-grid1.simpleCart_shelfItem
 							.mid-pop
 								.pro-img
-									img.img-responsive(src='images/pc.jpg', alt='', height = '200px', width = '200px')
+									img.img-responsive(src='images/pc.jpg', alt='', align = 'center', height = '200px', width = '200px')
 									.zoom-icon
 										a.picture(href='images/pc.jpg', rel='title')
 											i.glyphicon.glyphicon-search.icon
@@ -142,7 +147,7 @@ block content
 											em.item_price $70.00
 										.block
 										.clearfix
-						.col-md-4.item-grid1.simpleCart_shelfItem
+				.col-md-3.item-grid1.simpleCart_shelfItem
 							.mid-pop
 								.pro-img
 									img.img-responsive(src='images/pc1.jpg', alt='', height = '200px', width = '200px')
@@ -167,7 +172,7 @@ block content
 											em.item_price $70.00
 										.block
 										.clearfix
-						.col-md-4.item-grid1.simpleCart_shelfItem
+				.col-md-3.item-grid1.simpleCart_shelfItem
 							.mid-pop
 								.pro-img
 									img.img-responsive(src='images/pc2.jpg', alt='', height = '200px', width = '200px')
@@ -192,7 +197,7 @@ block content
 											em.item_price $70.00
 										.block
 										.clearfix
-						.col-md-4.item-grid1.simpleCart_shelfItem
+				.col-md-3.item-grid1.simpleCart_shelfItem
 							.mid-pop
 								.pro-img
 									img.img-responsive(src='images/pc3.jpg', alt='', height = '200px', width = '200px')
@@ -217,7 +222,7 @@ block content
 											em.item_price $70.00
 										.block
 										.clearfix
-						.col-md-4.item-grid1.simpleCart_shelfItem
+				.col-md-3.item-grid1.simpleCart_shelfItem
 							.mid-pop
 								.pro-img
 									img.img-responsive(src='images/pc4.jpg', alt='', height = '200px', width = '200px')
@@ -242,12 +247,64 @@ block content
 											em.item_price $70.00
 										.block
 										.clearfix
-						.col-md-4.item-grid1.simpleCart_shelfItem
+				.col-md-3.item-grid1.simpleCart_shelfItem
 							.mid-pop
 								.pro-img
 									img.img-responsive(src='images/pc5.jpg', alt='', height = '200px', width = '200px')
 									.zoom-icon
 										a.picture(href='images/pc5.jpg', rel='title')
+											i.glyphicon.glyphicon-search.icon
+										a(href='single.html')
+											i.glyphicon.glyphicon-menu-right.icon
+								.mid-1
+									.women
+										.women-top
+											span Men
+											h6
+												a(href='single.html') Sed ut perspiciati
+										.img.item_add
+											a(href='#')
+												img(src='images/ca.png', alt='')
+										.clearfix
+									.mid-2
+										p
+											label $100.00
+											em.item_price $70.00
+										.block
+										.clearfix
+
+
+				.col-md-3.item-grid1.simpleCart_shelfItem
+							.mid-pop
+								.pro-img
+									img.img-responsive(src='images/pc6.jpg', alt='', height = '200px', width = '200px')
+									.zoom-icon
+										a.picture(href='images/pc6.jpg', rel='title')
+											i.glyphicon.glyphicon-search.icon
+										a(href='single.html')
+											i.glyphicon.glyphicon-menu-right.icon
+								.mid-1
+									.women
+										.women-top
+											span Men
+											h6
+												a(href='single.html') Sed ut perspiciati
+										.img.item_add
+											a(href='#')
+												img(src='images/ca.png', alt='')
+										.clearfix
+									.mid-2
+										p
+											label $100.00
+											em.item_price $70.00
+										.block
+										.clearfix
+				.col-md-3.item-grid1.simpleCart_shelfItem
+							.mid-pop
+								.pro-img
+									img.img-responsive(src='images/pc7.jpg', alt='', height = '200px', width = '200px')
+									.zoom-icon
+										a.picture(href='images/pc7.jpg', rel='title')
 											i.glyphicon.glyphicon-search.icon
 										a(href='single.html')
 											i.glyphicon.glyphicon-menu-right.icon
