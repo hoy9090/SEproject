@@ -1,7 +1,7 @@
 doctype html
 html
 	script(language='javascript').
-		function popupClose() {	alert("No change password"); window.close(); }
+		function popupClose() {	alert("No change"); window.close(); }
 		function popupSaveClose() {	alert("Change Complete"); window.close(); }
 	body(onload='window.resizeTo(600,700)')
 		h2
@@ -9,31 +9,33 @@ html
 		table
 			tr 
 				th
-				th Detail
+				th(width='100px', text-align='center') Detail
 				th If want to change, please write down.
 			tr
 				td Name
-				td ~~
+				td(align='center') ~~
 				td 
+					input(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Nickname
-				td ~~
+				td(align='center') ~~
 				td 
-					input(type='text', placeholder='New')
+					input(type='text', size='36', placeholder='Change Nickname')
 			tr
 				td Phone number
-				td ~~
+				td(align='center') ~~
 				td 
-					input(type='text', placeholder='New')
-			tr
-				td Address
-				td ~~
-				td 
-					input(type='text', placeholder='New')
+					input(type='text', size='36', placeholder='Change Phone number')
 			tr
 				td Corporation number
-				td ~~
+				td(align='center') ~~
 				td 
-					input(type='text', placeholder='New')
+					input(type='text', size='36', placeholder='Change Corporation num')
+			tr
+				td Address
+				td(align='center') ~~
+				td 
+					textarea(size='25', placeholder='Change Address')
+		br
 		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
 		input(type='button', value='Close', onclick='popupClose();')

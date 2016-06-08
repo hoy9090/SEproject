@@ -1,12 +1,36 @@
 doctype html
 html
-	body(onload='window.resizeTo(400,200)')
-		br
-		br
+	script(language='javascript').
+		function popupClose() {	alert("No change"); window.close(); }
+		function popupSaveClose() {	alert("Change Complete"); window.close(); }
+	body(onload='window.resizeTo(600,700)')
+		h2
+			| Seller Profile Page
 		table
+			tr 
+				th
+				th(width='100px', text-align='center') Detail
+				th If want to change, please write down.
 			tr
-				td ~~
+				td Name
+				td(align='center') ~~
+				td 
+					input(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
-				td ~~
-		input(type='button', value = 'orderlist', onclick='save_and_close();')
-		input(type='button', value='Close', onclick='window.close();')
+				td Nickname
+				td(align='center') ~~
+				td 
+					input(type='text', size='36', placeholder='Change Nickname')
+			tr
+				td Phone number
+				td(align='center') ~~
+				td 
+					input(type='text', size='36', placeholder='Change Phone number')
+			tr
+				td Address
+				td(align='center') ~~
+				td 
+					textarea(size='25', placeholder='Change Address')
+		br
+		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
+		input(type='button', value='Close', onclick='popupClose();')
