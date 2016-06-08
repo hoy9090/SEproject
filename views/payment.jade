@@ -1,10 +1,56 @@
 extends layout
 
 block style
-	style.
+  style.
+    label.hvr-skew-backward {margin-bottom: 50px;}
+    #corp_num {display: none;}
 
 block content
+  script(language='javascript').
+    function buyerchk(){
+      alert("Buyer need not to insert corporate registration number.");
+      $('#corp_num').hide();
+      $('#corp_num input').val('0000000000');
+    }
+    function sellerchk(){
+      alert("Seller have to insert corporate registration number. Please insert corporate registration number.");
+      $('#corp_num').show();
+      $('#corp_num input').val('');
+    }
+  .container
+    .login
+      form(role='form', name='regitForm' action='sign_insert', method='post', novalidate)
+        .login-title
+          input(type='radio', name='member', value='credit', onclick='buyerchk()' checked)	//change of method will be required
+          |  credit card 
+          input(type='radio', name='member', value='transfer', onclick='sellerchk()')	//change of method will be required
+          |  Account transfer
+        .col-md-12.login-do
+          .login-mail
+            input(type='text', name='Address', placeholder='Please input the address to get your goods', required, value=(email ? '#{email}' : null))
+            i.glyphicon.glyphicon-envelope
+          .login-mail
+            input(type='text', name='phone', placeholder='Phone Number', required)
+            i.glyphicon.glyphicon-phone
+          //label.hvr-skew-backward
+            input(type='submit', value='Submit')
+          a.hvr-skew-backward(onClick='register()') Register
 
-	.container
-
-
+block script
+  script.
+    function register() {
+      $.ajax({
+        url: '/sign_insert',
+        type: "POST",
+        data: {email:$("input[name='email']").val(), pw:$("input[name='pw']").val(), name:$("input[name='name']").val(), nickname:$("input[name='nickname']").val(), phone:$("input[name='phone']").val(), address:$("input[name='address']").val(), corp_num:$("input[name='corp_num']").val()},
+        success: function(data) {
+          if (data.reg_success) {
+            alert('Your registration is successful.');
+            location.href = '/';
+          }
+          else {
+            alert('Your email or nickname are duplicated. Change and try again.');
+          }
+        }
+      });
+    }
