@@ -54,18 +54,28 @@ block content
 
 		.col-md-6.myinfo_detail-right
 			br
-			h3 Seller's products
+			h3 
+				b Management Product
+			br
+			input(type='button', size='30', value = 'Register New Product', onclick="location.href='/reg_product'")
+			br
+			input(type='button', size='30', value = 'manage order', onclick="location.href='/MYpage_show_order'")
+			|&nbsp;
+			input(type='button', size='30', value = 'manage deal', onclick="location.href='/MYpage_show_deal'")
+			|&nbsp;
+			input(type='button', size='30', value = 'manage stock', onclick="location.href='/MYpage_show_stock'")
 			br
 			br
+			| search product by Serial number:
 			br
-			h4(align = 'center')	place 3 or 4 square image in here
+			|&nbsp; 
+			input(type='text', size='30', placeholder='search products in your product list.')
 			br
 			br
-			h4 link something here to display seller's all products
 
-			h3 posts by me
+			h3 
+				b posts by me
 			br
-
 			table.table.table-hover.table-striped
 				thead
 					tr
@@ -85,5 +95,5 @@ block content
 			br
 			form
 				input(type='button', value = 'Change Profile', onclick='showPopup();')
+				|&nbsp;
 				input(type='button', value = 'Change Password', onclick='showPopup_pw();')
-				input(type='button', value = 'orderlist', href='/MYpage_show_order')
