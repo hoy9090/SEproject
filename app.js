@@ -32,11 +32,19 @@ var product_pallette = require('./routes/product_pallette');
 
 var mypage_buyer = require('./routes/mypage_buyer');
 var mypage_seller = require('./routes/mypage_seller');
+
+// mypage
 var MYpage_change_profile_buyer = require('./routes/MYpage_change_profile_buyer');
 var MYpage_change_profile_seller = require('./routes/MYpage_change_profile_seller');
 var MYpage_change_pw = require('./routes/MYpage_change_pw');
-var MYpage_show_order_list = require('./routes/MYpage_show_order_list');
+var MYpage_show_order = require('./routes/MYpage_show_order');
 var MYpage_show_order_detail = require('./routes/MYpage_show_order_detail');
+var MYpage_show_bid = require('./routes/MYpage_show_bid');
+var MYpage_show_bid_detail = require('./routes/MYpage_show_bid_detail');
+var MYpage_show_customizing = require('./routes/MYpage_show_customizing');
+var MYpage_show_customizing_detail = require('./routes/MYpage_show_customizing_detail');
+var MYpage_show_deal = require('./routes/MYpage_show_deal');
+var MYpage_show_deal_detail = require('./routes/MYpage_show_deal_detail');
 var change_profile = require('./routes/change_profile');
 
 var thread = require('./routes/thread');
@@ -99,8 +107,14 @@ app.use('/mypage_seller', mypage_seller);
 app.use('/MYpage_change_profile_seller', MYpage_change_profile_seller);
 app.use('/MYpage_change_profile_buyer', MYpage_change_profile_buyer);
 app.use('/MYpage_change_pw', MYpage_change_pw);
+app.use('/MYpage_show_order', MYpage_show_order);
 app.use('/MYpage_show_order_detail', MYpage_show_order_detail);
-app.use('/MYpage_show_order_list', MYpage_show_order_list);
+app.use('/MYpage_show_bid', MYpage_show_bid);
+app.use('/MYpage_show_bid_detail', MYpage_show_bid_detail);
+app.use('/MYpage_show_deal', MYpage_show_deal);
+app.use('/MYpage_show_deal_detail', MYpage_show_deal_detail);
+app.use('/MYpage_show_customizing', MYpage_show_customizing);
+app.use('/MYpage_show_customizing_detail', MYpage_show_customizing_detail);
 app.use('/change_profile', change_profile);
 
 app.use('/order_list', order_list);
