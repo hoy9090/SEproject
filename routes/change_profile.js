@@ -20,13 +20,13 @@ router.post('/', function(req, res, next)
 		var corp_num = req.corp_num;
 		var queryString = "";
 		if (nickname != '')
-			queryString.append("nickname='"+nickname+"', ");
+			queryString = queryString.concat("nickname='"+nickname+"', ");
 		if (phone_number != '')
-			queryString.append("phone_number='"+phone_number+"', ");
+			queryString = queryString.concat("phone_number='"+phone_number+"', ");
 		if (address != '')
-			queryString.append("address='"+address+"', ");
+			queryString = queryString.concat("address='"+address+"', ");
 		if (corp_num != '')
-			queryString.append("corp_num='"+corp_num+"', ");
+			queryString = queryString.concat("corp_num='"+corp_num+"', ");
 		queryString = queryString.slice(0, -2);
 		conn.query('update Member set '+queryString+' where SN='+req.session.userno, function(err, result, field) {
 			conn.release();
