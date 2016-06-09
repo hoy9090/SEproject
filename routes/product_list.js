@@ -10,7 +10,7 @@ var pool = mysql.createPool({
 router.get('/', function(req, res, next)
 {
 	var type = req.query.type;
-	var subtype = req.query.type;
+	var subtype = req.query.subtype;
 	var typeString;
 	if (type == 0) {
 		if (subtype == 0) {
