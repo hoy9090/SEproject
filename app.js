@@ -29,6 +29,7 @@ var reg_product = require('./routes/reg_product');
 var insert_product = require('./routes/insert_product');
 var payment = require('./routes/payment');
 var order_com = require('./routes/order_com');
+var purchase_com = require('./routes/purchase_com');
 
 var mypage_buyer = require('./routes/mypage_buyer');
 var mypage_seller = require('./routes/mypage_seller');
