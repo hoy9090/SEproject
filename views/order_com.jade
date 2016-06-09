@@ -11,6 +11,9 @@ block content
 	.container
 		.col-md-12.text-center.profile_left
 			br
-			img(src = 'images/purchase-complete.jpg')
+			img(src = 'images/order-complete.jpg')
+			a(href='/purchase_complete')
+				input(type='submit', name=' Pay now ', value = 'purchase')
 			br
-			input(type='submit', name=' Go to Home ', value = 'Return to home', omclick='location.href=/')
+			a(href='/')
+				input(type='submit', name=' Go to Home ', value = 'Return to home')
