@@ -22,13 +22,12 @@ var community = require('./routes/community');
 //product features
 
 var customize = require('./routes/customize');
-var product = require('./routes/product');
+var product_detail = require('./routes/product_detail');
 var product_list = require('./routes/product_list');
 var reg_product = require('./routes/reg_product');
 var insert_product = require('./routes/insert_product');
 var payment = require('./routes/payment');
 var order_com = require('./routes/order_com');
-var product_pallette = require('./routes/product_pallette');
 
 var mypage_buyer = require('./routes/mypage_buyer');
 var mypage_seller = require('./routes/mypage_seller');
@@ -96,7 +95,7 @@ app.use('/payment', payment);
 app.use('/order_com', order_com);
 
 app.use('/customize', customize);
-app.use('/product', product);
+app.use('/product_detail', product_detail);
 app.use('/product_list', product_list);
 app.use('/reg_product', reg_product);
 app.use('/insert_product', insert_product);
