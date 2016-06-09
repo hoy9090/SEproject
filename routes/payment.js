@@ -17,8 +17,13 @@ router.get('/', function(req, res, next)
 		conn.query('select SN, amount, product_SN as no, (select name from Product where Product.SN=Shopping_cart.product_SN) as name, (select img_url from Product where Product.SN=Shopping_cart.product_SN) as img_url, (select price from Product where Product.SN=Shopping_cart.product_SN) as price from Shopping_cart where Shopping_cart.buyer_SN=?', [req.session.userno], function(err, result, field) {
 			if (err)
 				console.error(err);
-			conn.release();
-		  res.render('payment', {list: result});
+			var list = result;
+			conn.query('select address from Member where SN='+req.session.userno, function(err, result, field) {
+				if (err)
+					console.error(err);
+				conn.release();
+		  	res.render('payment', {list: list, address: result[0].address});
+			});
 		});
 	});
 });
