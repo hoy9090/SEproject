@@ -12,7 +12,7 @@ var pool = mysql.createPool
 
 router.get('/', function(req, res, next)
 {
-	var type = req.query.threadno;
+	var threadno = req.query.threadno;
 
 	pool.getConnection(function(err, conn)
 	{
