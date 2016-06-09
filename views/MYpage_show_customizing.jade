@@ -28,14 +28,14 @@ html
 					input#deck_color(type='text', size='36', placeholder='Deck color change')
 			tr
 				td wheel
-				td(align='center')= info.
+				td(align='center')= info.wheel_SN
 				td 
-					input#board_type(type='text', size='36', placeholder='wheel change')
+					input#wheel_SN(type='text', size='36', placeholder='wheel change')
 			tr
 				td wheel_color
-				td(align='center')= info.
+				td(align='center')= info.wheel_color
 				td 
-					input#buyer(type='text', size='36', placeholder='Wheel color change')
+					input#wheel_color(type='text', size='36', placeholder='Wheel color change')
 			tr
 				td truck
 				td(align='center')= info.truck_SN
@@ -48,13 +48,14 @@ html
 					input#truck_color(type='text', size='36', placeholder='Truck color change')
 			tr
 				td comment
-				td(align='center')= info.
+				td(align='center')= info.comment
 				td 
-					input#board_type(type='text', size='36', placeholder='Change commnet')
+					input#comment(type='text', size='36', placeholder='Change commnet')
 			tr
 				td img-url
-				td(align='center')= info.
+				td(align='center')= info.img_url
 				td 
-					input#buyer(type='text', size='36', placeholder='Change img-url')
+					input#img.form-control(type='file', name='file', placeholder='Main Image File', required)
+					//input#img_url(type='text', size='36', placeholder='Change img-url')
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')
