@@ -40,6 +40,7 @@ router.post('/', function(req, res, next)
 			queryString = queryString.concat("color='"+color+"', ");
 		queryString = queryString.slice(0, -2);
 		console.log(queryString);
+		console.log('update Product set '+queryString+' where SN='+SN);
 		conn.query('update Product set '+queryString+' where SN='+SN, function(err, result, field) {
 			conn.release();
 			if (err) {
