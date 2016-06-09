@@ -97,7 +97,7 @@ block script
 	script.
 		$(document).ready(function() {
 			$("input[name='addr']").change(function() {
-				if ($("input[name='addr']").val() == 'new')
+				if ($("input[name='addr']:checked").val() == 'new')
 					$('#address').val('');
 				else
 					$('#address').val('#{address}');
