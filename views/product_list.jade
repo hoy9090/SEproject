@@ -121,29 +121,29 @@ block content
               .col-md-11
               .mid-popular
 
-      .col-md-12  
-        each val in list
-          .col-md-3.item-grid1.simpleCart_shelfItem
-            .mid-pop
-              .pro-img
-                img.img-responsive(src='images/products/#{val.img_url}/0', alt='', align = 'center', height = '200px', width = '200px')
-                .zoom-icon
-                  a.picture(href='images/products/#{val.img_url}/0', rel='title')
-                    i.glyphicon.glyphicon-search.icon
-                  a(href='/product?no=#{val.SN}')
-                    i.glyphicon.glyphicon-menu-right.icon
-              .mid-1
-                .women
-                  .women-top
-                    span #{type}
-                    h6
-                      a(href='/product?no=#{val.SN}') Sed ut perspiciati
-                  .img.item_add
-                    a(href='#')
-                      img(src='images/ca.png', alt='')
-                  .clearfix
-                .mid-2
-                  p
-                    em.item_price #{val.price} KRW
-                  .block
-                  .clearfix
+    .col-md-12  
+      each val in list
+        .col-md-3.item-grid1.simpleCart_shelfItem
+          .mid-pop
+            .pro-img
+              img.img-responsive(src='images/products/#{val.img_url}/0', alt='', align = 'center', height = '200px', width = '200px')
+              .zoom-icon
+                a.picture(href='images/products/#{val.img_url}/0', rel='title')
+                  i.glyphicon.glyphicon-search.icon
+                a(href='/product?no=#{val.SN}')
+                  i.glyphicon.glyphicon-menu-right.icon
+            .mid-1
+              .women
+                .women-top
+                  span #{type}
+                  h6
+                    a(href='/product?no=#{val.SN}') Sed ut perspiciati
+                .img.item_add
+                  a(href='#')
+                    img(src='images/ca.png', alt='')
+                .clearfix
+              .mid-2
+                p
+                  em.item_price #{val.price} KRW
+                .block
+                .clearfix
