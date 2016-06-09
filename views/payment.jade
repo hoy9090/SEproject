@@ -95,12 +95,15 @@ block content
 
 block script
 	script.
-		$("input[name='addr']").change(function() {
-			if ($("input[name='addr']").val() == 'new')
-				$('#address').val('');
-			else
-				$('#address').val('#{address}');
-		})
+		$(document).ready(function() {
+			$("input[name='addr']").change(function() {
+				if ($("input[name='addr']").val() == 'new')
+					$('#address').val('');
+				else
+					$('#address').val('#{address}');
+			})
+		});
+			
 		function submit() {
 			//things to do...
 		}
