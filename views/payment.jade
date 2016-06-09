@@ -7,21 +7,15 @@ block style
 
 block content
 	script(langauge='javascript').
-		function credit()
-		{
+		function credit()	{
 			alert("Using credit card to pay.");
 			$('#credit_card_list').show();
 			$('#transfer_bank_list').hide();
 		}
-		function transfer()
-		{
+		function transfer() {
 			alert("Using account transfer to pay.");
 			$('#credit_card_list').hide();
 			$('#transfer_bank_list').show();
-		}
-		function receiveadd()
-		{
-
 		}
 	.container
 		br
@@ -65,15 +59,15 @@ block content
 					br
 					b Address Selector
 					br
-					input(type = 'radio', name = 'method', value = 'credit')
+					input(type = 'radio', name = 'addr', value = 'new')
 					|	New Delivery Address  
 					| &nbsp;
-					input(type = 'radio', name = 'method', value = 'transfer', onclick = 'receiveadd()')
+					input(type = 'radio', name = 'addr', value = 'existing', onclick = 'receiveadd()', checked)
 					|	Existing Delivery Address
 					.login-mail
-						input(type = 'text', name = 'address', placeholder = 'write your address here')
+						input#address(type = 'text', name = 'address', placeholder = 'write your address here', value='#{address}')
 					.login-mail
-						input(type = 'text', name = 'phone number', placeholder = 'write your phone number here')
+						input(type = 'text', name = 'phone number', placeholder = 'write your phone number here', value='#{phone_number}')
 					.login-mail
 						input(type = 'text', name = 'comment', placeholder = 'comment to delivary service')
 					br
@@ -101,7 +95,12 @@ block content
 
 block script
 	script.
-		function submit()
-		{
+		$("input[name='addr']").onclick(function() {
+			if (this.val() == 'new')
+				$('#address').val('');
+			else
+				$('#address').val('#{address}');
+		})
+		function submit() {
 			//things to do...
 		}

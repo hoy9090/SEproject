@@ -18,11 +18,11 @@ router.get('/', function(req, res, next)
 			if (err)
 				console.error(err);
 			var list = result;
-			conn.query('select address from Member where SN='+req.session.userno, function(err, result, field) {
+			conn.query('select address, phone_number from Member where SN='+req.session.userno, function(err, result, field) {
 				if (err)
 					console.error(err);
 				conn.release();
-		  	res.render('payment', {list: list, address: result[0].address});
+		  	res.render('payment', {list: list, address: result[0].address, phone_number: result[0].phone_number});
 			});
 		});
 	});
