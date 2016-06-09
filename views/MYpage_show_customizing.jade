@@ -13,9 +13,9 @@ html
 					input#board_type(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Buyer
-				td(align='center')= info.buyer_SN
+				td#buyer_SN(align='center')= info.buyer_SN
 				td 
-					input#buyer_SN(type='text', size='36', placeholder='Cannot change this part', disabled)
+					input(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td deck
 				td(align='center')= info.deck_SN
@@ -58,6 +58,7 @@ html
 			function popupClose() {	alert("No change"); window.close(); }
 			function popupSaveClose() {
 				var sendData = {};
+				sendData.NO = $('#buyer_SN').html();
 				if ($('#deck_color').val() != '')
 					sendData.deck_color = $('#deck_color').val();
 				if ($('#wheel_color').val() != '')

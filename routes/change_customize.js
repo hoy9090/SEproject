@@ -16,12 +16,12 @@ router.post('/', function(req, res, next)
 		conn.query('use board');
 		console.log(req.body);
 		var SN = req.body.NO;
-		var total_price = req.body.total_price;
+		var deck_color = req.body.deck_color;
+		var truck_color = req.body.truck_color;
+		var wheel_color = req.body.wheel_color;
 		var queryString = "";
-		if (total_price != null)
-			queryString = queryString.concat("total_price='"+total_price+"', ");
 		queryString = queryString.slice(0, -2);
-		conn.query('update `Order` set '+queryString+' where `Order`.seller_SN='+req.session.userno, function(err, result, field) {
+		conn.query('update Customize set '+queryString+' where buyer_SN='+SN, function(err, result, field) {
 			conn.release();
 			if (err) {
 				console.error(err);
