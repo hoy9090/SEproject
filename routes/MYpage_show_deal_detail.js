@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 		else
 			queryString = 'seller_SN';
 		conn.query('use board');
-		conn.query('select SN, order_SN, date, seller_comment, buyer_comment from Deal (select '+queryString+' from `Order` where Deal.order_SN=`Order`.SN)='+req.session.userno, function(err, result, field) {
+		conn.query('select SN, order_SN, date, seller_comment, buyer_comment from Deal where (select '+queryString+' from `Order` where Deal.order_SN=`Order`.SN)='+req.session.userno, function(err, result, field) {
 			if (err)
 				console.error(err);
 			conn.release();
