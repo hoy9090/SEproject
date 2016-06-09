@@ -16,7 +16,7 @@ block style
 
 block content
 	script(language='javascript').
-		function showPopup() { window.open("MYpage_show_order_detail_#{str}", "TEST", "width=600, height=500, left=100, top=50"); }
+		function showPopup(num) { window.open("MYpage_show_order_detail_#{str}?number="+num, "TEST", "width=600, height=500, left=100, top=50"); }
 	.container
 		h2 Order list
 		.col-xs-12(style='overflow: auto;')
@@ -31,7 +31,7 @@ block content
 					each val in contents
 						tr
 							td
-								a(onclick='showPopup();')= val.SN
+								a(onclick='showPopup(#{val.SN});')= val.SN
 							td= val.date 
 							td= val.total_price
 							td= val.state
