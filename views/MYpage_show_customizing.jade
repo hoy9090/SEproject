@@ -10,7 +10,7 @@ html
 				td Board-type
 				td(align='center')= info.board_type
 				td 
-					input#board_type(type='text', size='36', placeholder='Cannot change this part')
+					input#board_type(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Buyer
 				td(align='center')= info.buyer_SN
@@ -20,7 +20,7 @@ html
 				td deck
 				td(align='center')= info.deck_SN
 				td 
-					input#deck_SN(type='text', size='36', placeholder='deck change')
+					input#deck_SN(type='text', size='36', placeholder='deck change', disabled)
 			tr
 				td deck_color
 				td(align='center')= info.deck_color
@@ -30,7 +30,7 @@ html
 				td wheel
 				td(align='center')= info.wheel_SN
 				td 
-					input#wheel_SN(type='text', size='36', placeholder='wheel change')
+					input#wheel_SN(type='text', size='36', placeholder='wheel change', disabled)
 			tr
 				td wheel_color
 				td(align='center')= info.wheel_color
@@ -40,7 +40,7 @@ html
 				td truck
 				td(align='center')= info.truck_SN
 				td 
-					input#truck_SN(type='text', size='36', placeholder='Truck change')
+					input#truck_SN(type='text', size='36', placeholder='Truck change', disabled)
 			tr
 				td truck_color
 				td(align='center')= info.truck_color
@@ -51,11 +51,5 @@ html
 				td(align='center')= info.comment
 				td 
 					input#comment(type='text', size='36', placeholder='Change commnet')
-			tr
-				td img-url
-				td(align='center')= info.img_url
-				td 
-					input#img.form-control(type='file', name='file', placeholder='Main Image File', required)
-					//input#img_url(type='text', size='36', placeholder='Change img-url')
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')
