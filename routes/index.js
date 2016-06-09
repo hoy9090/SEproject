@@ -46,6 +46,7 @@ router.get('/', function(req, res, next) {
 			res.render('index', {list: result, type: typeString});
 		});
 	});
+	res.render('index');
 });
 
 module.exports = router;
