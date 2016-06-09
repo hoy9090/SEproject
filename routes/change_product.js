@@ -23,19 +23,19 @@ router.post('/', function(req, res, next)
 		var img_url = req.body.img_url;
 		var color = req.body.color;
 		var queryString = "";
-		if (type != '')
+		if (type != null)
 			queryString = queryString.concat("type='"+type+"', ");
-		if (subtype != '')
+		if (subtype != null)
 			queryString = queryString.concat("subtype='"+subtype+"', ");
-		if (name != '')
+		if (name != null)
 			queryString = queryString.concat("name='"+name+"', ");
-		if (price != '')
+		if (price != null)
 			queryString = queryString.concat("price='"+price+"', ");
-		if (stock != '')
+		if (stock != null)
 			queryString = queryString.concat("stock='"+stock+"', ");
-		if (img_url != '')
+		if (img_url != null)
 			queryString = queryString.concat("img_url='"+img_url+"', ");
-		if (color != '')
+		if (color != null)
 			queryString = queryString.concat("color='"+color+"', ");
 		queryString = queryString.slice(0, -2);
 		console.log(queryString);
