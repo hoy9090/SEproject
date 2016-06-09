@@ -43,8 +43,9 @@ block content
 										h6
 											a(href='/product?no=#{val.SN}') #{val.name}
 									.img.item_add
-										a(onClick='addCart(#{val.SN});')
-											img(src='images/ca.png', alt='')
+										if (loggedIn)
+											a(onClick='addCart(#{val.SN});')
+												img(src='images/ca.png', alt='')
 									.clearfix
 								.mid-2
 									p

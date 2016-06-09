@@ -186,8 +186,9 @@ html
 							// /.navbar-collapse
 					.col-sm-2.search-right
 						.cart.box_1
-							a(href='/shopping_cart')
-								img(src='images/cart.png', alt='', width='30px')
+							if (loggedIn)
+								a(href='/shopping_cart')
+									img(src='images/cart.png', alt='', width='30px')
 						.clearfix  
 						// -
 						// -pop-up-box--
