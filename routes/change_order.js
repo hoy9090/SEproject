@@ -21,7 +21,7 @@ router.post('/', function(req, res, next)
 		if (total_price != null)
 			queryString = queryString.concat("total_price='"+total_price+"', ");
 		queryString = queryString.slice(0, -2);
-		conn.query('update `Order` set '+queryString+' where seller_SN='+req.session.userno, function(err, result, field) {
+		conn.query('update `Order` set '+queryString+' where SN='+SN, function(err, result, field) {
 			conn.release();
 			if (err) {
 				console.error(err);
