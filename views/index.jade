@@ -22,113 +22,32 @@ block content
 		.container
 			// products
 			.content-mid
-				h3 Recent Itmes
+				h3 Recent Items
 				label.line
 				.mid-popular
-					.col-md-3.item-grid.simpleCart_shelfItem
-						.mid-pop
-							.pro-img
-								img.img-responsive(src='images/skateboard/example.jpg', alt='', height = '200px', width = '200px')
-								.zoom-icon
-									a.picture(href='images/skateboard/example.jpg', rel='title')
-										i.glyphicon.glyphicon-search.icon
-									a(href='single')
-										i.glyphicon.glyphicon-menu-right.icon
-							.mid-1
-								.women
-									.women-top
-										span Complete Board
-										h6
-											a(href='single') example
-									.img.item_add
-										a(href='#')
-											img(src='images/ca.png', alt='')
-									.clearfix
-								.mid-2
-									p
-										label $100.00
-										em.item_price $70.00
-									.block
-										//.starbox.small.ghosting  
-									.clearfix
-					.col-md-3.item-grid.simpleCart_shelfItem
-						.mid-pop
-							.pro-img
-								img.img-responsive(src='images/skateboard/example2.jpg', alt='', height = '200px', width = '200px')
-								.zoom-icon
-									a.picture(href='images/skateboard/example2.jpg', rel='title')
-										i.glyphicon.glyphicon-search.icon
-									a(href='single')
-										i.glyphicon.glyphicon-menu-right.icon
-							.mid-1
-								.women
-									.women-top
-										span Deck
-										h6
-											a(href='single') Deck example
-									.img.item_add
-										a(href='#')
-											img(src='images/ca.png', alt='')
-									.clearfix
-								.mid-2
-									p
-										label $100.00
-										em.item_price $70.00
-									.block
-										//.starbox.small.ghosting  
-									.clearfix
-					.col-md-3.item-grid.simpleCart_shelfItem
-						.mid-pop
-							.pro-img
-								img.img-responsive(src='images/skateboard/example3.jpg', alt='', height = '200px', width = '200px')
-								.zoom-icon
-									a.picture(href='images/skateboard/example3.jpg', rel='title')
-										i.glyphicon.glyphicon-search.icon
-									a(href='single')
-										i.glyphicon.glyphicon-menu-right.icon
-							.mid-1
-								.women
-									.women-top
-										span Deck
-										h6
-											a(href='single') Deck example
-									.img.item_add
-										a(href='#')
-											img(src='images/ca.png', alt='')
-									.clearfix
-								.mid-2
-									p
-										label $100.00
-										em.item_price $70.00
-									.block
-										//.starbox.small.ghosting  
-									.clearfix
-					.col-md-3.item-grid.simpleCart_shelfItem
-						.mid-pop
-							.pro-img
-								img.img-responsive(src='images/skateboard/example4.jpg', alt='', height = '200px', width = '200px')
-								.zoom-icon
-									a.picture(href='images/skateboard/example4.jpg', rel='title')
-										i.glyphicon.glyphicon-search.icon
-									a(href='single')
-										i.glyphicon.glyphicon-menu-right.icon
-							.mid-1
-								.women
-									.women-top
-										span Deck
-										h6
-											a(href='single') Deck example
-									.img.item_add
-										a(href='#')
-											img(src='images/ca.png', alt='')
-									.clearfix
-								.mid-2
-									p
-										label $100.00
-										em.item_price $70.00
-									.block
-										//.starbox.small.ghosting  
-									.clearfix
-					.clearfix
-			// //products
-	// //content
+			.col-md-12
+				each val in list
+          .col-md-3.item-grid1.simpleCart_shelfItem
+            .mid-pop
+              .pro-img
+                img.img-responsive(src='images/product/#{val.img_url}', alt='', align = 'center', height = '200px', width = '200px')
+                .zoom-icon
+                  a.picture(href='images/product/#{val.img_url}', rel='title')
+                    i.glyphicon.glyphicon-search.icon
+                  a(href='/product?no=#{val.SN}')
+                    i.glyphicon.glyphicon-menu-right.icon
+              .mid-1
+                .women
+                  .women-top
+                    span #{val.typeString}
+                    h6
+                      a(href='/product?no=#{val.SN}') #{val.name}
+                  .img.item_add
+                    a(href='#')
+                      img(src='images/ca.png', alt='')
+                  .clearfix
+                .mid-2
+                  p
+                    em.item_price #{val.price} KRW
+                  .block
+                  .clearfix
