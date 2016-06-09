@@ -10,6 +10,8 @@ var pool = mysql.createPool({
 /* GET MYpage_show_order. */
 router.get('/', function(req, res, next) {
 	pool.getConnection(function(err, conn) {
+		if (err)
+			console.error(err);
 		var isBuyer = req.session.isBuyer;
 		var queryString;
 		if (isBuyer)
@@ -18,6 +20,8 @@ router.get('/', function(req, res, next) {
 			queryString = 'seller_SN';
 		conn.query('use board');
 		conn.query('select SN, date, total_price, (select state from Payment where Payment.order_SN=Order.SN) from Order where '+queryString+'=?', [req.session.userno], function(err, result, field) {
+			if (err)
+				console.error(err);
 			conn.release();
 			res.render('MYpage_show_order', {contents: result});
 		});
