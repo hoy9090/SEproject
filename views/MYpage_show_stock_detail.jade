@@ -58,19 +58,19 @@ html
 			function popupSaveClose() {
 				var sendData = {};
 				if ($('#type').val() != '')
-					sendData.nickname = $('#type').val();
+					sendData.type = $('#type').val();
 				if ($('#subtype').val() != '')
-					sendData.phone_number = $('#subtype').val();
+					sendData.subtype = $('#subtype').val();
 				if ($('#name').val() != '')
-					sendData.address = $('#name').val();
+					sendData.name = $('#name').val();
 				if ($('#price').val() != '')
-					sendData.corp_num = $('#price').val();
+					sendData.price = $('#price').val();
 				if ($('#stock').val() != '')
-					sendData.nickname = $('#stock').val();
+					sendData.stock = $('#stock').val();
 				if ($('#img_url').val() != '')
-					sendData.phone_number = $('#img_url').val();
+					sendData.img_url = $('#img_url').val();
 				if ($('#color').val() != '')
-					sendData.address = $('#color').val();
+					sendData.color = $('#color').val();
 				if (sendData != {})
 					$.ajax({
 						url: '/change_product',
