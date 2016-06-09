@@ -14,6 +14,13 @@ router.post('/', function(req, res, next)
 		if (err)
 			console.error(err);
 		conn.query('use board');
+		var type = req.body.type;
+		var subtype = req.body.subtype;
+		var name = req.body.name;
+		var price = req.body.price;
+		var stock = req.body.stock;
+		var img_url = req.body.img_url;
+		var color = req.body.color;
 		var queryString = "";
 		if (type != '')
 			queryString = queryString.concat("nickname='"+type+"', ");
