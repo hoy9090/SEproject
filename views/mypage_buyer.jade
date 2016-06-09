@@ -58,13 +58,13 @@ block content
 			.col-xs-8
 				textarea.board-desc(size='20' disabled)
 				br
-				input(type='button', value = 'modify', align='right')
+				input.btn.btn-info(type='button', value = 'modify', align='right')
 			br
 			br
 			br
 			.col-xs-12
 				h3
-					b posts by me
+					b Posts by me
 				br
 				table.table.table-hover.table-striped
 					thead
@@ -83,14 +83,14 @@ block content
 		.col-md-12.mypage_private_area
 			br
 			form
-				input(type='button', value = 'Change Profile', onclick='showPopup();')
+				input.btn.btn-info(type='button', value = 'Change Profile', onclick='showPopup();')
 				| &nbsp;
-				input(type='button', value = 'Change Password', onclick='showPopup_pw();')
+				input.btn.btn-info(type='button', value = 'Change Password', onclick='showPopup_pw();')
 				| &nbsp;
-				input(type='button', value = 'manage order', onclick="location.href='/MYpage_show_order'")
+				input.btn.btn-info(type='button', value = 'manage order', onclick="location.href='/MYpage_show_order'")
 				| &nbsp;
-				input(type='button', value = 'manage deal', onclick="location.href='/MYpage_show_deal'")
+				input.btn.btn-info(type='button', value = 'manage deal', onclick="location.href='/MYpage_show_deal'")
 				| &nbsp;
-				input(type='button', value = 'manage customizing', onclick="location.href='/MYpage_show_customizing'")
+				input.btn.btn-info(type='button', value = 'manage customizing', onclick="location.href='/MYpage_show_customizing'")
 				| &nbsp;
-				input(type='button', value = 'manage bid', onclick="location.href='/MYpage_show_bid_candidate'")
+				input.btn.btn-info(type='button', value = 'manage bid', onclick="location.href='/MYpage_show_bid_candidate'")
