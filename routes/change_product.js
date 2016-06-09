@@ -14,6 +14,7 @@ router.post('/', function(req, res, next)
 		if (err)
 			console.error(err);
 		conn.query('use board');
+		var SN = req.body.NO;
 		var type = req.body.type;
 		var subtype = req.body.subtype;
 		var name = req.body.name;
@@ -38,7 +39,7 @@ router.post('/', function(req, res, next)
 			queryString = queryString.concat("color='"+color+"', ");
 		queryString = queryString.slice(0, -2);
 		console.log(queryString);
-		conn.query('update Product set '+queryString+' where Seller_SN='+req.session.userno, function(err, result, field) {
+		conn.query('update Product set '+queryString+' where SN='+SN, function(err, result, field) {
 			conn.release();
 			if (err) {
 				console.error(err);
