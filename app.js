@@ -103,8 +103,6 @@ app.use('/reg_product', reg_product);
 app.use('/insert_product', insert_product);
 app.use('/thread', thread);
 
-app.use('/product_pallette', product_pallette);
-
 app.use('/mypage_buyer', mypage_buyer);
 app.use('/mypage_seller', mypage_seller);
 app.use('/MYpage_change_profile_seller', MYpage_change_profile_seller);
