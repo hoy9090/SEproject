@@ -52,7 +52,7 @@ html
 				table-footer td {color: white;}
 				td.title {width: 360px;}
 				td.date {width: 90px}
-				.footer-middle-in a {color: white; !important}
+				#sitemap a {color: white; !important}
 				
 
 		// -//End-rate--
@@ -186,22 +186,9 @@ html
 									li
 										a.color4(href='/about') About Us
 							// /.navbar-collapse
-					.col-sm-2.search-right
-						ul.heart
-							li
-								a(href='/wishlist')
-									span.glyphicon.glyphicon-heart(aria-hidden='true')
-							li
-								a.play-icon.popup-with-zoom-anim(href='/#small-dialog')
-									i.glyphicon.glyphicon-search  
 						.cart.box_1
 							a(href='/shopping_cart')
-								h3
-									.total
-										span.simpleCart_total
-									img(src='images/cart.png', alt='')
-							p
-								a.simpleCart_empty(href='javascript:;') Empty Cart
+								img(src='images/cart.png', alt='', width='30px;')
 						.clearfix  
 						// -
 						// -pop-up-box--
@@ -240,7 +227,7 @@ html
 							img(src='images/log.png', alt='',style='width: 160px;')
 						p
 							| Our website offer virtually unmatched experiences in making your own board, buying some products and acquiring board skill. And grow your skills with curriculum offered by lectures exclusively on our Community.
-					.col-md-6.footer-middle-in
+					.col-md-6.footer-middle-in#sitemap
 						h6 Sitemap
 
 						a(href = '/') main
