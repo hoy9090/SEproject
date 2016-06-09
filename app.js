@@ -53,6 +53,9 @@ var change_profile = require('./routes/change_profile');
 var change_product = require('./routes/change_product');
 var change_order = require('./routes/change_order');
 
+var change_bid_candidate = require('./routes/change_bid_candidate');
+var change_customize = require('./routes/change_customize');
+
 var thread = require('./routes/thread');
 var order_list = require('./routes/order_list');
 
@@ -109,7 +112,6 @@ app.use('/product_list', product_list);
 app.use('/product', product);
 app.use('/reg_product', reg_product);
 app.use('/insert_product', insert_product);
-app.use('/thread', thread);
 
 app.use('/mypage_buyer', mypage_buyer);
 app.use('/mypage_seller', mypage_seller);
@@ -130,7 +132,11 @@ app.use('/change_profile', change_profile);
 app.use('/change_product', change_product);
 app.use('/change_order', change_order);
 
+app.use('/change_bid_candidate', change_bid_candidate);
+app.use('/change_customize', change_customize);
+
 app.use('/order_list', order_list);
+app.use('/thread', thread);
 
 app.listen(app.get('port'), function() {
   console.log('Server is running...!');
