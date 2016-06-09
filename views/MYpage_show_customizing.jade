@@ -51,5 +51,38 @@ html
 				td(align='center')= info.comment
 				td 
 					input#comment(type='text', size='36', placeholder='Change commnet')
+		br
+		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
+		input(type='button', value='Close', onclick='popupClose();')
+		script(language='javascript').
+			function popupClose() {	alert("No change"); window.close(); }
+			function popupSaveClose() {
+				var sendData = {};
+				if ($('#deck_color').val() != '')
+					sendData.deck_color = $('#deck_color').val();
+				if ($('#wheel_color').val() != '')
+					sendData.wheel_color = $('#wheel_color').val();
+				if ($('#truck_color').val() != '')
+					sendData.truck_color = $('#truck_color').val();
+				if ($('#comment').val() != '')
+					sendData.comment = $('#comment').val();
+				if (sendData != {})
+					$.ajax({
+						url: '/change_customize',
+			      type: "POST",
+			      data: sendData,
+			      success: function(data) {
+			        if (data.reg_success) {
+								alert("Change Complete.");
+								window.close();
+								window.opener.location.reload();
+			        } else {
+			          alert('Change failed. Please modify your changes.');
+			        }
+			      }
+					});
+				else
+					alert('No change detected.');
+			}
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')
