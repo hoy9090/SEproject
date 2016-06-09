@@ -74,10 +74,13 @@ block content
 			br
 			| &nbsp; 
 			form
-				input(type='radio', value='Long')
-				input(type='radio', value='Crusier')
-				input(type='radio', value='Skater')
-			input.btn.btn-info(type='button', value = 'check', onclick="location.href='/bid'")
+				input(type='radio', name='radio_btn', value='1') Long 
+				|&nbsp;
+				input(type='radio', name='radio_btn', value='2') Crusier
+				|&nbsp;				
+				input(type='radio', name='radio_btn', value='3') Skater
+				|&nbsp;				
+				input.btn.btn-info(type='button', value = 'check', onclick="location.href='/bid'")
 			br
 			br
 
