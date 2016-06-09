@@ -95,7 +95,7 @@ block content
 
 block script
 	script.
-		$("input[name='addr']").onclick(function() {
+		$("input[name='addr']").change(function() {
 			if (this.val() == 'new')
 				$('#address').val('');
 			else
