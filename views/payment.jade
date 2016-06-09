@@ -62,7 +62,7 @@ block content
 					input(type = 'radio', name = 'addr', value = 'new')
 					|	New Delivery Address  
 					| &nbsp;
-					input(type = 'radio', name = 'addr', value = 'existing', onclick = 'receiveadd()', checked)
+					input(type = 'radio', name = 'addr', value = 'existing', checked)
 					|	Existing Delivery Address
 					.login-mail
 						input#address(type = 'text', name = 'address', placeholder = 'write your address here', value='#{address}')
@@ -96,7 +96,7 @@ block content
 block script
 	script.
 		$("input[name='addr']").change(function() {
-			if (this.val() == 'new')
+			if ($("input[name='addr']").val() == 'new')
 				$('#address').val('');
 			else
 				$('#address').val('#{address}');
