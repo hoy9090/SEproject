@@ -31,7 +31,7 @@ router.post('/', function(req, res, next)
 			queryString = queryString.concat("corp_num='"+color+"', ");
 		queryString = queryString.slice(0, -2);
 		console.log(queryString);
-		conn.query('update Product set '+queryString+' where SN='+req.session.userno, function(err, result, field) {
+		conn.query('update Product set '+queryString+' where Seller_SN='+req.session.userno, function(err, result, field) {
 			conn.release();
 			if (err) {
 				console.error(err);
