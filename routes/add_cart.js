@@ -18,7 +18,7 @@ router.post('/', function(req, res, next) {
 			if (err)
 				console.error(err);
 			console.log(result.length);
-			if (result.length != 0) {
+			if (result.length == 0) {
 				conn.query('insert into Shopping_cart(amount, product_SN, buyer_SN) values(1, ?, ?)', [no, req.session.userno], function(err, result, field) {
 					if (err)
 						console.error(err);
