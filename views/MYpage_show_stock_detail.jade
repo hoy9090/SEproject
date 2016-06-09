@@ -2,54 +2,92 @@ doctype html
 html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
 	
-	body(onload='window.resizeTo(600,700)')
+	body(onload='window.resizeTo(1000,700)')
 		h2
 			| Stock Detail view page for seller
 		table
 			tr
 				td Product number
-				td(align='center') ~~
+				td(align='center')= info.SN
 				td 
 					input#SN(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Type
-				td(align='center') ~~
+				td(align='center')= info.type
 				td 
-					input#SN(type='text', size='36', placeholder='change type')
+					input#type(type='text', size='36', placeholder='change type')
 			tr
 				td Sub-type
-				td(align='center') ~~
+				td(align='center')= info.subtype
 				td 
-					input#SN(type='text', size='36', placeholder='Change sub type')
+					input#subtype(type='text', size='36', placeholder='Change sub type')
 			tr
 				td name
-				td(align='center') ~~
+				td(align='center')= info.name
 				td 
-					input#SN(type='text', size='36', placeholder='Change name')
+					input#name(type='text', size='36', placeholder='Change name')
 			tr
 				td price
-				td(align='center') ~~
+				td(align='center')= info.price
 				td 
-					input#SN(type='text', size='36', placeholder='Change price')
+					input#price(type='text', size='36', placeholder='Change price')
 			tr
 				td stock
-				td(align='center') ~~
+				td(align='center')= info.stock
 				td 
-					input#SN(type='text', size='36', placeholder='Change stock')
+					input#stock(type='text', size='36', placeholder='Change stock')
 			tr
 				td date
-				td(align='center') ~~
+				td(align='center')= info.date
 				td 
-					input#SN(type='text', size='36', placeholder='Cannot change this part', disabled)
+					input#date(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td img-url
-				td(align='center') ~~
+				td(align='center')= info.img_url
 				td 
-					input#SN(type='text', size='36', placeholder='Change img-url')
+					input#img_url(type='text', size='36', placeholder='Change img-url')
 			tr
 				td color
-				td(align='center') ~~
+				td(align='center')= info.color
 				td 
-					input#SN(type='text', size='36', placeholder='Change color')
+					input#color(type='text', size='36', placeholder='Change color')
+		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
+		input(type='button', value='Close', onclick='popupClose();')
+		script(language='javascript').
+			function popupClose() {	alert("No change"); window.close(); }
+			function popupSaveClose() {
+				var sendData = {};
+				if ($('#type').val() != '')
+					sendData.type = $('#type').val();
+				if ($('#subtype').val() != '')
+					sendData.subtype = $('#subtype').val();
+				if ($('#name').val() != '')
+					sendData.name = $('#name').val();
+				if ($('#price').val() != '')
+					sendData.price = $('#price').val();
+				if ($('#stock').val() != '')
+					sendData.stock = $('#stock').val();
+				if ($('#img_url').val() != '')
+					sendData.img_url = $('#img_url').val();
+				if ($('#color').val() != '')
+					sendData.color = $('#color').val();
+				if (sendData != {})
+					$.ajax({
+						url: '/change_product',
+			      type: "POST",
+			      data: sendData,
+			      success: function(data) {
+			        if (data.reg_success) {
+								alert("Change Complete.");
+								window.close();
+								window.opener.location.reload();
+			        } else {
+			          alert('Change failed. Please modify your changes.');
+			        }
+			      }
+					});
+				else
+					alert('No change detected.');
+			}
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')

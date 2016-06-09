@@ -17,14 +17,15 @@ router.post('/', function(req, res, next) {
 		conn.query('select product_SN, buyer_SN from Shopping_cart where product_SN=? and buyer_SN=?', [no, req.session.userno], function(err, result, field) {
 			if (err)
 				console.error(err);
-			if (!result.length)
+			console.log(result.length);
+			if (result.length == 0) {
 				conn.query('insert into Shopping_cart(amount, product_SN, buyer_SN) values(1, ?, ?)', [no, req.session.userno], function(err, result, field) {
 					if (err)
 						console.error(err);
 					conn.release();
 					res.send({already: false});
 				});
-			else {
+			} else {
 				conn.release();
 				res.send({already: true});
 			}

@@ -12,8 +12,14 @@ router.get('/', function(req, res, next) {
 	pool.getConnection(function(err, conn) {
 		if (err)
 			console.error(err);
+		var isBuyer = req.session.isBuyer;
+		var queryString;
+		if (isBuyer)
+			queryString = 'buyer_SN';
+		else
+			queryString = 'seller_SN';
 		conn.query('use board');
-		conn.query('select SN, date from Deal', function(err, result, field) {
+		conn.query('select SN, date from Deal where (select '+queryString+' from `Order` where Deal.order_SN=`Order`.SN)='+req.session.userno, function(err, result, field) {
 			if (err)
 				console.error(err);
 			conn.release();
