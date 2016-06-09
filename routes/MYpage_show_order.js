@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 		else
 			queryString = 'seller_SN';
 		conn.query('use board');
-		conn.query('select SN, date, total_price, (select state from Payment where Payment.order_SN=Order.SN) from Order where '+queryString+'=?', [req.session.userno], function(err, result, field) {
+		conn.query('select SN, date, total_price, (select state from Payment where Payment.order_SN=Order.SN) from Order where Order.'+queryString+'=?', [req.session.userno], function(err, result, field) {
 			if (err)
 				console.error(err);
 			conn.release();
