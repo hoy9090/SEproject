@@ -23,7 +23,12 @@ router.get('/', function(req, res, next) {
 			if (err)
 				console.error(err);
 			conn.release();
-			res.render('MYpage_show_order', {contents: result});
+			var str;
+			if (isBuyer)
+				str = "buyer";
+			else
+				str = "seller";
+			res.render('MYpage_show_order', {contents: result, str: str});
 		});
 	});
 });
