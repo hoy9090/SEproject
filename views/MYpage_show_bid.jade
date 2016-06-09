@@ -23,11 +23,9 @@ block content
 			table.table.table-hover.table-striped
 				thead
 					tr
-						td.no Bid Number
-						td.customer Customer Number
+						td.no Customer Number
 				tbody
 					each val in contents
 						tr
-							td= val.SN 
 							td
-								a(href= onclick='showPopup(#{val.Custom_SN});')= val.Custom_SN 
+								a(href= onclick='showPopup(#{val.SN});')= val.SN
