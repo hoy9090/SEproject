@@ -7,15 +7,10 @@ html
 			| Bid Candidate Detail view page
 		table
 			tr
-				td Bid number
-				td(align='center')= info.SN
-				td 
-					input#SN(type='text', size='36', placeholder='Cannot change this part', disabled)
-			tr
 				td Customizing number
-				td(align='center')= customize_SN
+				td#custom_SN(align='center')= customize_SN
 				td 
-					input#custom_SN(type='text', size='36', placeholder='Cannot change this part', disabled)
+					input(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td price
 				td(align='center')= price
@@ -33,6 +28,7 @@ html
 			function popupClose() {	alert("No change"); window.close(); }
 			function popupSaveClose() {
 				var sendData = {};
+				sendData.NO = $('#custom_SN').html();
 				if ($('#price').val() != '')
 					sendData.price = $('#price').val();
 				if ($('#comment').val() != '')
