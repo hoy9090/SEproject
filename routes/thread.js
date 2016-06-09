@@ -18,7 +18,7 @@ router.get('/', function(req, res, next)
 		if (err)
 			console.error(err);
 		conn.query('use board');
-		conn.query('select buyer_comment from Deal where SN=? order by SN desc', [type], function(err, result, field) {
+		conn.query('select buyer_comment, seller_comment from Deal where SN=? order by SN desc', [type], function(err, result, field) {
 			if (err)
 				console.error(err);
 			conn.release();
