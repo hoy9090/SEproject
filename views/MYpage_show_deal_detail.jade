@@ -2,35 +2,25 @@ doctype html
 html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
 	
-	body(onload='window.resizeTo(600,700)')
+	body(onload='window.resizeTo(400,400)')
 		h2
 			| Deal Detail view page
 		table
 			tr
 				td Deal number
-				td#SN(align='center')= info.SN
-				td 
-					input(type='text', size='36', placeholder='Cannot change this part', disabled)
+				td(align='center')= info.SN
 			tr
 				td Order number
 				td(align='center')= info.order_SN
-				td 
-					input#order_SN(type='text', size='36', placeholder='change type', disabled)
 			tr
 				td Date
 				td(align='center')= date
-				td 
-					input#date(type='text', size='36', placeholder='change type', disabled)
 			tr
 				td Seller comment
 				td(align='center')= seller_comment
-				td 
-					input#seller_comment(type='text', size='36', placeholder='change type', disabled)
 			tr
 				td Buyer comment
 				td(align='center')= buyer_comment
-				td 
-					input#buyer_comment(type='text', size='36', placeholder='change type', disabled) 
 		input(type='button', value='Messanger', onclick='popMessanger();')
 		|&nbsp;
 		input(type='button', value='Close', onclick='popupClose();')
