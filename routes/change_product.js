@@ -23,6 +23,7 @@ router.post('/', function(req, res, next)
 		var img_url = req.body.img_url;
 		var color = req.body.color;
 		var queryString = "";
+		console.log(SN, type, subtype, name, price, stock, img_url, color);
 		if (type != null)
 			queryString = queryString.concat("type='"+type+"', ");
 		if (subtype != null)
