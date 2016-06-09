@@ -31,6 +31,8 @@ html
 				td(align='center')= buyer_comment
 				td 
 					input#buyer_comment(type='text', size='36', placeholder='change type', disabled) 
+		input(type='button', value='Messanger', onclick="location.href='/thread?type=#{info.order_SN}")
+		|&nbsp;
 		input(type='button', value='Close', onclick='popupClose();')
 		script(language='javascript').
 			function popupClose() {	alert("No change"); window.close(); }
