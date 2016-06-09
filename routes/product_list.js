@@ -39,7 +39,7 @@ router.get('/', function(req, res, next)
 		if (err)
 			console.error(err);
 		conn.query('use board');
-		conn.query('select SN, name, price, img_url from Product order by SN desc', function(err, result, field) {
+		conn.query('select SN, name, price, img_url from Product where type=? and subtype=? order by SN desc', [type, subtype], function(err, result, field) {
 			if (err)
 				console.error(err);
 			conn.release();
