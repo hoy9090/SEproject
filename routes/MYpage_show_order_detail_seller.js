@@ -7,7 +7,7 @@ var pool = mysql.createPool({
 	password: '1234'
 });
 
-/* GET MYpage_show_order_detail */
+/* GET MYpage_show_order_detail_seller */
 router.get('/', function(req, res, next) {
 	pool.getConnection(function(err, conn) {
 		if (err)
@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 			if (err)
 				console.error(err);
 			conn.release();
-			res.render('MYpage_show_order_detail', {info: result[0]});
+			res.render('MYpage_show_order_detail_seller', {info: result[0]});
 		});
 	});
 });
