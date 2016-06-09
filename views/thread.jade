@@ -11,20 +11,18 @@ block style
 
 block content
 
-	.container1
-		.col-md-12
+	.container
+		.col-xs-12
 			each val in list
 				h3 thread title
-
-				a #{val.buyer_comment}
-
+				hr
+				h4 #{val.buyer_comment}
+		
+				br
+				h4 #{val.seller_comment}
+			
+				br
 				br
 
-				a #{val.seller_comment}
-
-				br
-				br
-
-				.clearfix
 		
 		
