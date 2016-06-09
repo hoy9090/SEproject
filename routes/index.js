@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 		if (err)
 			console.error(err);
 		conn.query('use board');
-		conn.query('select SN, name, type, subtype, price, img_url from Product order by SN desc limit(0, 4)', function(err, result, field) {
+		conn.query('select SN, name, type, subtype, price, img_url from Product order by SN desc limit 0, 4', function(err, result, field) {
 			if (err)
 				console.error(err);
 			conn.release();
