@@ -23,19 +23,19 @@ router.post('/', function(req, res, next)
 		var color = req.body.color;
 		var queryString = "";
 		if (type != '')
-			queryString = queryString.concat("nickname='"+type+"', ");
+			queryString = queryString.concat("type='"+type+"', ");
 		if (subtype != '')
-			queryString = queryString.concat("nickname='"+subtype+"', ");
+			queryString = queryString.concat("subtype='"+subtype+"', ");
 		if (name != '')
-			queryString = queryString.concat("nickname='"+name+"', ");
+			queryString = queryString.concat("name='"+name+"', ");
 		if (price != '')
-			queryString = queryString.concat("phone_number='"+price+"', ");
+			queryString = queryString.concat("price='"+price+"', ");
 		if (stock != '')
-			queryString = queryString.concat("address='"+stock+"', ");
+			queryString = queryString.concat("stock='"+stock+"', ");
 		if (img_url != '')
-			queryString = queryString.concat("corp_num='"+img_url+"', ");
+			queryString = queryString.concat("img_url='"+img_url+"', ");
 		if (color != '')
-			queryString = queryString.concat("corp_num='"+color+"', ");
+			queryString = queryString.concat("color='"+color+"', ");
 		queryString = queryString.slice(0, -2);
 		console.log(queryString);
 		conn.query('update Product set '+queryString+' where Seller_SN='+req.session.userno, function(err, result, field) {
