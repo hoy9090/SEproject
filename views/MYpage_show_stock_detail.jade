@@ -2,7 +2,7 @@ doctype html
 html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
 	
-	body(onload='window.resizeTo(600,700)')
+	body(onload='window.resizeTo(1000,700)')
 		h2
 			| Stock Detail view page for seller
 		table
@@ -51,6 +51,8 @@ html
 				td(align='center')= info.color
 				td 
 					input#color(type='text', size='36', placeholder='Change color')
+		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
+		input(type='button', value='Close', onclick='popupClose();')
 		script(language='javascript').
 			function popupClose() {	alert("No change"); window.close(); }
 			function popupSaveClose() {
