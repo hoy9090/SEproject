@@ -12,7 +12,7 @@ router.get('/', function(req, res, next)
 {
 	var type = req.query.type;
 	var subtype = req.query.subtype;
-	var typeString;
+	var typeString = 'thread';
 
 	pool.getConnection(function(err, conn) {
 		if (err)
