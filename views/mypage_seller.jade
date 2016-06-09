@@ -60,20 +60,23 @@ block content
 				b Management Product
 			br
 			input.btn.btn-info(type='button', size='30', value = 'Register New Product', onclick="location.href='/reg_product'")
+			|&nbsp;
+			input.btn.btn-info(type='button', size='30', value = 'manage stock', onclick="location.href='/MYpage_show_stock'")
 			br
 			input.btn.btn-info(type='button', size='30', value = 'manage order', onclick="location.href='/MYpage_show_order'")
 			|&nbsp;
 			input.btn.btn-info(type='button', size='30', value = 'manage deal', onclick="location.href='/MYpage_show_deal'")
 			|&nbsp;
-			input.btn.btn-info(type='button', size='30', value = 'manage stock', onclick="location.href='/MYpage_show_stock'")
-			|&nbsp;
 			input.btn.btn-info(type='button', size='30', value = 'manage bid', onclick="location.href='/MYpage_show_bid'")
 			br
 			br
-			| search bid by Serial number:
+			| search Customizing deal by board type:
 			br
 			| &nbsp; 
-			input(type='text', size='30', placeholder='search products in your product list.')
+			form
+				input(type='radio', value='Long')
+				input(type='radio', value='Crusier')
+				input(type='radio', value='Skater')
 			input.btn.btn-info(type='button', value = 'check', onclick="location.href='/bid'")
 			br
 			br

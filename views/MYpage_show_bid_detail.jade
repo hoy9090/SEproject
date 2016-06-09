@@ -7,24 +7,49 @@ html
 			| Bid Candidate Detail view page
 		table
 			tr
-				td Bid number
-				td(align='center') ~~
-				td 
-					input#SN(type='text', size='36', placeholder='Cannot change this part', disabled)
-			tr
 				td Customizing number
-				td(align='center') ~~
+				td#custom_SN(align='center')= customize_SN
 				td 
-					input#custom_SN(type='text', size='36', placeholder='Cannot change this part', disabled)
+					input(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td price
-				td(align='center') ~~
+				td(align='center')= price
 				td 
 					input#price(type='text', size='36', placeholder='Change price')
 			tr
-				td commment
-				td(align='center') ~~
+				td comment
+				td(align='center')= comment
 				td 
 					input#comment(type='text', size='36', placeholder='Change comment')
+		br
+		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
+		input(type='button', value='Close', onclick='popupClose();')
+		script(language='javascript').
+			function popupClose() {	alert("No change"); window.close(); }
+			function popupSaveClose() {
+				var sendData = {};
+				sendData.NO = $('#custom_SN').html();
+				if ($('#price').val() != '')
+					sendData.price = $('#price').val();
+				if ($('#comment').val() != '')
+					sendData.comment = $('#comment').val();
+				if (sendData != {})
+					$.ajax({
+						url: '/change_bid_candidate',
+			      type: "POST",
+			      data: sendData,
+			      success: function(data) {
+			        if (data.reg_success) {
+								alert("Change Complete.");
+								window.close();
+								window.opener.location.reload();
+			        } else {
+			          alert('Change failed. Please modify your changes.');
+			        }
+			      }
+					});
+				else
+					alert('No change detected.');
+			}
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')

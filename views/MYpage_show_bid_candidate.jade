@@ -1,55 +1,38 @@
-doctype html
-html
-	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
-	
-	body(onload='window.resizeTo(600,700)')
-		h2
-			| Bid Candidate Detail view page
-		table
-			tr
-				td Customizing number
-				td#custom_SN(align='center')= customize_SN
-				td 
-					input(type='text', size='36', placeholder='Cannot change this part', disabled)
-			tr
-				td price
-				td(align='center')= price
-				td 
-					input#price(type='text', size='36', placeholder='Change price')
-			tr
-				td comment
-				td(align='center')= comment
-				td 
-					input#comment(type='text', size='36', placeholder='Change comment')
-		br
-		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
-		input(type='button', value='Close', onclick='popupClose();')
-		script(language='javascript').
-			function popupClose() {	alert("No change"); window.close(); }
-			function popupSaveClose() {
-				var sendData = {};
-				sendData.NO = $('#custom_SN').html();
-				if ($('#price').val() != '')
-					sendData.price = $('#price').val();
-				if ($('#comment').val() != '')
-					sendData.comment = $('#comment').val();
-				if (sendData != {})
-					$.ajax({
-						url: '/change_bid_candidate',
-			      type: "POST",
-			      data: sendData,
-			      success: function(data) {
-			        if (data.reg_success) {
-								alert("Change Complete.");
-								window.close();
-								window.opener.location.reload();
-			        } else {
-			          alert('Change failed. Please modify your changes.');
-			        }
-			      }
-					});
-				else
-					alert('No change detected.');
-			}
-		script(src='js/jquery.min.js')
-		script(src='js/bootstrap.min.js')
+extends layout
+
+block style
+	style.
+		table td {color: black; word-break: break-all; border: 1px solid #ddd !important;}
+		table {min-width: 700px; margin-bottom: 0 !important;}
+		thead {font-weight: bold;}
+		td.title {min-width: 400px;}
+		td.no {width: 60px;}
+		td.views {min-width: 60px;}
+		td.writer, td.date {min-width: 100px;}
+		h2 {margin: 30px 0; text-align: center;}
+		button.btn.btn-info.write {margin: 10px 0; float: right;}
+		ul.pagination > li > a:hover {background-color: #5BC0DE; color: #FFFFFF;}
+		.form-group {display: inline-block !important; margin-right: 5px;}
+
+block content
+
+	script(language='javascript').
+				function showPopup() { alert('Select done.'); }
+	.container
+		h2	Bid Candidate List view page for Buyer
+		.col-xs-12(style='overflow: auto;')
+			table.table.table-hover.table-striped
+				thead
+					tr
+						td.seller seller
+						td.price price
+						td.comment comment
+						td
+
+				tbodys
+					each val in contents
+						tr
+							td= val.seller_SN
+							td= val.price 
+							td= val.comment
+							input.btn.btn-info(type='button', value = 'Select', onclick='showPopup();')
