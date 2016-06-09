@@ -22,7 +22,7 @@ router.post('/', function(req, res, next)
 		var comment = req.body.comment;
 		var queryString = "";
 		queryString = queryString.slice(0, -2);
-		conn.query('update Customize set '+queryString+' where buyer_SN='+SN, function(err, result, field) {
+		conn.query('update Customize set '+queryString+' where Customize.buyer_SN='+SN, function(err, result, field) {
 			conn.release();
 			if (err) {
 				console.error(err);
