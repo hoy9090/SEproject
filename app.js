@@ -95,6 +95,7 @@ app.use('/shopping_cart', shopping_cart);
 app.use('/community', community);
 app.use('/payment', payment);
 app.use('/order_com', order_com);
+app.use('/purchase_com', purchase_com);
 
 app.use('/customize', customize);
 app.use('/product_detail', product_detail);
