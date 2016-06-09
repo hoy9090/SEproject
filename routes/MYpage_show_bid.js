@@ -1,9 +1,26 @@
 var express = require('express');
 var router = express.Router();
-
-/* GET MYpage_show_bid */
-router.get('/', function(req, res, next) {
-	res.render('MYpage_show_bid');
+var mysql = require('mysql');
+var pool = mysql.createPool({
+	host: 'localhost',
+	user: 'root',
+	password: '1234'
 });
+
+/* GET MYpage_show_stock */
+router.get('/', function(req, res, next) {
+	pool.getConnection(function(err, conn) {
+		if (err)
+			console.error(err);
+		conn.query('use board');
+		conn.query('select SN from Bid', function(err, result, field) {
+			if (err)
+				console.error(err);
+			conn.release();
+			res.render('MYpage_show_bid', {contents: result});
+		});
+	});
+});
+
 
 module.exports = router;
