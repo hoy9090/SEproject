@@ -8,9 +8,9 @@ html
 		table
 			tr
 				td Product number
-				td(align='center')= info.SN
+				td#SN(align='center')= info.SN
 				td 
-					input#SN(type='text', size='36', placeholder='Cannot change this part', disabled)
+					input(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Type
 				td(align='center')= info.type
@@ -58,7 +58,7 @@ html
 			function popupSaveClose() {
 				var sendData = {};
 				sendData.NO = $('#SN').val();
-				if ($('#type').val() != '')
+				if ($('#type').html() != '')
 					sendData.type = $('#type').val();
 				if ($('#subtype').val() != '')
 					sendData.subtype = $('#subtype').val();
