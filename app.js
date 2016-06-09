@@ -22,6 +22,7 @@ var community = require('./routes/community');
 //product features
 
 var customize = require('./routes/customize');
+var customize_result = require('./routes/customize_result');
 var product_detail = require('./routes/product_detail');
 var product_list = require('./routes/product_list');
 var product = require('./routes/product');
@@ -103,6 +104,7 @@ app.use('/order_com', order_com);
 app.use('/purchase_com', purchase_com);
 
 app.use('/customize', customize);
+app.use('/customize_result', customize_result);
 app.use('/product_detail', product_detail);
 app.use('/product_list', product_list);
 app.use('/product', product);

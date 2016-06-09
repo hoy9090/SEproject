@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 		if (err)
 			console.error(err);
 		conn.query('use board');
-		conn.query('select SN, type, subtype, name, price, stock, date, img_url, color from Product where Seller_SN='+req.session.userno, function(err, result, field) {
+		conn.query('select SN, type, subtype, name, price, stock, date, img_url, color from Product where SN='+req.query.number, function(err, result, field) {
 			if (err)
 				console.error(err);
 			conn.release();
