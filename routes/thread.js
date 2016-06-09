@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/', function(req, res, next)
 {
-	res.render('/thread');	
+	res.render('thread');	
 });
 
 module.exports = router;
