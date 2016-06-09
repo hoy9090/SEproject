@@ -14,7 +14,7 @@ router.get('/', function(req, res, next)
 		if (err)
 			console.error(err);
 		conn.query('use board');
-		conn.query('select name, nickname, phone_number, address from Member where SN='+req.session.userno, function(err, result, field) {
+		conn.query('select name, nickname, phone_number, address, img_url from Member where SN='+req.session.userno, function(err, result, field) {
 			if (err)
 				console.error(err);
 			conn.release();
