@@ -25,7 +25,7 @@ block content
               tr.cart-header
                 td.ring-in
                   a.at-in(href='/product_detail?no=#{val.no}')
-                    img.img-responsive(src='images/products/#{val.img_url}/0', alt='')
+                    img.img-responsive(src='images/product/#{val.img_url}', alt='')
                   .sed
                     h4
                       a(href='/product_detail?no=#{val.no}')= val.name
@@ -42,7 +42,7 @@ block content
 block script
   script.
     function changeAmount(index) {
-      $('#subtotal'+index).html(parseInt($('#price'+index).val())*parseInt($('#amount'+index).val()));
+      $('#subtotal'+index).html(parseInt($('#price'+index).html())*parseInt($('#amount'+index).val()));
     }
     function checkNum() {
       if ((event.keyCode<48)||(event.keyCode>57))
