@@ -19,6 +19,7 @@ router.post('/', function(req, res, next)
 		var deck_color = req.body.deck_color;
 		var truck_color = req.body.truck_color;
 		var wheel_color = req.body.wheel_color;
+		var comment = req.body.comment;
 		var queryString = "";
 		queryString = queryString.slice(0, -2);
 		conn.query('update Customize set '+queryString+' where buyer_SN='+SN, function(err, result, field) {
