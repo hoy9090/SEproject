@@ -59,39 +59,41 @@ block content
 			br
 			| Total price :
 			br
-			b Address Selector
-			br
-			form(role = 'form', name = 'payform', method = 'post')
-				input(type = 'radio', name = 'method', value = 'credit')
-				|	New Delivery Address  
-				| &nbsp;
-				input(type = 'radio', name = 'method', value = 'transfer', onclick = 'receiveadd()')
-				|	Existing Delivery Address
-			br
-			b Method of Payment Selector 	
-			form(role = 'form', name = 'payform', method = 'post')
-				input(type = 'radio', name = 'method', value = 'credit', onclick = 'credit()')
-				|	Credit card  
-				| &nbsp;
-				input(type = 'radio', name = 'method', value = 'transfer', onclick = 'transfer()')
-				|	Account transfer
-				.col-md-12.login-do
+			
+			.col-md-12.login-do
+				form(role = 'form', name = 'payform', method = 'post')
+					br
+					b Address Selector
+					br
+					input(type = 'radio', name = 'method', value = 'credit')
+					|	New Delivery Address  
+					| &nbsp;
+					input(type = 'radio', name = 'method', value = 'transfer', onclick = 'receiveadd()')
+					|	Existing Delivery Address
 					.login-mail
 						input(type = 'text', name = 'address', placeholder = 'write your address here')
 					.login-mail
 						input(type = 'text', name = 'phone number', placeholder = 'write your phone number here')
 					.login-mail
 						input(type = 'text', name = 'comment', placeholder = 'comment to delivary service')
+					br
+					b Method of Payment Selector 	
+					br
+					input(type = 'radio', name = 'method', value = 'credit', onclick = 'credit()')
+					|	Credit card  
+					| &nbsp;
+					input(type = 'radio', name = 'method', value = 'transfer', onclick = 'transfer()')
+					|	Account transfer
 					.login-mail.pay#credit_card_list
 						input(type = 'radio', name = 'method', value = 'visa', onclick = 'credit()', checked)
 						|	VISA  
 						| &nbsp;
 						input(type = 'radio', name = 'method', value = 'master', onclick = 'transfer()')
 						|	MASTER Card
-					.login_mail.pay#transfer_bank_list
+					.login-mail.pay#transfer_bank_list
 						input(type = 'radio', name = 'method', value = 'wooribank', onclick = 'credit()', checked)
 						|	Woori Bank(Account xxxx-xxx-xxxxxx)
-						|&nbsp;
+						| &nbsp;
 						input(type = 'radio', name = 'method', value = 'hanabank', onclick = 'transfer()')
 						|	Hana Bank(Account xxxxx-xxxx-xxxxx)	
 					br
