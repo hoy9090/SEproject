@@ -13,13 +13,8 @@ router.get('/', function(req, res, next) {
 		if (err)
 			console.error(err);
 		var isBuyer = req.session.isBuyer;
-		var queryString;
-		if (isBuyer)
-			queryString = 'buyer_SN';
-		else
-			queryString = 'seller_SN';
 		conn.query('use board');
-		conn.query('select SN, order_SN, date, seller_comment, buyer_comment from Deal where (select '+queryString+' from `Order` where Deal.order_SN=`Order`.SN)='+req.session.userno, function(err, result, field) {
+		conn.query('select SN, order_SN, date, seller_comment, buyer_comment from Deal where SN='+req.query.number, function(err, result, field) {
 			if (err)
 				console.error(err);
 			conn.release();
