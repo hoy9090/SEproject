@@ -14,6 +14,7 @@ router.post('/', function(req, res, next)
 		if (err)
 			console.error(err);
 		conn.query('use board');
+		console.log(req.body);
 		var SN = req.body.NO;
 		var type = req.body.type;
 		var subtype = req.body.subtype;
