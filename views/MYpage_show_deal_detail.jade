@@ -31,10 +31,14 @@ html
 				td(align='center')= buyer_comment
 				td 
 					input#buyer_comment(type='text', size='36', placeholder='change type', disabled) 
-		input(type='button', value='Messanger', onclick="location.href='/thread?type=#{info.order_SN}")
+		input(type='button', value='Messanger', onclick='popMessanger();')
 		|&nbsp;
 		input(type='button', value='Close', onclick='popupClose();')
 		script(language='javascript').
 			function popupClose() {	alert("No change"); window.close(); }
+			function popMessanger() {
+					window.close();
+					window.opener.location.href='/thread?type=#{info.order_SN}';
+			}
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')
