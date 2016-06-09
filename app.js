@@ -43,6 +43,8 @@ var MYpage_show_order_detail_buyer = require('./routes/MYpage_show_order_detail_
 var MYpage_show_order_detail_seller = require('./routes/MYpage_show_order_detail_seller');
 var MYpage_show_bid = require('./routes/MYpage_show_bid');
 var MYpage_show_bid_detail = require('./routes/MYpage_show_bid_detail');
+var MYpage_show_stock = require('./routes/MYpage_show_stock');
+var MYpage_show_stock_detail = require('./routes/MYpage_show_stock_detail');
 var MYpage_show_bid_candidate = require('./routes/MYpage_show_bid_candidate');
 var MYpage_show_customizing = require('./routes/MYpage_show_customizing');
 var MYpage_show_deal = require('./routes/MYpage_show_deal');
@@ -116,6 +118,8 @@ app.use('/MYpage_show_order_detail_buyer', MYpage_show_order_detail_buyer);
 app.use('/MYpage_show_bid', MYpage_show_bid);
 app.use('/MYpage_show_bid_detail', MYpage_show_bid_detail);
 app.use('/MYpage_show_bid_candidate', MYpage_show_bid_candidate);
+app.use('/MYpage_show_stock', MYpage_show_stock);
+app.use('/MYpage_show_stock_detail', MYpage_show_stock_detail);
 app.use('/MYpage_show_deal', MYpage_show_deal);
 app.use('/MYpage_show_deal_detail', MYpage_show_deal_detail);
 app.use('/MYpage_show_customizing', MYpage_show_customizing);
