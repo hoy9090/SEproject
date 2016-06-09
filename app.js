@@ -51,6 +51,7 @@ var MYpage_show_deal = require('./routes/MYpage_show_deal');
 var MYpage_show_deal_detail = require('./routes/MYpage_show_deal_detail');
 var change_profile = require('./routes/change_profile');
 var change_product = require('./routes/change_product');
+var change_order = require('./routes/change_order');
 
 var thread = require('./routes/thread');
 var order_list = require('./routes/order_list');
@@ -127,6 +128,7 @@ app.use('/MYpage_show_deal_detail', MYpage_show_deal_detail);
 app.use('/MYpage_show_customizing', MYpage_show_customizing);
 app.use('/change_profile', change_profile);
 app.use('/change_product', change_product);
+app.use('/change_order', change_order);
 
 app.use('/order_list', order_list);
 

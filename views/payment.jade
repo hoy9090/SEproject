@@ -27,56 +27,77 @@ block content
 		br
 		br
 		h3
-			| payment page
+			| Payment page
 		br
 		.payinfo
 			h4
 			b Order Information 
+			.check-out
+				.bs-example4(data-example-id='simple-responsive-table')
+					.table-responsive
+						table#cart.table-heading.simpleCart_shelfItem
+							tr
+								th.table-grid Item
+								th Price
+								th Delivery 
+								th Amount
+								th Subtotal
+							each val, index in list
+								tr.cart-header
+									td.ring-in
+										a.at-in(href='/product_detail?no=#{val.no}')
+											img.img-responsive(src='images/product/#{val.img_url}', alt='')
+										.sed
+											h4
+												a(href='/product_detail?no=#{val.no}')= val.name
+										.clearfix  
+									td(id='price#{index}')= val.price
+									td FREE SHIPPING
+									td
+										input(id='amount#{index}', type='text', value='#{val.amount}', size='2', maxlength='2', placeholder='0', disabled)
+									td(id='subtotal#{index}')= val.price*val.amount
 			br
-			| - total price :
+			| Total price :
 			br
-			| - number of product : 
-			br
-			| - Delivery state : Free shipping
-			br
-			br
-			b Address Selector
-			br
-			form(role = 'form', name = 'payform', method = 'post')
-				input(type = 'radio', name = 'method', value = 'credit')
-				|	New Delivery Address  
-				| &nbsp;
-				input(type = 'radio', name = 'method', value = 'transfer', onclick = 'receiveadd()')
-				|	Existing Delivery Address
-			br
-			b Method of Payment Selector 	
-			form(role = 'form', name = 'payform', method = 'post')
-				input(type = 'radio', name = 'method', value = 'credit', onclick = 'credit()')
-				|	Credit card  
-				| &nbsp;
-				input(type = 'radio', name = 'method', value = 'transfer', onclick = 'transfer()')
-				|	Account transfer
-				.col-md-12.login-do
+			
+			.col-md-12.login-do
+				form(role = 'form', name = 'payform', method = 'post')
+					br
+					b Address Selector
+					br
+					input(type = 'radio', name = 'method', value = 'credit')
+					|	New Delivery Address  
+					| &nbsp;
+					input(type = 'radio', name = 'method', value = 'transfer', onclick = 'receiveadd()')
+					|	Existing Delivery Address
 					.login-mail
 						input(type = 'text', name = 'address', placeholder = 'write your address here')
 					.login-mail
 						input(type = 'text', name = 'phone number', placeholder = 'write your phone number here')
 					.login-mail
 						input(type = 'text', name = 'comment', placeholder = 'comment to delivary service')
+					br
+					b Method of Payment Selector 	
+					br
+					input(type = 'radio', name = 'method', value = 'credit', onclick = 'credit()')
+					|	Credit card  
+					| &nbsp;
+					input(type = 'radio', name = 'method', value = 'transfer', onclick = 'transfer()')
+					|	Account transfer
 					.login-mail.pay#credit_card_list
 						input(type = 'radio', name = 'method', value = 'visa', onclick = 'credit()', checked)
 						|	VISA  
-						|&nbsp;
+						| &nbsp;
 						input(type = 'radio', name = 'method', value = 'master', onclick = 'transfer()')
-						|	MASTERCard
-					.login_mail.pay#transfer_bank_list
+						|	MASTER Card
+					.login-mail.pay#transfer_bank_list
 						input(type = 'radio', name = 'method', value = 'wooribank', onclick = 'credit()', checked)
 						|	Woori Bank(Account xxxx-xxx-xxxxxx)
-						|&nbsp;
+						| &nbsp;
 						input(type = 'radio', name = 'method', value = 'hanabank', onclick = 'transfer()')
 						|	Hana Bank(Account xxxxx-xxxx-xxxxx)	
 					br
-					a.hvr-skew-backward(onclick='submit()') submit
+					a.hvr-skew-backward(onclick='submit()') Submit
 
 block script
 	script.

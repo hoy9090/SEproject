@@ -11,12 +11,20 @@ block style
 
 block content
 
-	.container1
-		.col-md-12
+	.container
+		.col-xs-12
 			each val in list
-				h3 thread thtle
-
-
-				.clearfix
+				h3 thread title
+				hr
+				h4 #{val.buyer_comment}
 		
+				br
+				h4 #{val.seller_comment}
+			
+				br
+				br
+
+			form.form(role = 'form', method = 'post')
+				textarea(name = 'threadupdate', placeholder = 'update your thread in here.', required)
+				button(type = 'submit').btn.btn-info Write
 		

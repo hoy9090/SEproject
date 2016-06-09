@@ -8,18 +8,31 @@ html
 		table
 			tr
 				td Deal number
-				td(align='center') ~~
+				td#SN(align='center')= info.SN
+				td 
+					input(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Order number
-				td(align='center') ~~
+				td(align='center')= info.order_SN
+				td 
+					input#order_SN(type='text', size='36', placeholder='change type', disabled)
 			tr
 				td Date
-				td(align='center') ~~
+				td(align='center')= date
+				td 
+					input#date(type='text', size='36', placeholder='change type', disabled)
 			tr
 				td Seller comment
-				td(align='center') ~~ // 샐러는 샐러 코멘트 수정가능
+				td(align='center')= seller_comment
+				td 
+					input#seller_comment(type='text', size='36', placeholder='change type', disabled)
 			tr
 				td Buyer comment
-				td(align='center') ~~ // 바이어는 바이어 코멘트 수정가능
+				td(align='center')= buyer_comment
+				td 
+					input#buyer_comment(type='text', size='36', placeholder='change type', disabled) 
+		input(type='button', value='Close', onclick='popupClose();')
+		script(language='javascript').
+			function popupClose() {	alert("No change"); window.close(); }
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')

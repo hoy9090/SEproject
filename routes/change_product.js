@@ -14,6 +14,8 @@ router.post('/', function(req, res, next)
 		if (err)
 			console.error(err);
 		conn.query('use board');
+		console.log(req.body);
+		var SN = req.body.NO;
 		var type = req.body.type;
 		var subtype = req.body.subtype;
 		var name = req.body.name;
@@ -22,23 +24,25 @@ router.post('/', function(req, res, next)
 		var img_url = req.body.img_url;
 		var color = req.body.color;
 		var queryString = "";
-		if (type != '')
+		console.log(SN, type, subtype, name, price, stock, img_url, color);
+		if (type != null)
 			queryString = queryString.concat("type='"+type+"', ");
-		if (subtype != '')
+		if (subtype != null)
 			queryString = queryString.concat("subtype='"+subtype+"', ");
-		if (name != '')
+		if (name != null)
 			queryString = queryString.concat("name='"+name+"', ");
-		if (price != '')
+		if (price != null)
 			queryString = queryString.concat("price='"+price+"', ");
-		if (stock != '')
+		if (stock != null)
 			queryString = queryString.concat("stock='"+stock+"', ");
-		if (img_url != '')
+		if (img_url != null)
 			queryString = queryString.concat("img_url='"+img_url+"', ");
-		if (color != '')
+		if (color != null)
 			queryString = queryString.concat("color='"+color+"', ");
 		queryString = queryString.slice(0, -2);
 		console.log(queryString);
-		conn.query('update Product set '+queryString+' where Seller_SN='+req.session.userno, function(err, result, field) {
+		console.log('update Product set '+queryString+' where SN='+SN);
+		conn.query('update Product set '+queryString+' where SN='+SN, function(err, result, field) {
 			conn.release();
 			if (err) {
 				console.error(err);

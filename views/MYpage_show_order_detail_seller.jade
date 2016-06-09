@@ -2,41 +2,66 @@ doctype html
 html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
 	
-	body(onload='window.resizeTo(600,500)')
+	body(onload='window.resizeTo(1000,500)')
 		h2
 			| Order Detail view Page for Seller
 		table
 			tr
 				td Order number
-				td(align='center') ~~
+				td(align='center')= info.SN
 				td 
 					input#SN(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Date
-				td(align='center') ~~
+				td(align='center')= info.date
 				td 
 					input#date(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Seller
-				td(align='center') ~~
+				td(align='center')= info.seller_SN
 				td 
-					input#Seller(type='text', size='36', placeholder='Cannot change this part', disabled)
+					input#seller_SN(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Buyer
-				td(align='center') ~~
+				td(align='center')= info.buyer_SN
 				td 
-					input#Buyer(type='text', size='36', placeholder='Cannot change this part', disabled)
+					input#buyer_SN(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td Total Price
-				td(align='center') ~~
+				td(align='center')= info.total_price
 				td 
-					input#price(type='text', size='36', placeholder='Can change Total price') //셀러는 order의 total price, state 부분 수정 가능
+					input#total_price(type='text', size='36', placeholder='Can change Total price')
 			tr
 				td state
-				td(align='center') ~~
+				td(align='center')= info.state
 				td 
 					input#state(type='text', size='36', placeholder='Can change state')
-		input(type='button', value = 'Deal')
+		input(type='button', value = 'Save and Close', onclick='popupSaveClose();')
+		input(type='button', value='Close', onclick='popupClose();')
+		script(language='javascript').
+			function popupClose() {	alert("No change"); window.close(); }
+			function popupSaveClose() {
+				var sendData = {};
+				if ($('#total_price').val() != '')
+					sendData.total_price = $('#total_price').val();
+				if (sendData != {})
+					$.ajax({
+						url: '/change_order',
+			      type: "POST",
+			      data: sendData,
+			      success: function(data) {
+			        if (data.reg_success) {
+								alert("Change Complete.");
+								window.close();
+								window.opener.location.reload();
+			        } else {
+			          alert('Change failed. Please modify your changes.');
+			        }
+			      }
+					});
+				else
+					alert('No change detected.');
+			}
 
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')

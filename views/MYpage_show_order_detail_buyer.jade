@@ -2,29 +2,34 @@ doctype html
 html
 	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
 	
-	body(onload='window.resizeTo(600,500)')
+	body(onload='window.resizeTo(400,400)')
 		h2
 			| Order Detail view Page for Seller
 		table
 			tr
 				td Order number
-				td(align='center') ~~
+				td(align='center')= info.SN
 			tr
 				td Date
-				td(align='center') ~~
+				td(align='center')= info.date
 			tr
 				td Seller
-				td(align='center') ~~
+				td(align='center')= info.seller_SN
 			tr
 				td Buyer
-				td(align='center') ~~
+				td(align='center')= info.buyer_SN
 			tr
 				td Total Price
-				td(align='center') ~~
+				td(align='center')= info.total_price
 			tr
 				td state
-				td(align='center') ~~
-		input(type='button', value = 'Deal') // 바이어는 딜버튼을 눌러 딜 가능
+				td(align='center')= info.state
+		input(type='button', value = 'Close', onclick='popupClose();')
+		|&nbsp;
+		input(type='button', value='Make a deal', onclick='makeAdeal();')
+		script(language='javascript').
+			function popupClose() {	alert("No change"); window.close(); }
+			function makeAdeal() {			}
 
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')
