@@ -42,7 +42,7 @@ block content
 block script
   script.
     function changeAmount(index) {
-      $('#subtotal'+index).html(parseInt($('#price'+index).val())*parseInt($('#amount'+index).val()));
+      $('#subtotal'+index).html(parseInt($('#price'+index).html())*parseInt($('#amount'+index).val()));
     }
     function checkNum() {
       if ((event.keyCode<48)||(event.keyCode>57))
