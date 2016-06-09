@@ -16,7 +16,7 @@ var logout = require('./routes/logout');
 var login_check = require('./routes/login_check');
 var sign_FB = require('./routes/sign_FB');
 var shopping_cart = require('./routes/shopping_cart');
-
+var add_cart = require('./routes/add_cart');
 var community = require('./routes/community');
 
 //product features
@@ -91,6 +91,7 @@ app.use('/logout', logout);
 app.use('/login_check', login_check);
 app.use('/sign_FB', sign_FB);
 app.use('/shopping_cart', shopping_cart);
+app.use('/add_cart', add_cart);
 
 app.use('/community', community);
 app.use('/payment', payment);

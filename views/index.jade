@@ -43,7 +43,7 @@ block content
 										h6
 											a(href='/product?no=#{val.SN}') #{val.name}
 									.img.item_add
-										a(href='#')
+										a(onClick='addCart(#{val.SN});')
 											img(src='images/ca.png', alt='')
 									.clearfix
 								.mid-2
@@ -51,3 +51,21 @@ block content
 										em.item_price #{val.price} KRW
 									.block
 									.clearfix
+
+block script
+	script.
+		function addCart(num) {
+			$.ajax({
+				url: '/add_cart',
+				type: "POST",
+				data: {no: num},
+				success: function(data) {
+					if (data.already) {
+						alert('You have already added the product.');
+					}
+					else {
+						alert('Successfully added the product to shopping cart.');
+					}
+				}
+			});
+		}

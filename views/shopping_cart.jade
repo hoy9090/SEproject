@@ -6,128 +6,45 @@ block content
       h1 Shopping Cart
       em
       h2
-        a(href='main') Home
+        a(href='/') Home
         label /
         | Shopping cart
-  // login
-  script.
-    $(document).ready(function(c) {
-    $('.close1').on('click', function(c){
-    $('.cart-header').fadeOut('slow', function(c){
-    $('.cart-header').remove();
-    });
-    });
-    });
-  script.
-    $(document).ready(function(c) {
-    $('.close2').on('click', function(c){
-    $('.cart-header1').fadeOut('slow', function(c){
-    $('.cart-header1').remove();
-    });
-    });
-    });
-  script.
-    $(document).ready(function(c) {
-    $('.close3').on('click', function(c){
-    $('.cart-header2').fadeOut('slow', function(c){
-    $('.cart-header2').remove();
-    });
-    });
-    });
-     script.
-    $(document).ready(function(c) {
-    $('.close4').on('click', function(c){
-    $('.cart-header3').fadeOut('slow', function(c){
-    $('.cart-header3').remove();
-    });
-    });
-    });
-     script.
-    $(document).ready(function(c) {
-    $('.close5').on('click', function(c){
-    $('.cart-header4').fadeOut('slow', function(c){
-    $('.cart-header4').remove();
-    });
-    });
-    });
-  script.
-    function calcBook(idx) {
-    if(idx < "1" && idx > "5") {
-    return;
-    }
-    var myTable = document.getElementById('cart');
-    var total;
-    var price=0;
-    var num = document.getElementById('number' + idx).value;
-    if(isNaN(num)) {
-    alert("입력한 수량이 숫자가 아닙니다.");
-    document.getElementById('number' + idx).value = "0";
-    return;
-    }
-    if(parseInt(num) < 0) {
-    alert("입력한 수량은 음수를 입력할 수 없습니다.");
-    document.getElementById('number' + idx).value = "0";
-    return;
-    }
-    price += (+myTable.rows[idx].cells[1].innerHTML);
-    total = price * num;
-    myTable.rows[idx].cells[4].innerHTML = total;
-    }
+  
   .container
-      .check-out
-        .bs-example4(data-example-id='simple-responsive-table')
-          .table-responsive
-            table#cart.table-heading.simpleCart_shelfItem
-              tr
-                th.table-grid Item
-                th Prices
-                th Delivery 
-                th Amount
-                th Subtotal
+    .check-out
+      .bs-example4(data-example-id='simple-responsive-table')
+        .table-responsive
+          table#cart.table-heading.simpleCart_shelfItem
+            tr
+              th.table-grid Item
+              th Price
+              th Delivery 
+              th Amount
+              th Subtotal
+            each val, index in list
               tr.cart-header
                 td.ring-in
-                  a.at-in(href='single.html')
-                    img.img-responsive(src='images/ch.jpg', alt='')
+                  a.at-in(href='/product_detail?no=#{val.no}')
+                    img.img-responsive(src='images/products/#{val.img_url}/0', alt='')
                   .sed
-                    h5
-                      a(href='single.html') Example 1
-                    p explaination 1 
+                    h4
+                      a(href='/product_detail?no=#{val.no}')= val.name
                   .clearfix  
-                  .close1  
-                td 100
+                  .close1
+                td(id='price#{index}')= val.price
                 td FREE SHIPPING
                 td
-                  input#number1(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('1');")
-                td
-              tr.cart-header1
-                  td.ring-in
-                    a.at-in(href='single.html')
-                      img.img-responsive(src='images/ch.jpg', alt='')
-                    .sed
-                      h5
-                        a(href='single.html') Example 2
-                      p explaination 2 
-                    .clearfix  
-                    .close2  
-                  td 100
-                  td FREE SHIPPING
-                  td
-                    input#number2(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('2');")
-                  td
-                tr.cart-header2
-                  td.ring-in
-                    a.at-in(href='single.html')
-                      img.img-responsive(src='images/ch.jpg', alt='')
-                    .sed
-                      h5
-                        a(href='single.html') Example 3
-                      p explaination 3 
-                    .clearfix  
-                    .close3  
-                  td 100
-                  td FREE SHIPPING
-                  td
-                    input#number3(type='text', value='1', size='2', maxlength='2', placeholder='0', onkeyup="calcBook('3');")
-                  td
-      .produced
-        a.hvr-skew-backward(href='payment') Produced To Buy
+                  input(id='amount#{index}', type='text', value='#{val.amount}', size='2', maxlength='2', placeholder='0', onchange='changeAmount(#{index});', onkeypress='checkNum();')
+                td(id='subtotal#{index}')= val.price*val.amount
+    .produced
+      a.hvr-skew-backward(href='payment') Produced To Buy
+
+block script
+  script.
+    function changeAmount(index) {
+      $('#subtotal'+index).html(parseInt($('#price'+index).val())*parseInt($('#amount'+index).val()));
+    }
+    function checkNum() {
+      if ((event.keyCode<48)||(event.keyCode>57))
+        event.returnValue = false;
+    }
