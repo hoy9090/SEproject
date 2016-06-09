@@ -59,13 +59,13 @@ block content
 					br
 					b Address Selector
 					br
-					input(type = 'radio', name = 'addr', value = 'credit')
+					input(type = 'radio', name = 'addr', value = 'new')
 					|	New Delivery Address  
 					| &nbsp;
-					input(type = 'radio', name = 'addr', value = 'transfer', onclick = 'receiveadd()', checked)
+					input(type = 'radio', name = 'addr', value = 'existing', onclick = 'receiveadd()', checked)
 					|	Existing Delivery Address
 					.login-mail
-						input(type = 'text', name = 'address', placeholder = 'write your address here', value='#{address}')
+						input#address(type = 'text', name = 'address', placeholder = 'write your address here', value='#{address}')
 					.login-mail
 						input(type = 'text', name = 'phone number', placeholder = 'write your phone number here', value='#{phone_number}')
 					.login-mail
@@ -95,8 +95,11 @@ block content
 
 block script
 	script.
-		$(document).ready(function() {
-
+		$("input[name='addr']").onclick(function() {
+			if (this.val() == 'new')
+				$('#address').val('');
+			else
+				$('#address').val('#{address}');
 		})
 		function submit() {
 			//things to do...
