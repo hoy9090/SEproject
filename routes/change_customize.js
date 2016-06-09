@@ -21,8 +21,16 @@ router.post('/', function(req, res, next)
 		var wheel_color = req.body.wheel_color;
 		var comment = req.body.comment;
 		var queryString = "";
+		if (deck_color != null)
+			queryString = queryString.concat("deck_color='"+deck_color+"', ");
+		if (truck_color != null)
+			queryString = queryString.concat("truck_color='"+truck_color+"', ");
+		if (wheel_color != null)
+			queryString = queryString.concat("wheel_color='"+wheel_color+"', ");
+		if (comment != null)
+			queryString = queryString.concat("comment='"+comment+"', ");
 		queryString = queryString.slice(0, -2);
-		conn.query('update Customize set '+queryString+' where Customize.buyer_SN='+SN, function(err, result, field) {
+		conn.query('update Customize set '+queryString+' where buyer_SN='+SN, function(err, result, field) {
 			conn.release();
 			if (err) {
 				console.error(err);
