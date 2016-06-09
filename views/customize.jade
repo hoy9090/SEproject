@@ -131,6 +131,14 @@ block content
 						input#img.form-control(type='file', name='file', placeholder='Main Image File', required)
 					legend
 						h4.cate Search
+						/////////////////////////////////////////////h3 Type
+						input(type='radio', value='val', name='radiotest')
+						| select
+						br
+						select(id = 'text', name = 'product type')
+							option(value = 'first', name = 'first') Long board
+							option(vaule = 'second', name = 'second') Cruser board
+							option(vaule = 'second', name = 'second') Skate board
 						h3 Price
 						h4.font-ubuntureg
 						label
@@ -159,29 +167,30 @@ block content
 			.clearfix
 			.col-md-11
 				.mid-popular
+				each val in list
 					.col-md-4.item-grid1.simpleCart_shelfItem
 						.mid-pop
 							.pro-img
-								img.img-responsive(src='images/pc.jpg', alt='')
+								img.img-responsive(src='images/product/#{val.img_url}', alt='', align = 'center', height = '200px', width = '200px')
 								.zoom-icon
-									a.picture(href='images/pc.jpg', rel='title')
+									a.picture(href='images/product/#{val.img_url}', rel='title')
 										i.glyphicon.glyphicon-search.icon
-									a(href='single.html')
+									a(href='/product?no=#{val.SN}')
 										i.glyphicon.glyphicon-menu-right.icon
 							.mid-1
 								.women
 									.women-top
-										span Women
+										span #{type}
 										h6
-											a(href='single.html') Sed ut perspiciati
+											a(href='/product?no=#{val.SN}')= val.name
 									.img.item_add
-										a(href='#')
+										a(onClick='addCart(#{val.SN});')
 											img(src='images/ca.png', alt='')
 									.clearfix
 								.mid-2
 									p
-										label $100.00
-										em.item_price $70.00
+										em.item_price #{val.price} KRW
+									.blpck
 									.clearfix
 					.col-md-4.item-grid1.simpleCart_shelfItem
 						.mid-pop
