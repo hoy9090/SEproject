@@ -8,52 +8,52 @@ html
 		table
 			tr
 				td Board-type
-				td(align='center') ~~
+				td(align='center')= info.board_type
 				td 
 					input#board_type(type='text', size='36', placeholder='Cannot change this part')
 			tr
 				td Buyer
-				td(align='center') ~~
+				td(align='center')= info.buyer_SN
 				td 
-					input#buyer(type='text', size='36', placeholder='Cannot change this part', disabled)
+					input#buyer_SN(type='text', size='36', placeholder='Cannot change this part', disabled)
 			tr
 				td deck
-				td(align='center') ~~
+				td(align='center')= info.deck_SN
 				td 
 					input#deck_SN(type='text', size='36', placeholder='deck change')
 			tr
 				td deck_color
-				td(align='center') ~~
+				td(align='center')= info.deck_color
 				td 
-					input#buyer(type='text', size='36', placeholder='Deck color change')
+					input#deck_color(type='text', size='36', placeholder='Deck color change')
 			tr
 				td wheel
-				td(align='center') ~~
+				td(align='center')= info.
 				td 
 					input#board_type(type='text', size='36', placeholder='wheel change')
 			tr
 				td wheel_color
-				td(align='center') ~~
+				td(align='center')= info.
 				td 
 					input#buyer(type='text', size='36', placeholder='Wheel color change')
 			tr
 				td truck
-				td(align='center') ~~
+				td(align='center')= info.truck_SN
 				td 
-					input#board_type(type='text', size='36', placeholder='Truck change')
+					input#truck_SN(type='text', size='36', placeholder='Truck change')
 			tr
 				td truck_color
-				td(align='center') ~~
+				td(align='center')= info.truck_color
 				td 
-					input#buyer(type='text', size='36', placeholder='Truck color change')
+					input#truck_color(type='text', size='36', placeholder='Truck color change')
 			tr
 				td comment
-				td(align='center') ~~
+				td(align='center')= info.
 				td 
 					input#board_type(type='text', size='36', placeholder='Change commnet')
 			tr
 				td img-url
-				td(align='center') ~~
+				td(align='center')= info.
 				td 
 					input#buyer(type='text', size='36', placeholder='Change img-url')
 		script(src='js/jquery.min.js')
