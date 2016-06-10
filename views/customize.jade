@@ -215,7 +215,7 @@ block content
 							if (data.get_success) {
 								$('#list').empty();
 								for (var i=0; i<data.list.length; i++) {
-									$('#list').append("<div id='"+data.list[i].SN"' onclick='changeData("+data.list[i].SN+", "+data.list[i].type+")' class='col-md-4 item-grid1 simpleCart_shelfItem'><div class='mid-pop'><div class='pro-img'><img class='img-responsive' src='images/product/"+data.list[i].img_url+"' align='center' height='200px' width='200px'></div><div class='mid-1'><div class='women'><div class='women-top><span>"+data.list[i].type+"</span><h6><a href='/product_detail?no="+data.list[i].SN+"'>"+data.list[i].name+"</a></h6></div><div class='clearfix'></div></div><div class='mid-2'><p><em class='item_price'>"+data.list[i].price+" KRW</em></p><div class='blpck'></div><div class='clearfix'></div></div></div></div></div>");
+									$('#list').append("<div id='"+data.list[i].SN+"' onclick='changeData("+data.list[i].SN+", "+data.list[i].type+")' class='col-md-4 item-grid1 simpleCart_shelfItem'><div class='mid-pop'><div class='pro-img'><img class='img-responsive' src='images/product/"+data.list[i].img_url+"' align='center' height='200px' width='200px'></div><div class='mid-1'><div class='women'><div class='women-top><span>"+data.list[i].type+"</span><h6><a href='/product_detail?no="+data.list[i].SN+"'>"+data.list[i].name+"</a></h6></div><div class='clearfix'></div></div><div class='mid-2'><p><em class='item_price'>"+data.list[i].price+" KRW</em></p><div class='blpck'></div><div class='clearfix'></div></div></div></div></div>");
 								}
 							} else {
 								alert('Load failed.');
