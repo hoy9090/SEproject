@@ -92,11 +92,11 @@ block content
 						td.title Title
 						td.views Views
 				tbody
-					tr
-						td info2.title
-						td 5555555
+					each val in info2
+						tr
+							td= val.title
+							td= val.views
 
-			h4(align = 'right')	view all posts by user(BTN)
 	.container
 		.col-md-12.mypage_private_area
 			br
