@@ -192,31 +192,32 @@ block content
 
 	block script
 		script.
+			function changeData(no, type) {
+				if (type == "0") {
+					$('#truck-text').html(no);
+				} else if (type == "1") {
+					$('#wheel-text').html(no);
+				} else if (type == "2") {
+					$('#deck-text').html(no);
+					$('#deck-img').attr(src, $('#'+no+' img').attr(src));
+				}
+			}
 			$(document).ready(function() {
 				$('.color-btn').click(function() {
 					$('.color-btn').each(function() {
 						$(this).css('border', '2px solid black');
-					})
+					});
 					$(this).css('border', '3px solid skyblue');
 					$('#wheel-a-img').attr('src', 'images/custom/wheel-a-'+$(this).val()+'.png');
 					$('#wheel-img').attr('src', 'images/custom/wheel-'+$(this).val()+'.png');
 					$("#color").val($(this).val());
 				});
+				
 				$("select[name='type']").change(function() {
 					$(".select-subtype").show();
 					$("#type-text").html($("select option:selected").html());
 				});
 
-				function changeData(no, type) {
-					if (type == "0") {
-						$('#truck-text').html(no);
-					} else if (type == "1") {
-						$('#wheel-text').html(no);
-					} else if (type == "2") {
-						$('#deck-text').html(no);
-						$('#deck-img').attr(src, $('#'+no+' img').attr(src));
-					}
-				}
 
 				$("input[name='subtype']").change(function() {
 					$.ajax({
