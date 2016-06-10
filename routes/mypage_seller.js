@@ -14,11 +14,16 @@ router.get('/', function(req, res, next)
 		if (err)
 			console.error(err);
 		conn.query('use board');
+
 		conn.query('select name, nickname, phone_number, address, corp_num, img_url from Member where SN='+req.session.userno, function(err, result, field) {
 			if (err)
 				console.error(err);
-			conn.release();
-			res.render('mypage_seller', {info: result[0]});		
+				conn.query('select * from Community_Free', function(err2, result2, field2){
+
+
+				conn.release();
+				res.render('mypage_seller', {info: result[0], info2: result2[0]});		
+			});
 		});
 	});
 });
