@@ -73,15 +73,15 @@ block content
 			| search Customizing deal by board type:
 			br
 			| &nbsp; 
-			form
-				input(type='radio')
+			form(action='#', accept_charset'utf-8', name='datalist', method='get')
+				input(type='radio', value = 1)
 				|	Long
-				input(type='radio')
+				input(type='radio', value = 2)
 				|	Crusier
-				input(type='radio')
+				input(type='radio', value = 3)
 				|	Skater
 				br
-				input.btn.btn-info(type='button', value = 'check')
+				input.btn.btn-info(type='submit', value = 'check', method = 'post')
 			br
 			h3 
 				b Posts by me
