@@ -80,12 +80,12 @@ block content
 				| This browser do not support canvas.
 			.img-div.col-xs-12.col-sm-6.col-md-6.col-lg-6
 				img(src='images/product/custom/long/deck/14260528758m0.jpg').product-img-div
-				img(src='images/custom/wheel-a-3.png').wheel-img-div
+				img(id='wheel-a-img' src='images/custom/wheel-a-3.png').wheel-img-div
 			.img-div.col-xs-12.col-sm-6.col-md-6.col-lg-6
 				img(src='images/custom/back-tm.jpg').back-div
 				//img(src='images/custom/test.jpg').upload-div
 				img(src='images/custom/custom-view.png').middle-div
-				img(src='images/custom/wheel-3.png').front-div
+				img(id='wheel-img' src='images/custom/wheel-3.png').front-div
 
 			table.table-info2.table-hover.table-striped
 				thead
@@ -198,6 +198,8 @@ block content
 						$(this).css('border', '2px solid black');
 					})
 					$(this).css('border', '3px solid skyblue');
+					$('#wheel-a-img').attr('src', 'images/custom/wheel-a-'+$(this).val()+'.png');
+					$('#wheel-img').attr('src', 'images/custom/wheel-'+$(this).val()+'.png');
 					$("#color").val($(this).val());
 				});
 				$("select[name='type']").change(function() {
