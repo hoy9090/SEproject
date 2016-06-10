@@ -17,6 +17,7 @@ router.get('/', function(req, res, next) {
 			if (err)
 				console.error(err);
 			conn.release();
+			console.log(result[0]);
 			res.render('MYpage_show_customizing', {info: result[0]});
 		});
 	});
