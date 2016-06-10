@@ -28,6 +28,9 @@ block style
 		.form-group {display: inline-block !important; margin-right: 5px;}
 
 		.img-div {height: 500px;}
+		.product-img-div {position: absolute; top:0; left: 0; width: 300px; height: 300px; z-index: 0;}
+		.wheel-img-div {position: absolute; top:0; left: 0; width: 300px; height: 300px; z-index: 1;}
+
 		.back-div {position: absolute; top:10px; left: 55px; width: 130px; height: 420px; max-height: 560px; z-index: 0; background-color: brown;}
 		.middle-div {position: absolute; top:0; left: 0; width: 430px; height: 430px; z-index: 1;}
 		.front-div {position: absolute; top:0; left: 0; width: 430px; height: 430px; z-index: 2;}
@@ -73,6 +76,9 @@ block content
 			//canvas#canvas(width='600px', height='400px').hidden-xs.hidden-md.hidden-lg
 			//canvas#canvas(width=auto, height='300px').hidden-sm.hidden-md.hidden-lg
 				| This browser do not support canvas.
+			.img-div.col-xs-12
+				img(src='images/product/custom/long/deck/14260528758m0.jpg').product-img-div
+				img(src='images/custom/wheel-white.png').wheel-img-div
 			.img-div.col-xs-12
 				img(src='images/.jpg').back-div
 				img(src='images/custom/custom-view.png').middle-div
