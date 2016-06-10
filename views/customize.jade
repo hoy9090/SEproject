@@ -207,7 +207,7 @@ block content
 					$.ajax({
 						url: 'get_board',
 						type: 'POST',
-						data: {type: $("select[name='type']").val(), subtype: $("input[name='addr']:checked").val()},
+						data: {type: $("select[name='type']").val(), subtype: $("input[name='subtype']:checked").val()},
 						success: function(data) {
 							if (data.get_success) {
 								$('#list').empty();
