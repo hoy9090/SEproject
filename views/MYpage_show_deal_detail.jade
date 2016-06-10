@@ -21,9 +21,9 @@ html
 			tr
 				td Buyer comment
 				td(align='center')= buyer_comment
-		input(type='button', value='Messanger', onclick='popMessanger();')
+		input(type='button', value='Messanger', onclick='popMessanger();') Pop Messanger
 		|&nbsp;
-		input(type='button', value='Close', onclick='popupClose();')
+		input(type='button', value='Close', onclick='popupClose();') Pop Close
 		script(language='javascript').
 			function popupClose() {	alert("No change"); window.close(); }
 			function popMessanger() {

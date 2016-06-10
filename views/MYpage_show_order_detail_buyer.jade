@@ -24,11 +24,11 @@ html
 			tr
 				td state
 				td(align='center')= info.state
-		button.btn.btn-info(type='button', value = 'Close', onclick='popupClose();')
+		button.btn.btn-info(type='button', value = 'Close', onclick='popupClose();') Popup Close
 		| &nbsp;
 		form(action='/insert_deal', method='post')
 			input(type='hidden', value='#{info.SN}', name='order_SN')
-			button.btn.btn-info(type='submit', value='Make a deal', onclick='makeAdeal();')
+			button.btn.btn-info(type='submit', value='Make a deal', onclick='makeAdeal();') Make a Deal
 		script(language='javascript').
 			function popupClose() {	alert("No change"); window.close(); }
 			function makeAdeal() {			}

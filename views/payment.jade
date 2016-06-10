@@ -51,7 +51,6 @@ block content
 										input(id='amount#{index}', type='text', value='#{val.amount}', size='2', maxlength='2', placeholder='0', disabled)
 									td(id='subtotal#{index}')= val.price*val.amount
 			br
-			| Total price :
 			br
 			
 			.col-md-12.login-do
@@ -105,5 +104,6 @@ block script
 		});
 			
 		function submit() {
-			//things to do...
+			alert("결제가 진행중입니다.");
+			window.opener.location.href='purchase_com';
 		}
