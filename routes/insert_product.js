@@ -19,14 +19,26 @@ router.post('/', function(req, res, next) {
 		if (!err)
 	  	pool.getConnection(function(err, conn) {
 				conn.query('use board');
-				conn.query('insert into Product(type, subtype, name, price, stock, date, img_url, color, Seller_SN) values(?, ?, ?, ?, ?, now(), ?, ?, ?)', [req.body.type, req.body.subtype, req.body.name, req.body.price, req.body.stock, image_path, req.body.color, req.session.userno], function(err, result, field) {
+				conn.query('insert into Product(type, subtype, name, price, stock, date, color, Seller_SN) values(?, ?, ?, ?, ?, now(), ?, ?, ?)', [req.body.type, req.body.subtype, req.body.name, req.body.price, req.body.stock, req.body.color, req.session.userno], function(err, result, field) {
 					if (err) {
 						console.error(err);
 					}
-					conn.release();
-					for (var index in req.files)
-						fs.rename('public/images/products/'+image_path+'/'+req.files[index].filename, 'public/images/products/'+image_path+'/'+index);
-					res.redirect('/');
+					var filename = [0, 0];
+					for (var index in req.files) {
+						filename[index] = image_path+'/'+req.files[index].filename;
+					}
+					conn.query('select SN from Product order by SN desc limit 0, 1', function(err, result, field) {
+						if (err) {
+							console.error(err);
+						}
+						var SN = result[0].SN;
+						conn.query('update Product set img_url=?, detail_image_url=? where SN='+SN, [filename[0], filename[1]], function(err, result,field) {
+							if (err)
+								console.error(err);
+							conn.release();
+							res.redirect('/');
+						});
+					});
 				});
 			});
 	 	else
