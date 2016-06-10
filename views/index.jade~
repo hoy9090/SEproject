@@ -41,7 +41,7 @@ block content
 									.women-top
 										span #{val.typeString}
 										h6
-											a(href='/product_detail?no=#{val.SN}') #{val.name}
+											a(href='/product?no=#{val.SN}') #{val.name}
 									.img.item_add
 										if (loggedIn)
 											a(onClick='addCart(#{val.SN});')
