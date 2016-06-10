@@ -2,55 +2,41 @@ extends layout
 
 block style
 	style.
-		img {margin: 0 auto;}
+		label.hvr-skew-backward {margin-bottom: 50px;}
+		#corp_num {display: none;}
 
 block content
-	.row.col-lg-12.text-center
+	.container
 		br
 		br
-		h2.section-heading Team 4
-		label.line
+		h3
+			| Customizing Result page
 		br
-		h3.section-subheading.text-muted SKKU Software Engineering Team 4.
-		br
-		br
-	.clearfix
-
-	.brand
-		.col-lg-1.hidden-sm.hidden-md.hidden-xs
-		.col-sm-6.col-md-4.col-lg-2.col-xs-12.text-center
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', src="images/members/sujin.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em')
-				b Oh Sujin
-			h4 Team Leader
-			h3(style='line-height:2.3em; font-family: BMJUA_ttf; color: #9cbf27') TIME Controller
-			hr.hidden-lg
-		.col-sm-6.col-md-4.col-lg-2.col-xs-12.text-center
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', src="images/members/Jeonghun.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em')
-				b Gong Jeonghun
-			h4 CLI control 
-			h3(style='line-height:2.3em; font-family: BMJUA_ttf; color: #9cbf27') VIM@ster
-			hr.hidden-lg
-		.col-sm-6.col-md-4.col-lg-2.col-xs-12.text-center
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', src="images/members/taejun.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em')
-				b Kim Taejun
-			h4 role
-			h3(style='line-height:2.3em; font-family: BMJUA_ttf; color: #9cbf27') Brother
-			hr.hidden-lg
-		.col-sm-6.col-md-4.col-lg-2.col-xs-12.text-center
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', src="images/members/sangkyu.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em')
-				b Lee Sangkyu
-			h4 SCRUM master
-			h3(style='line-height:2.3em; font-family: BMJUA_ttf; color: #9cbf27') Honor
-			hr.hidden-lg
-		.col-sm-6.col-md-4.col-lg-2.col-xs-12.text-center
-			img.img-circle(alt='160x160', style='width: 160px; height; 160px;', src="images/members/hongryul.jpg", data-holder-rendered='true')
-			h3(style='line-height:2.3em')
-				b Jung Hongryul
-			h4 Designer
-			h3(style='line-height:2.3em; font-family: BMJUA_ttf; color: #9cbf27') LEMON diffuser
-
-		.clearfix
+		.payinfo
+			h4
+			b Customizing Information 
+			.check-out
+				.bs-example4(data-example-id='simple-responsive-table')
+					.table-responsive
+						table#customizing_result.table-heading
+							tr
+								th.table-grid(align='center') board type
+								th(align='center') buyer
+								th(align='center') comment 
+								td(align='center') deck 
+								th(align='center') wheel
+								th(align='center') truck
+								td(align='center') deck color 
+								th(align='center') wheel color
+								th(align='center') truck color
+							each val in contents
+								tr
+									td(align='center')= val.board
+									td(align='center')= val.buyer_SN
+									td(align='center')= val.comment
+									td(align='center')= val.deck_SN
+									th(align='center')= val.wheel_SN 
+									th(align='center')= val.truck_SN
+									td(align='center')= val.deck_color
+									th(align='center')= val.wheel_color 
+									th(align='center')= val.truck_color
