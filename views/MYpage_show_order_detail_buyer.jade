@@ -8,24 +8,24 @@ html
 		table
 			tbodys
 				each val in contents
-				tr
-					td Order number
-					td(align='center', onclick='showPopup(#{val.SN});')= val.SN
-				tr
-					td Date
-					td(align='center')= val.date
-				tr
-					td Seller
-					td(align='center')= val.seller_SN
-				tr
-					td Buyer
-					td(align='center')= val.buyer_SN
-				tr
-					td Total Price
-					td(align='center')= val.total_price
-				tr
-					td state
-					td(align='center')= val.state
+					tr
+						td Order number
+						td(align='center', onclick='showPopup(#{val.SN});')= val.SN
+					tr
+						td Date
+						td(align='center')= val.date
+					tr
+						td Seller
+						td(align='center')= val.seller_SN
+					tr
+						td Buyer
+						td(align='center')= val.buyer_SN
+					tr
+						td Total Price
+						td(align='center')= val.total_price
+					tr
+						td state
+						td(align='center')= val.state
 		button.btn.btn-info(type='button', value = 'Close', onclick='popupClose();') Close
 		| &nbsp;
 		form(action='/insert_deal', method='post')
