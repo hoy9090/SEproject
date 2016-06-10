@@ -53,7 +53,6 @@ router.get('/', function(req, res, next)
 			res.render('customize', {list: result, type: typeString});
 		});
 
-
 		// customize load
 		conn.query('select board_type, deck_SN, truck_SN, wheel_SN, wheel_color from Customize where buyer_SN='+req.session.userno, function(err, result, field) {
 			if (err)
@@ -62,11 +61,33 @@ router.get('/', function(req, res, next)
 			res.render('MYpage_show_customizing', {info: result[0]});
 		});
 
-
 		// customize write
-
+		console.log(req.body);
+		var SN = req.body.NO;
+		var deck_color = req.body.deck_color;
+		var truck_color = req.body.truck_color;
+		var wheel_color = req.body.wheel_color;
+		var comment = req.body.comment;
+		var queryString = "";
+		if (deck_color != null)
+			queryString = queryString.concat("deck_color='"+deck_color+"', ");
+		if (truck_color != null)
+			queryString = queryString.concat("truck_color='"+truck_color+"', ");
+		if (wheel_color != null)
+			queryString = queryString.concat("wheel_color='"+wheel_color+"', ");
+		if (comment != null)
+			queryString = queryString.concat("comment='"+comment+"', ");
+		queryString = queryString.slice(0, -2);
+		conn.query('update Customize set '+queryString+' where buyer_SN='+SN, function(err, result, field) {
+			conn.release();
+			if (err) {
+				console.error(err);
+				res.send({reg_success: false});
+			} else {
+				res.send({reg_success: true});
+			}
+		});
 	});
-
 });
 
 module.exports = router;
