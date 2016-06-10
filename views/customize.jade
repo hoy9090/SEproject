@@ -142,11 +142,11 @@ block content
 						input#img.form-control(type='file', name='file', placeholder='Main Image File', required)
 					legend
 						h4.cate Search
-						select(id = 'text', name = 'type')
+						select(id = 'text', name='type')
 							option(value = 'Select board type.', disabled, selected) Select board type.
-							option(value = '0') Long board
-							option(vaule = '1') Cruser board
-							option(vaule = '2') Skate board
+							option(value='0') Long board
+							option(vaule='1') Cruser board
+							option(vaule='2') Skate board
 						/////////////////////////////////////////////h3 Type
 						//input(type='radio', value='val', name='radiotest') 
 						//| All
@@ -205,7 +205,7 @@ block content
 				});
 				$("input[name='subtype']").change(function() {
 					$.ajax({
-						url: 'get_board';
+						url: 'get_board',
 						type: 'POST',
 						data: {type: $("select[name='type']").val(), subtype: $("input[name='addr']:checked").val()},
 						success: function(data) {
