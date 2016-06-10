@@ -82,7 +82,7 @@ block content
 		script(language='javascript').
 					function showPopup() { window.open("MYpage_change_profile_buyer", "TEST", "width=400, height=300, left=100, top=50"); }
 					function showPopup_pw() { window.open("MYpage_change_pw", "TEST", "width=400, height=300, left=100, top=50"); }
-					function showPopup_custom() { window.open("MYpage_show_customizing", "TEST", "width=600, height=700, left=100, top=50"); }
+					//function showPopup_custom() { window.open("MYpage_show_customizing", "TEST", "width=600, height=700, left=100, top=50"); }
 	.container
 		.col-md-12.mypage_private_area
 			br
@@ -95,6 +95,6 @@ block content
 				| &nbsp;
 				input.btn.btn-info(type='button', value = 'manage deal', onclick="location.href='/MYpage_show_deal'")
 				| &nbsp;
-				input.btn.btn-info(type='button', value = 'manage customizing', onclick='showPopup_custom();')
-				| &nbsp;
+				//input.btn.btn-info(type='button', value = 'manage customizing', onclick='showPopup_custom();')
+				//| &nbsp;
 				input.btn.btn-info(type='button', value = 'manage bid', onclick="location.href='/MYpage_show_bid_candidate'")
