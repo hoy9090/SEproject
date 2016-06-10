@@ -4,7 +4,7 @@ var mysql = require('mysql');
 var pool = mysql.createPool({
 	host: 'localhost',
 	user: 'root',
-	password: 1234
+	password: '1234'
 });
 
 router.get('/', function(req, res, next)
