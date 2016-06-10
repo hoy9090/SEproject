@@ -4,7 +4,7 @@ html
 	
 	body(onload='window.resizeTo(400,400)')
 		h2
-			| Order Detail view Page for Seller
+			| Order Detail view Page for buyer
 		table
 			tr
 				td Order number
@@ -24,7 +24,7 @@ html
 			tr
 				td state
 				td(align='center')= info.state
-		button.btn.btn-info(type='button', value = 'Close', onclick='popupClose();') Popup Close
+		button.btn.btn-info(type='button', value = 'Close', onclick='popupClose();') Close
 		| &nbsp;
 		form(action='/insert_deal', method='post')
 			input(type='hidden', value='#{info.SN}', name='order_SN')
