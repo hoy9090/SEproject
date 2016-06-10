@@ -22,6 +22,7 @@ router.get('/', function(req, res, next)
 			res.render('prioduct_detail', {product: result[0]});
 
 		});
+	});
 });
 
 module.exports = router;
