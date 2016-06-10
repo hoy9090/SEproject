@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
 		if (!err)
 	  	pool.getConnection(function(err, conn) {
 				conn.query('use board');
-				conn.query('insert into Product(type, subtype, name, price, stock, date, color, Seller_SN) values(?, ?, ?, ?, ?, now(), ?, ?, ?)', [req.body.type, req.body.subtype, req.body.name, req.body.price, req.body.stock, req.body.color, req.session.userno], function(err, result, field) {
+				conn.query('insert into Product(type, subtype, name, price, stock, date, color, Seller_SN) values(?, ?, ?, ?, ?, now(), ?, ?)', [req.body.type, req.body.subtype, req.body.name, req.body.price, req.body.stock, req.body.color, req.session.userno], function(err, result, field) {
 					if (err) {
 						console.error(err);
 					}
