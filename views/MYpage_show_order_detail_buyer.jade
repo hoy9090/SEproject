@@ -6,28 +6,30 @@ html
 		h2
 			| Order Detail view Page for buyer
 		table
-			tr
-				td Order number
-				td(align='center', onclick='showPopup(#{info.SN});')= info.SN
-			tr
-				td Date
-				td(align='center')= info.date
-			tr
-				td Seller
-				td(align='center')= info.seller_SN
-			tr
-				td Buyer
-				td(align='center')= info.buyer_SN
-			tr
-				td Total Price
-				td(align='center')= info.total_price
-			tr
-				td state
-				td(align='center')= info.state
+			tbodys
+				each val in contents
+				tr
+					td Order number
+					td(align='center', onclick='showPopup(#{val.SN});')= val.SN
+				tr
+					td Date
+					td(align='center')= val.date
+				tr
+					td Seller
+					td(align='center')= val.seller_SN
+				tr
+					td Buyer
+					td(align='center')= val.buyer_SN
+				tr
+					td Total Price
+					td(align='center')= val.total_price
+				tr
+					td state
+					td(align='center')= val.state
 		button.btn.btn-info(type='button', value = 'Close', onclick='popupClose();') Close
 		| &nbsp;
 		form(action='/insert_deal', method='post')
-			input(type='hidden', value='#{info.SN}', name='order_SN')
+			input(type='hidden', value='#{val.SN}', name='order_SN')
 			button.btn.btn-info(type='submit', value='Make a deal', onclick='makeAdeal();') Make a Deal
 		script(language='javascript').
 			function popupClose() {	alert("No change"); window.close(); }
