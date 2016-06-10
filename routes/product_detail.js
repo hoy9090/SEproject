@@ -19,7 +19,7 @@ router.get('/', function(req, res, next)
 			if(err)
 				console.error(err);
 			conn.release();
-			res.render('prioduct_detail', {product: result[0]});
+			res.render('product_detail', {product: result[0]});
 
 		});
 	});
