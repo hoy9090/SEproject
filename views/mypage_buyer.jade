@@ -74,7 +74,8 @@ block content
 					tbody
 						each val in info2
 							tr
-								td= val.title
+								td
+									a(href='/community/Free/view?no=#{val.SN}')= val.title
 								td= val.views
 
 		script(language='javascript').
