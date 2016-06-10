@@ -7,7 +7,7 @@ var pool = mysql.createPool({
 	password: '1234'
 });
 
-/* GET about. */
+/* GET customize_result. */
 router.get('/', function(req, res, next) {
 
 	pool.getConnection(function(err, conn) {
