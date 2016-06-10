@@ -9,19 +9,17 @@ var pool = mysql.createPool({
 
 router.get('/', function(req, res, next)
 {
-	var type = req.query.type;
-	var subtype = req.query.subtype;
-	var typeString;
+	var no = req.query.no;
 
 	pool.getConnection(function(err, conn){
 		if(err)
 			console.error(err);
 		conn.query('use board');
-		conn.query('select * from Product where SN=? order by SN desc', [type], function(err, result, field){
+		conn.query('select * from Product where SN=?', [no], function(err, result, field){
 			if(err)
 				console.error(err);
 			conn.release();
-			res.render('prioduct_detail', {product: result});
+			res.render('prioduct_detail', {product: result[0]});
 
 		});
 });
