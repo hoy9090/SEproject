@@ -79,7 +79,7 @@ block content
 			//canvas#canvas(width=auto, height='300px').hidden-sm.hidden-md.hidden-lg
 				| This browser do not support canvas.
 			.img-div.col-xs-12.col-sm-6.col-md-6.col-lg-6
-				img(src='images/product/custom/long/deck/14260528758m0.jpg').product-img-div
+				img(id='deck-img' src='images/product/custom/long/deck/14260528758m0.jpg').product-img-div
 				img(id='wheel-a-img' src='images/custom/wheel-a-3.png').wheel-img-div
 			.img-div.col-xs-12.col-sm-6.col-md-6.col-lg-6
 				img(src='images/custom/back-tm.jpg').back-div
@@ -99,22 +99,22 @@ block content
 						td
 							font(color='black') Board Type#
 						td
-							font(color='#42BD71', size='6px')
+							font(color='#42BD71', size='6px' id="type-text")
 					tr
 						td
 							font(color='black') Deck S/N
 						td
-							font(color='#42BD71', size='5px')
+							font(color='#42BD71', size='5px' id="deck-text")
 					tr
 						td
 							font(color='black') Truck S/N
 						td
-							font(color='#42BD71', size='5px')
+							font(color='#42BD71', size='5px' id="truck-text")
 					tr
 						td
 							font(color='black') Wheel S/N
 						td
-							font(color='#42BD71', size='5px')
+							font(color='#42BD71', size='5px' id="wheel-text")
 		hr.hidden-md.hidden-lg
 		.col-md-6.myinfo_detail-right		
 			//h3 Search Filter
@@ -152,11 +152,11 @@ block content
 						//| All
 						.select-subtype
 							input(type='radio', value='0', name='subtype')
-							| Deck
-							input(type='radio', value='1', name='subtype')
 							| Truck
-							input(type='radio', value='2', name='subtype')
+							input(type='radio', value='1', name='subtype')
 							| Wheel
+							input(type='radio', value='2', name='subtype')
+							| Deck
 						br
 						br
 			//input(type='submit', value='PREV').font-ubuntureg
@@ -204,6 +204,7 @@ block content
 				});
 				$("select[name='type']").change(function() {
 					$(".select-subtype").show();
+					("#type-text").html($("select[name='type']").html());
 				});
 				$("input[name='subtype']").change(function() {
 					$.ajax({
@@ -214,7 +215,7 @@ block content
 							if (data.get_success) {
 								$('#list').empty();
 								for (var i=0; i<data.list.length; i++) {
-									$('#list').append("<div class='col-md-4 item-grid1 simpleCart_shelfItem'><div class='mid-pop'><div class='pro-img'><img class='img-responsive' src='images/product/"+data.list[i].img_url+"' align='center' height='200px' width='200px'></div><div class='mid-1'><div class='women'><div class='women-top><span>"+data.list[i].type+"</span><h6><a href='/product_detail?no="+data.list[i].SN+"'>"+data.list[i].name+"</a></h6></div><div class='clearfix'></div></div><div class='mid-2'><p><em class='item_price'>"+data.list[i].price+" KRW</em></p><div class='blpck'></div><div class='clearfix'></div></div></div></div></div>");
+									$('#list').append("<div id='"+data.list[i].SN"' onclick='changeData("+data.list[i].SN+", "+data.list[i].type+")' class='col-md-4 item-grid1 simpleCart_shelfItem'><div class='mid-pop'><div class='pro-img'><img class='img-responsive' src='images/product/"+data.list[i].img_url+"' align='center' height='200px' width='200px'></div><div class='mid-1'><div class='women'><div class='women-top><span>"+data.list[i].type+"</span><h6><a href='/product_detail?no="+data.list[i].SN+"'>"+data.list[i].name+"</a></h6></div><div class='clearfix'></div></div><div class='mid-2'><p><em class='item_price'>"+data.list[i].price+" KRW</em></p><div class='blpck'></div><div class='clearfix'></div></div></div></div></div>");
 								}
 							} else {
 								alert('Load failed.');
@@ -222,5 +223,15 @@ block content
 						}
 					});
 				});
+				function changeData(no, type) {
+					if (type == "0") {
+						$('#truck-text').html(no);
+					} else if (type == "1") {
+						$('#wheel-text').html(no);
+					} else if (type == "2") {
+						$('#deck-text').html(no);
+						$('#deck-img').attr(src, $('#'+no+' img').attr(src));
+					}
+				}
 			});
 			
