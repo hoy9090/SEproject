@@ -43,6 +43,8 @@ router.get('/', function(req, res, next)
 			console.error(err);
 
 		conn.query('use board');
+
+		// product
 		conn.query('select SN, name, price, img_url from Product where type=? and subtype=? order by SN desc', [type, subtype], function(err, result, field)
 		{
 			if(err)
@@ -50,6 +52,19 @@ router.get('/', function(req, res, next)
 			conn.release();
 			res.render('customize', {list: result, type: typeString});
 		});
+
+
+		// customize load
+		conn.query('select board_type, deck_SN, truck_SN, wheel_SN, wheel_color from Customize where buyer_SN='+req.session.userno, function(err, result, field) {
+			if (err)
+				console.error(err);
+			conn.release();
+			res.render('MYpage_show_customizing', {info: result[0]});
+		});
+
+
+		// customize write
+
 	});
 
 });
