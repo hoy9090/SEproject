@@ -3,12 +3,13 @@ extends layout
 block style
 	style.
 		table td {color: black; word-break: break-all; border: 1px solid #ddd !important;}
-		table {min-width: 700px; margin-bottom: 0 !important;}
+		table {min-width: 500px; max-width: 1000px; margin-bottom: 0 !important;}
 		thead {font-weight: bold;}
-		td.title {min-width: 400px;}
-		td.no {width: 60px;}
-		td.views {min-width: 60px;}
-		td.writer, td.date {min-width: 100px;}
+		td.no {min-width: 150px;}
+		td.date {min-width : 150px;}
+		td.price {min-width : 100px;}
+		td.state {min-width : 100px;}
+
 		h2 {margin: 30px 0; text-align: center;}
 		button.btn.btn-info.write {margin: 10px 0; float: right;}
 		ul.pagination > li > a:hover {background-color: #5BC0DE; color: #FFFFFF;}
@@ -25,7 +26,7 @@ block content
 					tr
 						td.no Order Number
 						td.date Date
-						td.views Total_price
+						td.price Total_price
 						td.state State
 				tbodys
 					each val in contents
