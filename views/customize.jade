@@ -31,9 +31,9 @@ block style
 		.product-img-div {position: absolute; top:0; left: 0; width: 300px; height: 300px; z-index: 0;}
 		.wheel-img-div {position: absolute; top:0; left: 0; width: 300px; height: 300px; z-index: 1;}
 
-		.back-div {position: absolute; top:10px; left: 55px; width: 130px; height: 420px; max-height: 560px; z-index: 0; background-color: brown;}
-		.middle-div {position: absolute; top:0; left: 0; width: 430px; height: 430px; z-index: 1;}
-		.front-div {position: absolute; top:0; left: 0; width: 430px; height: 430px; z-index: 2;}
+		.back-div {position: absolute; top:7px; left: 40px; width: 100px; height: 300px; z-index: 0; background-color: black;}
+		.middle-div {position: absolute; top:0; left: 0; width: 300px; height: 300px; z-index: 1;}
+		.front-div {position: absolute; top:0; left: 0; width: 300px; height: 300px; z-index: 2;}
 		//.middle-div {position: absolute; top:30%; left:30%; width: 40%; height: 40%; z-index: 1; background-color: red;}
 
 	//parameter 1 : product type
@@ -76,10 +76,10 @@ block content
 			//canvas#canvas(width='600px', height='400px').hidden-xs.hidden-md.hidden-lg
 			//canvas#canvas(width=auto, height='300px').hidden-sm.hidden-md.hidden-lg
 				| This browser do not support canvas.
-			.img-div.col-xs-12
+			.img-div.col-xs-12.col-sm-6.col-md-6.col-lg-6
 				img(src='images/product/custom/long/deck/14260528758m0.jpg').product-img-div
 				img(src='images/custom/wheel-white.png').wheel-img-div
-			.img-div.col-xs-12
+			.img-div.col-xs-12.col-sm-6.col-md-6.col-lg-6
 				img(src='images/.jpg').back-div
 				img(src='images/custom/custom-view.png').middle-div
 				img(src='images/custom/wheel-white.png').front-div
