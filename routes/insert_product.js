@@ -19,7 +19,6 @@ router.post('/', function(req, res, next) {
 		if (!err)
 	  	pool.getConnection(function(err, conn) {
 				conn.query('use board');
-				console.log('0');
 				conn.query('insert into Product(type, subtype, name, price, stock, date, color, Seller_SN) values(?, ?, ?, ?, ?, now(), ?, ?)', [req.body.type, req.body.subtype, req.body.name, req.body.price, req.body.stock, req.body.color, req.session.userno], function(err, result, field) {
 					if (err)
 						console.error(err);
@@ -27,16 +26,13 @@ router.post('/', function(req, res, next) {
 					for (var index in req.files) {
 						filename[index] = image_path+'/'+req.files[index].filename;
 					}
-					console.log('a');
 					conn.query('select SN from Product order by SN desc limit 0, 1', function(err, result, field) {
 						if (err)
 							console.error(err);
 						var SN = result[0].SN;
-						console.log('b');
 						conn.query('update Product set img_url=?, detail_image_url=? where SN='+SN, [filename[0], filename[1]], function(err, result,field) {
 							if (err)
 								console.error(err);
-							console.log('c');
 							conn.release();
 							res.redirect('/');
 						});
