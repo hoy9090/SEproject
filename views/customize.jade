@@ -96,24 +96,24 @@ block content
 				tbody
 					tr
 						td
-							font(color='black') Board Type
+							font(color='black') Board Type#
 						td
-							font(color='#42BD71', size='6px').font-koolbean Long Board
+							font(color='#42BD71', size='6px')= info.board_type
 					tr
 						td
-							font(color='black') Deck Name
+							font(color='black') Deck S/N
 						td
-							font(color='#42BD71', size='5px') #######
+							font(color='#42BD71', size='5px')= info.deck_SN
 					tr
 						td
-							font(color='black') Truck Name
+							font(color='black') Truck S/N
 						td
-							font(color='#42BD71', size='5px') #######
+							font(color='#42BD71', size='5px')= info.truck_SN
 					tr
 						td
-							font(color='black') Wheel Name
+							font(color='black') Wheel S/N
 						td
-							font(color='#42BD71', size='5px') #######
+							font(color='#42BD71', size='5px')= info.wheel_SN
 		hr.hidden-md.hidden-lg
 		.col-md-6.myinfo_detail-right		
 			//h3 Search Filter
