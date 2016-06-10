@@ -18,7 +18,7 @@ router.get('/', function(req, res, next)
 		conn.query('select name, nickname, phone_number, address, corp_num, img_url from Member where SN='+req.session.userno, function(err, result, field) {
 			if (err)
 				console.error(err);
-			conn.query('select title, views from Community_Free where writer_SN='+req.session.userno, function(err2, result2, field2) {
+			conn.query('select SN, title, views from Community_Free where writer_SN='+req.session.userno, function(err2, result2, field2) {
 				conn.release();
 				res.render('mypage_seller', {info: result[0], info2: result2});		
 			});

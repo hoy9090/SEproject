@@ -94,7 +94,8 @@ block content
 				tbody
 					each val in info2
 						tr
-							td= val.title
+							td
+								a(href='/community/Free/view?no=#{val.no}')= val.title
 							td= val.views
 
 	.container
