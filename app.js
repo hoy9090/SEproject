@@ -40,6 +40,7 @@ var MYpage_change_profile_buyer = require('./routes/MYpage_change_profile_buyer'
 var MYpage_change_profile_seller = require('./routes/MYpage_change_profile_seller');
 var MYpage_change_pw = require('./routes/MYpage_change_pw');
 var MYpage_show_order = require('./routes/MYpage_show_order');
+var MYpage_show_order_list = require('./routes/MYpage_show_order_list');
 var MYpage_show_order_detail_buyer = require('./routes/MYpage_show_order_detail_buyer');
 var MYpage_show_order_detail_seller = require('./routes/MYpage_show_order_detail_seller');
 var MYpage_show_bid = require('./routes/MYpage_show_bid');
@@ -121,6 +122,7 @@ app.use('/MYpage_change_profile_seller', MYpage_change_profile_seller);
 app.use('/MYpage_change_profile_buyer', MYpage_change_profile_buyer);
 app.use('/MYpage_change_pw', MYpage_change_pw);
 app.use('/MYpage_show_order', MYpage_show_order);
+app.use('/MYpage_show_order_list', MYpage_show_order_list);
 app.use('/MYpage_show_order_detail_seller', MYpage_show_order_detail_seller);
 app.use('/MYpage_show_order_detail_buyer', MYpage_show_order_detail_buyer);
 app.use('/MYpage_show_bid', MYpage_show_bid);

@@ -1,0 +1,25 @@
+doctype html
+html
+	link(href='css/bootstrap.css', rel='stylesheet', type='text/css', media='all')
+	
+	body(onload='window.resizeTo(400,400)')
+		h2
+			| Order list view Page for Seller
+		table
+			tr
+				td Order number
+				td(align='center')= info.SN
+			tr
+				td Product number
+				td(align='center')= info.poduct_SN
+			tr
+				td amount
+				td(align='center')= info.amount
+		button.btn.btn-info(type='button', value = 'Close', onclick='popupClose();')
+		| &nbsp;
+		script(language='javascript').
+			function popupClose() {	alert("No change"); window.close(); }
+
+
+		script(src='js/jquery.min.js')
+		script(src='js/bootstrap.min.js')
