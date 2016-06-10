@@ -18,7 +18,7 @@ var sign_FB = require('./routes/sign_FB');
 var shopping_cart = require('./routes/shopping_cart');
 var add_cart = require('./routes/add_cart');
 var community = require('./routes/community');
-
+var get_board = require('./routes/get_board');
 //product features
 
 var customize = require('./routes/customize');
@@ -113,6 +113,7 @@ app.use('/product_list', product_list);
 app.use('/product', product);
 app.use('/reg_product', reg_product);
 app.use('/insert_product', insert_product);
+app.use('/get_board', get_board);
 
 app.use('/mypage_buyer', mypage_buyer);
 app.use('/mypage_seller', mypage_seller);
