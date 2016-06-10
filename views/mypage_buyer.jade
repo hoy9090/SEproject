@@ -72,9 +72,10 @@ block content
 							td.title Title
 							td.views Views
 					tbody
-						tr
-							td Replace to database data
-							td 5555555
+						each val in info2
+							tr
+								td= val.title
+								td= val.views
 
 		script(language='javascript').
 					function showPopup() { window.open("MYpage_change_profile_buyer", "TEST", "width=400, height=300, left=100, top=50"); }

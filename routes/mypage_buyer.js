@@ -21,7 +21,7 @@ router.get('/', function(req, res, next)
 			conn.query('select title, views from Community_Free where writer_SN='+req.session.userno, function(err2, result2, field2) {
 
 				conn.release();
-				res.render('mypage_buyer', {info: result[0]});
+				res.render('mypage_buyer', {info: result[0], info2: result2});
 			});
 		});
 	});
