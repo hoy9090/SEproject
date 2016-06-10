@@ -8,7 +8,7 @@ html
 		table
 			tr
 				td Order number
-				td(align='center')= info.SN
+				td(align='center', onclick='showPopup(#{info.SN});')= info.SN
 			tr
 				td Date
 				td(align='center')= info.date
@@ -32,6 +32,6 @@ html
 		script(language='javascript').
 			function popupClose() {	alert("No change"); window.close(); }
 			function makeAdeal() {			}
-
+			function showPopup(num) { window.close(); window.open("MYpage_show_order_list_#{str}?number="+num, "TEST", "width=600, height=500, left=100, top=50"); })
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')
