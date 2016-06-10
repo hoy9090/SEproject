@@ -15,24 +15,19 @@ block style
 		.form-group {display: inline-block !important; margin-right: 5px;}
 
 block content
-
 	script(language='javascript').
-				function showPopup() { alert('Select done.'); }
+		function showPopup(num) { window.open("MYpage_show_deal_detail?number="+num, "TEST", "width=600, height=500, left=100, top=50"); }
 	.container
-		h2	Bid Candidate List view page for Buyer
+		h2 Deal list
 		.col-xs-12(style='overflow: auto;')
 			table.table.table-hover.table-striped
 				thead
 					tr
-						td.seller seller
-						td.price price
-						td.comment comment
-						//td
-
-				tbodys
+						td.no Deal Number
+						td.date Date
+				tbody
 					each val in contents
 						tr
-							td= val.seller_SN
-							td= val.price 
-							td= val.comment
-							//input.btn.btn-info(type='button', value = 'Select', onclick='showPopup();')
+							td
+								a(onclick='showPopup(#{val.SN});')= val.SN
+							td= val.date

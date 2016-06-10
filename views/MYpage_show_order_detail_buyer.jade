@@ -10,7 +10,7 @@ html
 				each val in contents
 					tr
 						td Order number
-						td(align='center', onclick='showPopup(#{val.SN});')= val.SN
+						td(align='center')= val.SN
 					tr
 						td Date
 						td(align='center')= val.date
@@ -28,12 +28,11 @@ html
 						td(align='center')= val.state
 		button.btn.btn-info(type='button', value = 'Close', onclick='popupClose();') Close
 		| &nbsp;
-		form(action='/insert_deal', method='post')
+		//form(action='/insert_deal', method='post')
 			input(type='hidden', value='#{val.SN}', name='order_SN')
 			button.btn.btn-info(type='submit', value='Make a deal', onclick='makeAdeal();') Make a Deal
 		script(language='javascript').
 			function popupClose() {	alert("No change"); window.close(); }
 			function makeAdeal() {			}
-			function showPopup(num) { window.close(); window.open("MYpage_show_order_list_#{str}?number="+num, "TEST", "width=600, height=500, left=100, top=50"); })
 		script(src='js/jquery.min.js')
 		script(src='js/bootstrap.min.js')
