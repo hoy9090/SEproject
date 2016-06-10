@@ -17,8 +17,12 @@ router.get('/', function(req, res, next)
 		conn.query('select name, nickname, phone_number, address, img_url from Member where SN='+req.session.userno, function(err, result, field) {
 			if (err)
 				console.error(err);
-			conn.release();
-			res.render('mypage_buyer', {info: result[0]});
+
+			conn.query('select title, views from Community_Free where writer_SN='+req.session.userno, function(err2, result2, field2) {
+
+				conn.release();
+				res.render('mypage_buyer', {info: result[0]});
+			});
 		});
 	});
 });
